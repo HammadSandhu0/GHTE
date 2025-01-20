@@ -1,0 +1,11 @@
+User-Agent: *
+Allow: /
+Disallow: /private/
+
+Disallow: /admin/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /cart/
+
+
+Sitemap: https://www.gulfhorizontele.com/sitemap.xml
