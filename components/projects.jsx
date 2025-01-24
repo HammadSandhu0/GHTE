@@ -181,7 +181,7 @@ const Projects = () => {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, scale: 0.95, y: 30 },
+    hidden: { opacity: 0, scale: 0, y: 30 },
     visible: {
       opacity: 1,
       scale: 1,
@@ -246,10 +246,7 @@ const Projects = () => {
             <motion.div
               key={index}
               className="relative overflow-hidden mx-auto max-w-sm text-center group"
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }} // Ensures animation triggers when 20% of the card enters the viewport
+              variants={cardVariants} // Ensures animation triggers when 20% of the card enters the viewport
             >
               <div className="overflow-hidden rounded-3xl relative">
                 <Link href={service.link} className="block relative">

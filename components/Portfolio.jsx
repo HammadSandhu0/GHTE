@@ -4,19 +4,6 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.4,
-      ease: [0.25, 0.8, 0.25, 1],
-    },
-  },
-};
-
 const headingVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -35,15 +22,29 @@ const paragraphVariants = {
   },
 };
 
-const buttonVariants = {
-  hidden: { opacity: 0, y: 30 },
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2, // Small delay between child animations
+      ease: [0.25, 0.8, 0.25, 1],
+    },
   },
 };
 
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 5, ease: [0.25, 0.8, 0.25, 1] },
+  },
+};
 const Portfolio = () => {
   const t = useTranslations("Services");
   const services = [
@@ -159,7 +160,7 @@ const Portfolio = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         {/* Heading Section */}
         <div className="text-center mb-12">
@@ -213,15 +214,12 @@ const Portfolio = () => {
         </div>
 
         {/* Services Grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-8 gap-x-3"
-          variants={headingVariants}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-8 gap-x-3">
           {filteredServices.map((service, index) => (
             <motion.div
               key={index}
               className="relative overflow-hidden mx-auto max-w-sm text-center group"
-              variants={containerVariants}
+              variants={cardVariants}
             >
               <div className="overflow-hidden rounded-3xl relative">
                 <a href={service.link} className="block relative">
@@ -254,7 +252,7 @@ const Portfolio = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </motion.div>
     </div>
   );

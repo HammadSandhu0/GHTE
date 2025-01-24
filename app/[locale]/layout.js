@@ -23,7 +23,7 @@ export const metadata = {
 };
 
 export default async function LocaleLayout({ children, params }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   // Ensure the locale is valid
   if (!routing.locales.includes(locale)) {
