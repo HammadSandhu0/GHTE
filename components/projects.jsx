@@ -2,169 +2,155 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const Projects = () => {
-  const services = [
+  const t = useTranslations("AllProjects");
+  const projects = [
     {
-      category: "Power",
+      category: t("categories.power"),
       items: [
         {
-          title: "Saudia Technic",
-          description:
-            "Saudia Technic specializes in power systems supply, installation, testing, and commissioning, ensuring seamless and efficient operations.",
-          image: "saudiatechnic.png",
+          title: t("projects.Saudia_Technic.title"),
+          description: t("projects.Saudia_Technic.description"),
+          image: "/saudiatechnic.png",
           link: "#",
         },
         {
-          title: "Royal Commission of AlUla",
-          description:
-            "The AlUla UPS Systems project guarantees continuous power supply through reliable installation, testing, and commissioning services.",
+          title: t("projects.Royal_Commission_of_AlUla.title"),
+          description: t("projects.Royal_Commission_of_AlUla.description"),
           image: "/AlUla.png",
           link: "#",
         },
         {
-          title: "National Water Company Jeddah",
-          description:
-            "National Water Company relies on Load Banks to provide dependable backup power during unexpected outages.",
+          title: t("projects.National_Water_Company_Jeddah.title"),
+          description: t("projects.National_Water_Company_Jeddah.description"),
           image: "/natonalwatercompany.png",
           link: "#",
         },
         {
-          title: "King Abdulaziz Endowment",
-          description:
-            "The AVR System installed for the King Abdulaziz Endowment ensures stable voltage, delivering uninterrupted and reliable power.",
+          title: t("projects.King_Abdulaziz_Endowment.title"),
+          description: t("projects.King_Abdulaziz_Endowment.description"),
           image: "/endowment.png",
           link: "#",
         },
         {
-          title: "King Salman Air Base",
-          description:
-            "Outdoor UPS Systems at King Salman Air Base are meticulously installed to maintain reliable backup power during critical situations.",
+          title: t("projects.King_Salman_Air_Base.title"),
+          description: t("projects.King_Salman_Air_Base.description"),
           image: "/kingsalmanairbase.jpg",
           link: "#",
         },
       ],
     },
     {
-      category: "Security",
+      category: t("categories.security"),
       items: [
         {
-          title: "Al Kofeia Restaurant",
-          description:
-            "A robust CCTV solution was implemented at Al Kofeia Restaurant to enhance security and ensure comprehensive surveillance.",
+          title: t("projects.Al_Kofeia_Restaurant.title"),
+          description: t("projects.Al_Kofeia_Restaurant.description"),
           image: "/alkofia.png",
           link: "#",
         },
         {
-          title: "Al Falah Bukhari Restaurant Jeddah",
-          description:
-            "CCTV systems installed at Al Falah Bukhari Restaurant deliver continuous and efficient security monitoring for all operations.",
+          title: t("projects.Al_Falah_Bukhari_Restaurant_Jeddah.title"),
+          description: t(
+            "projects.Al_Falah_Bukhari_Restaurant_Jeddah.description"
+          ),
           image: "/alfalah.png",
           link: "#",
         },
         {
-          title: "ASIC",
-          description:
-            "ASIC projects encompass testing, commissioning, and advanced security solutions to ensure reliable system performance.",
+          title: t("projects.ASIC.title"),
+          description: t("projects.ASIC.description"),
           image: "/asic.png",
           link: "#",
         },
       ],
     },
     {
-      category: "IT",
+      category: t("categories.it"),
       items: [
         {
-          title: "The Ritz-Carlton Hotel",
-          description:
-            "Ritz-Carlton Hotel projects include state-of-the-art power and security solutions, ensuring smooth and secure operations.",
+          title: t("projects.The_Ritz_Carlton_Hotel.title"),
+          description: t("projects.The_Ritz_Carlton_Hotel.description"),
           image: "/Ritzhotel.png",
           link: "#",
         },
       ],
     },
     {
-      category: "Testing & Comissioning",
+      category: t("categories.Testing_Comissioning"),
       items: [
         {
-          title: "STC Headquarters",
-          description:
-            "At STC Headquarters, UPTIME GHTE conducted comprehensive data center testing using engineers and load banks for optimal performance.",
+          title: t("projects.STC_Headquarters.title"),
+          description: t("projects.STC_Headquarters.description"),
           image: "/stc.png",
           link: "#",
         },
         {
-          title: "King Faisal Air Academy",
-          description:
-            "King Faisal Air Academy projects combine power systems and security solutions, providing reliable and efficient operations.",
+          title: t("projects.King_Faisal_Air_Academy.title"),
+          description: t("projects.King_Faisal_Air_Academy.description"),
           image: "/KingFaisalAirAccadmy.png",
           link: "#",
         },
         {
-          title: "King Abdulaziz International Airport",
-          description:
-            "King Abdulaziz Airport's projects included installing and testing advanced power and security systems to ensure reliable functionality.",
+          title: t("projects.King_Abdulaziz_International_Airport.title"),
+          description: t(
+            "projects.King_Abdulaziz_International_Airport.description"
+          ),
           image: "/KingAbdulazizinternationaairport.jpg",
           link: "#",
         },
         {
-          title: "Riyadh Metro",
-          description:
-            "Riyadh Metro's UPS Testing guarantees smooth operations by maintaining uninterrupted power during outages.",
+          title: t("projects.Riyadh_Metro.title"),
+          description: t("projects.Riyadh_Metro.description"),
           image: "/riyadhmetro.png",
           link: "#",
         },
         {
-          title: "Ma’aden",
-          description:
-            "Ma’aden's projects involve comprehensive power systems supply, installation, testing, and commissioning for dependable functionality.",
+          title: t("projects.Ma’aden.title"),
+          description: t("projects.Ma’aden.description"),
           image: "/Ma’aden.png",
           link: "#",
         },
         {
-          title: "NEOM",
-          description:
-            "NEOM’s Generator Testing ensures uninterrupted and reliable backup power for its state-of-the-art facilities.",
+          title: t("projects.NEOM.title"),
+          description: t("projects.NEOM.description"),
           image: "/neom.png",
           link: "#",
         },
         {
-          title: "Aramco",
-          description:
-            "Aramco's projects include supplying, installing, and testing power and security systems to meet their rigorous operational standards.",
+          title: t("projects.Aramco.title"),
+          description: t("projects.Aramco.description"),
           image: "/Aramco.jpg",
           link: "#",
         },
         {
-          title: "Mecca Haram",
-          description:
-            "Projects at Makkah Haram involved the installation and testing of reliable power and security systems for efficient operations.",
+          title: t("projects.Mecca_Haram.title"),
+          description: t("projects.Mecca_Haram.description"),
           image: "/MakkahHaram.png",
           link: "/servercomputer",
         },
         {
-          title: "National CyberCrime Agency",
-          description:
-            "The CyberCrime Agency's Data Center Testing ensures efficient operations for high-demand and critical systems.",
+          title: t("projects.National_CyberCrime_Agency.title"),
+          description: t("projects.National_CyberCrime_Agency.description"),
           image: "/cybercrime.png",
           link: "#",
         },
       ],
     },
     {
-      category: "Enggineering",
+      category: t("categories.Engineering"),
       items: [
         {
-          title: "King Salman Hospital Madinah",
-          description:
-            "King Salman Hospital’s project delivers reliable power, data, and infrastructure systems to support critical healthcare services.",
+          title: t("projects.King_Salman_Hospital_Madinah.title"),
+          description: t("projects.King_Salman_Hospital_Madinah.description"),
           image: "/samanhospita.png",
           link: "/servercomputer",
         },
         {
-          title: "⁠Batterjee Medical College",
-          description:
-            "Batterjee Medical College’s projects include testing data center and power systems to guarantee consistent and reliable performance.",
+          title: t("projects.Batterjee_Medical_College.title"),
+          description: t("projects.Batterjee_Medical_College.description"),
           image: "/batterjee.png",
           link: "#",
         },
@@ -176,8 +162,8 @@ const Projects = () => {
 
   const filteredServices =
     selectedCategory === "All"
-      ? services.flatMap((service) => service.items)
-      : services.find((service) => service.category === selectedCategory)
+      ? projects.flatMap((service) => service.items)
+      : projects.find((service) => service.category === selectedCategory)
           ?.items || [];
 
   // Animation variants
@@ -200,7 +186,7 @@ const Projects = () => {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
+      transition: { duration: 5, ease: [0.25, 0.8, 0.25, 1] },
     },
   };
 
@@ -215,18 +201,13 @@ const Projects = () => {
         {/* Header */}
         <motion.div className="text-center mb-12" variants={cardVariants}>
           <motion.h3 className="text-lg sm:text-xl font-semibold text-secondary mb-2">
-            Our projects
+            {t("heading")}
           </motion.h3>
           <motion.h2 className="text-3xl sm:text-5xl font-bold mb-4 text-primary">
-            OUR SELECTED PROJECTS
+            {t("subheading")}
           </motion.h2>
           <motion.p className="lg:w-2/3 mx-auto text-base sm:text-lg text-textcolor mt-4">
-            We have successfully completed a variety of projects, including
-            testing and commissioning services for major sites like STC
-            Headquarters and Riyadh Metro. Our expertise also extends to
-            engineering services for healthcare facilities. Additionally, we
-            specialize in power systems with reliable UPS installations and
-            provide advanced CCTV security solutions for different sectors.
+            {t("description")}
           </motion.p>
         </motion.div>
 
@@ -243,7 +224,7 @@ const Projects = () => {
             >
               All
             </li>
-            {services.map((service, index) => (
+            {projects.map((service, index) => (
               <li
                 key={index}
                 className={`px-4 py-2 rounded cursor-pointer ${
@@ -293,7 +274,7 @@ const Projects = () => {
                   href={service.link}
                   className="absolute text-secondary font-semibold capitalize text-lg hover:text-white flex items-center justify-start -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
                 >
-                  View more
+                  {t("view_more_btn")}
                   <img
                     src="/arrow.svg"
                     alt="svg"

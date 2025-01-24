@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
-import { motion } from "framer-motion"; // Import motion from framer-motion
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const Reach = () => {
+  const t = useTranslations("AboutReach");
   // Animation variants
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -15,7 +18,7 @@ const Reach = () => {
   return (
     <div className="bg-primary py-6 px-5 rounded-xl">
       <ul className="flex flex-col gap-y-4 text-start text-[14px] md:text-[16px] lg:text-[18px] text-light">
-        <li className="flex items-start">
+        <motion.li className="flex items-start" variants={itemVariants}>
           <p className="mr-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,16 +38,12 @@ const Reach = () => {
               </g>
             </svg>
           </p>
-          <motion.p
-            variants={itemVariants}
-            className="text-white text-base md:text-lg font-semibold"
-            data-translate-key="aboutvalue1"
-          >
-            Respect: Hold various opinions and digital plans
-          </motion.p>
-        </li>
+          <p className="text-white text-base md:text-lg font-semibold">
+            {t("Respect")}
+          </p>
+        </motion.li>
 
-        <li className="flex items-start">
+        <motion.li className="flex items-start" variants={itemVariants}>
           <p className="mr-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -64,17 +63,12 @@ const Reach = () => {
               </g>
             </svg>
           </p>
-          <motion.p
-            variants={itemVariants}
-            className="text-white text-base md:text-lg font-semibold"
-            data-translate-key="aboutvalue2"
-          >
-            Ownership: Operating success with responsibility and getting perfect
-            output.
-          </motion.p>
-        </li>
+          <p className="text-white text-base md:text-lg font-semibold">
+            {t("Ownership")}
+          </p>
+        </motion.li>
 
-        <li className="flex items-start">
+        <motion.li className="flex items-start" variants={itemVariants}>
           <p className="mr-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -94,16 +88,15 @@ const Reach = () => {
               </g>
             </svg>
           </p>
-          <motion.p
-            variants={itemVariants}
-            className="text-white text-base md:text-lg font-semibold"
-            data-translate-key="aboutvalue3"
-          >
-            Fairness: Confirm honesty and believe in each interactivity.
-          </motion.p>
-        </li>
+          <p className="text-white text-base md:text-lg font-semibold">
+            {t("Fairness")}
+          </p>
+        </motion.li>
 
-        <li className="flex items-start lg:hidden xl:flex">
+        <motion.li
+          className="flex items-start lg:hidden xl:flex"
+          variants={itemVariants}
+        >
           <p className="mr-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -123,15 +116,10 @@ const Reach = () => {
               </g>
             </svg>
           </p>
-          <motion.p
-            variants={itemVariants}
-            className="text-white text-base md:text-lg font-semibold"
-            data-translate-key="aboutvalue4"
-          >
-            Quality: Construct an inheritance of excellence with steady
-            commitment.
-          </motion.p>
-        </li>
+          <p className="text-white text-base md:text-lg font-semibold">
+            {t("Quality")}
+          </p>
+        </motion.li>
       </ul>
     </div>
   );

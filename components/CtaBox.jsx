@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SecondaryBtn from "./SecondaryBtn";
+import { useTranslations } from "next-intl";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -44,9 +45,10 @@ const buttonVariants = {
 };
 
 const CtaBox = () => {
+  const t = useTranslations("CTA");
   return (
     <motion.div
-      className="bg-primary my-20 p-8 sm:p-4 relative"
+      className="bg-primary  p-8 sm:p-4 relative"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }} // Ensures animation runs once when 20% of the component is in view
@@ -57,27 +59,22 @@ const CtaBox = () => {
         <motion.div className="lg:w-1/2 sm:w-2/3 w-full lg:text-left flex flex-col items-start">
           <motion.h2
             className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
-            data-translate-key="cta_heading"
             variants={headingVariants}
           >
-            Let’s Work on Something Great Together!
+            {t("title")}
           </motion.h2>
 
           <motion.p
             className="text-white text-lg lg:text-xl my-8"
-            data-translate-key="cta_description"
             variants={paragraphVariants}
           >
-            We are coupled with Gulf Horizon Telecom Est and undergo exceptional
-            service, quality, and innovation. Let’s make your engineering
-            imagination come to life with solutions that stand with the time.
+            {t("description")}
           </motion.p>
 
           <motion.div variants={buttonVariants}>
             <SecondaryBtn
-              text="Get a Free Quote Today!"
-              datatranslatekey="cta_button"
-              href=""
+              text={t("free-quote-btn")}
+              href="/contact"
               className="hover:text-white hover:border-white hover:border border border-secondary"
             />
           </motion.div>

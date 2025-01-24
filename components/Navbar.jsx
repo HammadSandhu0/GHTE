@@ -1,32 +1,25 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import LanguageTranslator from "./LanguageTranslator";
-import { useRouter } from "next/navigation";
 
-const CustomLink = ({
-  href,
-  title,
-  className = "",
-  toggle,
-  datatranslatekey,
-}) => {
+const CustomLink = ({ href, title, className = "", toggle }) => {
+  const t = useTranslations("Navigations"); // Use the "Navigations" namespace for translations
+
   const handleClick = () => {
     if (toggle) toggle();
   };
 
   return (
     <Link
-      href={`${href}`}
+      href={href}
       className={`${className} relative group text-[18px] text-light hover:text-secondary`}
       onClick={handleClick}
-      data-translate-key={datatranslatekey}
     >
-      {title}
-      <span
-        className={`inline-block w-0 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease-linear duration-700`}
-      >
+      {t(title)} {/* Correct translation key */}
+      <span className="inline-block w-0 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease-linear duration-700">
         &nbsp;
       </span>
     </Link>
@@ -34,24 +27,64 @@ const CustomLink = ({
 };
 
 const Navbar = () => {
-  const dropdownmenus = [
-    { menuname: "Power", datatranslatekey: "power" },
-    { menuname: "Security", datatranslatekey: "security" },
-    { menuname: "IT", datatranslatekey: "IT" },
+  const t = useTranslations("Navigations");
+  const dropdownMenus = [
+    {
+      menuName: "power",
+      links: [
+        { href: "/ups-saudi-arabia", key: "ups_system" },
+        { href: "/battery-solutions-saudi-arabia", key: "batteries" },
+        { href: "/generators-saudi-arabia", key: "generators" },
+        { href: "/load-bank-rental-saudi-arabia", key: "load_banks" },
+        {
+          href: "/automatic-voltage-regulator-services-Saudi-Arabia",
+          key: "avrs",
+        },
+      ],
+    },
+    {
+      menuName: "security",
+      links: [
+        { href: "/cctv-systems-services", key: "cctv" },
+        {
+          href: "/access-control-systems-in-saudi-arabia",
+          key: "access_control",
+        },
+        {
+          href: "/fire-fighting-systems-solution-in-saudi-arabia",
+          key: "firefighting",
+        },
+        {
+          href: "/cyber-security-services-in-saudi-arabia",
+          key: "cybersecurity",
+        },
+        { href: "/sound-system-services-in-saudi-arabia", key: "sound_system" },
+      ],
+    },
+    {
+      menuName: "it",
+      links: [
+        {
+          href: "/racks-and-power-distribution-units-in-saudi-arabia",
+          key: "racks",
+        },
+        { href: "/networking-solutions", key: "networking_switches" },
+        {
+          href: "/server-and-computer-solution-in-saudia-arabia",
+          key: "servers_computers",
+        },
+      ],
+    },
   ];
 
-  const [open, setOpen] = useState(false); // Mobile menu state
-  const [activeDropdown, setActiveDropdown] = useState(null); // Track which dropdown is open
+  const [open, setOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const toggleMenu = () => {
-    setOpen(!open);
-  };
-
+  const toggleMenu = () => setOpen((prev) => !prev);
   const closeMenu = () => {
     setOpen(false);
-    setActiveDropdown(null); // Close all dropdowns when menu closes
+    setActiveDropdown(null);
   };
-
   const toggleDropdown = (name) => {
     setActiveDropdown((prev) => (prev === name ? null : name));
   };
@@ -60,13 +93,14 @@ const Navbar = () => {
     <header className="w-full px-4 py-10 font-medium flex items-center justify-between lg:px-16 border-b-2 border-light/20 relative z-20">
       {/* Logo */}
       <div className="text-dark font-bold text-xl">
-        <img src="/logo.png" alt="" className="w-36" />
+        <img src="/logo.png" alt="logo" className="w-36" />
       </div>
 
       {/* Mobile menu toggle button */}
       <button
         className="flex flex-col justify-center items-center xl:hidden bg-primary p-3 px-2 rounded-md"
         onClick={toggleMenu}
+        aria-label="Toggle Menu"
       >
         <span
           className={`bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
@@ -87,20 +121,15 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <nav className="hidden xl:flex space-x-8 px-5 items-center">
-        <CustomLink href="/" title="Home" datatranslatekey="home" />
-        <CustomLink href="/about" title="About" datatranslatekey="about" />
-
-        {/* Desktop Dropdowns */}
-        {dropdownmenus.map((category) => (
+        <CustomLink href="/" title="home" />
+        <CustomLink href="/about" title="about" />
+        {dropdownMenus.map(({ menuName, links }) => (
           <div
-            key={category.menuname}
+            key={menuName}
             className="relative group text-light text-[18px] flex items-center"
           >
-            <div
-              data-translate-key={category.datatranslatekey}
-              className="flex items-center gap-x-2 group-hover:font-semibold cursor-pointer"
-            >
-              {category.menuname}
+            <div className="flex items-center gap-x-2 group-hover:font-semibold cursor-pointer">
+              {t(menuName)} {/* Use key directly */}
             </div>
             <svg
               width="20px"
@@ -118,123 +147,20 @@ const Navbar = () => {
               />
             </svg>
             <div className="absolute hidden group-hover:block bg-primary text-light shadow-lg py-4 rounded-lg w-[200px] -left-1 top-7">
-              {/* Dropdown links for categories */}
-              {category.menuname === "Power" && (
-                <>
-                  <Link
-                    href="/ups-saudi-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="ups_system"
-                  >
-                    UPS System
-                  </Link>
-                  <Link
-                    href="/battery-solutions-saudi-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="Batteries"
-                  >
-                    Batteries
-                  </Link>
-                  <Link
-                    href="/generators-saudi-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="Generators"
-                  >
-                    Generators
-                  </Link>
-                  <Link
-                    href="/load-bank-rental-saudi-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="Load_Banks"
-                  >
-                    Load Bank
-                  </Link>
-                  <Link
-                    href="/automatic-voltage-regulator-services-Saudi-Arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="AVR"
-                  >
-                    AVR's
-                  </Link>
-                </>
-              )}
-              {category.menuname === "Security" && (
-                <>
-                  <Link
-                    href="/cctv-systems-services"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="cctv"
-                  >
-                    CCTV
-                  </Link>
-                  <Link
-                    href="/access-control-systems-in-saudi-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="access_control"
-                  >
-                    Access Control
-                  </Link>
-                  <Link
-                    href="/fire-fighting-systems-solution-in-saudi-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="firefighting"
-                  >
-                    Fire-Fighting
-                  </Link>
-                  <Link
-                    href="/cyber-security-services-in-saudi-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="Cybersecurity"
-                  >
-                    Cyber Security
-                  </Link>
-                  <Link
-                    href="/sound-system-services-in-saudi-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="soundsystem"
-                  >
-                    Sound System
-                  </Link>
-                </>
-              )}
-              {category.menuname === "IT" && (
-                <>
-                  <Link
-                    href="/racks-and-power-distribution-units-in-saudi-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="racks"
-                  >
-                    Racks
-                  </Link>
-                  <Link
-                    href="/networking-solutions"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="Networkingswitches"
-                  >
-                    Networking / Switches
-                  </Link>
-                  <Link
-                    href="/server-and-computer-solution-in-saudia-arabia"
-                    className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
-                    data-translate-key="Servercomputer"
-                  >
-                    Server's / Computer's
-                  </Link>
-                </>
-              )}
+              {links.map(({ href, key }) => (
+                <Link
+                  key={key}
+                  href={href}
+                  className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
+                >
+                  {t(key)} {/* Use key directly */}
+                </Link>
+              ))}
             </div>
           </div>
         ))}
-        <CustomLink
-          href="/client-projects"
-          title="Projects"
-          datatranslatekey="Projects"
-        />
-        <CustomLink
-          href="/contact"
-          title="Contact Us"
-          datatranslatekey="contact"
-        />
+        <CustomLink href="/client-projects" title="projects" />
+        <CustomLink href="/contact" title="contact" />
         <LanguageTranslator />
       </nav>
 
@@ -247,31 +173,27 @@ const Navbar = () => {
         >
           <CustomLink
             href="/"
-            title="Home"
+            title="home"
             toggle={closeMenu}
             className="mb-4"
-            datatranslatekey="home"
           />
           <CustomLink
             href="/about"
-            title="About"
+            title="about"
             toggle={closeMenu}
             className="mb-4"
-            datatranslatekey="about"
           />
-
-          {/* Mobile Dropdowns */}
-          {dropdownmenus.map((category) => (
+          {dropdownMenus.map(({ menuName, links }) => (
             <div
-              key={category.menuname}
+              key={menuName}
               className="w-full flex flex-col items-center mb-4"
             >
               <button
                 className="w-full text-center text-light flex items-center justify-center hover:text-secondary transition-all text-[18px]"
-                onClick={() => toggleDropdown(category.menuname)}
-                data-translate-key={category.datatranslatekey}
+                onClick={() => toggleDropdown(menuName)}
+                aria-expanded={activeDropdown === menuName}
               >
-                {category.menuname}
+                {t(menuName)} {/* Use key directly */}
                 <svg
                   width="20px"
                   height="20px"
@@ -288,129 +210,35 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-              {activeDropdown === category.menuname && (
+              {activeDropdown === menuName && (
                 <div className="w-full flex flex-col items-center justify-center py-2 rounded-md">
-                  {category.menuname === "Power" && (
-                    <>
-                      <Link
-                        href="/ups-saudi-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="ups_system"
-                      >
-                        UPS System
-                      </Link>
-                      <Link
-                        href="/battery-solutions-saudi-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="Batteries"
-                      >
-                        Batteries
-                      </Link>
-                      <Link
-                        href="/generators-saudi-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="Generators"
-                      >
-                        Generators
-                      </Link>
-                      <Link
-                        href="/load-bank-rental-saudi-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="Load_Banks"
-                      >
-                        Load Bank
-                      </Link>
-                      <Link
-                        href="/automatic-voltage-regulator-services-Saudi-Arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="AVR"
-                      >
-                        AVR's
-                      </Link>
-                    </>
-                  )}
-                  {category.menuname === "Security" && (
-                    <>
-                      <Link
-                        href="/cctv-systems-services"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="cctv"
-                      >
-                        CCTV
-                      </Link>
-                      <Link
-                        href="/access-control-systems-in-saudi-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="access_control"
-                      >
-                        Access Control
-                      </Link>
-                      <Link
-                        href="/fire-fighting-systems-solution-in-saudi-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="firefighting"
-                      >
-                        Fire-Fighting
-                      </Link>
-                      <Link
-                        href="/cyber-security-services-in-saudi-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="Cybersecurity"
-                      >
-                        Cyber Security
-                      </Link>
-                      <Link
-                        href="/sound-system-services-in-saudi-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="soundsystem"
-                      >
-                        Sound System
-                      </Link>
-                    </>
-                  )}
-                  {category.menuname === "IT" && (
-                    <>
-                      <Link
-                        href="/racks-and-power-distribution-units-in-saudi-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="racks"
-                      >
-                        Racks
-                      </Link>
-                      <Link
-                        href="/networking-solutions"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="Networkingswitches"
-                      >
-                        Networking / Switches
-                      </Link>
-                      <Link
-                        href="/server-and-computer-solution-in-saudia-arabia"
-                        className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
-                        data-translate-key="Servercomputer"
-                      >
-                        Server's / Computer's
-                      </Link>
-                    </>
-                  )}
+                  {links.map(({ href, key }) => (
+                    <Link
+                      key={key}
+                      href={href}
+                      className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
+                      onClick={closeMenu}
+                    >
+                      {t(key)} {/* Use key directly */}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
           ))}
-          <LanguageTranslator className="bg-secondary mt-8" />
+          <CustomLink
+            href="/client-projects"
+            title="projects"
+            toggle={closeMenu}
+            className="mb-4"
+          />
+          <CustomLink
+            href="/contact"
+            title="contact"
+            toggle={closeMenu}
+            className="mb-4"
+          />
+          <LanguageTranslator className="bg-secondary" />
         </motion.div>
       )}
     </header>

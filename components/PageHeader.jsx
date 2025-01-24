@@ -45,10 +45,7 @@ const PageHeader = ({ pageHeader }) => {
           {...fadeIn}
         >
           {/* Page Header Box Start */}
-          <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-tight"
-            data-translate-key={pageHeader.titleKey}
-          >
+          <motion.h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-tight">
             {pageHeader.title}
           </motion.h1>
           <nav>
@@ -70,14 +67,10 @@ const PageHeader = ({ pageHeader }) => {
                       router.push(breadcrumb.link);
                     }}
                     className="text-white"
-                    data-translate-key={pageHeader.backtokey}
                   >
                     {pageHeader.backto}
                   </button>{" "}
-                  /{" "}
-                  <span data-translate-key={pageHeader.titleKey}>
-                    {breadcrumb.name}
-                  </span>
+                  / <span>{breadcrumb.name}</span>
                 </li>
               ))}
             </motion.ol>

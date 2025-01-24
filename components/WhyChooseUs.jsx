@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useTranslations } from "next-intl";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -34,17 +35,7 @@ const paragraphVariants = {
   },
 };
 
-const CountCard = ({
-  icon,
-  heading,
-  text,
-  count,
-  unit,
-  subtext,
-  datatranslatekeyheading,
-  datatranslatekeytext,
-  subtextdatakey,
-}) => {
+const CountCard = ({ icon, heading, text, count, unit, subtext }) => {
   return (
     <motion.div
       className="relative group border rounded-[50px] shadow-lg p-7 py-10 flex flex-col items-start justify-between overflow-hidden"
@@ -52,43 +43,31 @@ const CountCard = ({
     >
       <div className="relative z-10 pb-6 mb-6">
         <img src={icon} alt={heading} />
-        <h3
-          className="text-xl lg:text-2xl font-medium mt-10 mb-5 text-primary"
-          data-translate-key={datatranslatekeyheading}
-        >
+        <h3 className="text-xl lg:text-2xl font-medium mt-10 mb-5 text-primary">
           {heading}
         </h3>
-        <p
-          className="text-textcolor text-base sm:text-lg"
-          data-translate-key={datatranslatekeytext}
-        >
-          {text}
-        </p>
+        <p className="text-textcolor text-base sm:text-lg">{text}</p>
       </div>
       <div className="relative z-10 text-start border-t py-5 w-full">
         <h3 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
           {count}
           {unit}
         </h3>
-        <p
-          className="text-textcolor mt-3 text-lg font-semibold"
-          data-translate-key={subtextdatakey}
-        >
-          {subtext}
-        </p>
+        <p className="text-textcolor mt-3 text-lg font-semibold">{subtext}</p>
       </div>
     </motion.div>
   );
 };
 
 const WhyChooseUs = ({ whychooseus }) => {
+  const t = useTranslations("Mainwhychoose");
   const [counts, setCounts] = useState([0, 0, 0]);
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   const startCountAnimation = (index, endValue) => {
     let start = 0;
-    const duration = 2000; // Total duration in ms
-    const increment = Math.ceil(endValue / (duration / 16)); // Smooth increment
+    const duration = 2000;
+    const increment = Math.ceil(endValue / (duration / 16));
     const interval = setInterval(() => {
       start += increment;
       if (start >= endValue) {
@@ -100,7 +79,7 @@ const WhyChooseUs = ({ whychooseus }) => {
         newCounts[index] = start;
         return newCounts;
       });
-    }, 16); // 60fps for smooth count
+    }, 16);
   };
 
   useEffect(() => {
@@ -122,27 +101,17 @@ const WhyChooseUs = ({ whychooseus }) => {
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <motion.div className="text-center mb-12" variants={headingVariants}>
-          <h3
-            className="text-secondary sm:text-lg md:text-xl font-semibold"
-            data-translate-key="main_page_why_choose"
-          >
-            Why Choose Us?
+          <h3 className="text-secondary sm:text-lg md:text-xl font-semibold">
+            {t("title")}
           </h3>
-          <h2
-            className="text-3xl sm:text-3xl px-4 md:text-4xl lg:text-5xl font-bold text-primary my-8"
-            data-translate-key="main_page_why_chooseheading"
-          >
-            Why Choose Gulf Horizon Telecom Est?
+          <h2 className="text-3xl sm:text-3xl px-4 md:text-4xl lg:text-5xl font-bold text-primary my-8">
+            {t("subtitle")}
           </h2>
           <motion.p
             className="text-textcolor text-base sm:text-lg md:w-1/2 w-full mx-auto"
-            data-translate-key="main_page_why_choosepra"
             variants={paragraphVariants}
           >
-            Core Values are what support the vision, shape the culture and
-            reflect what an organization values. They are the essence of the
-            organization’s identity – the principles, beliefs or philosophy of
-            values:
+            {t("description")}
           </motion.p>
         </motion.div>
 
@@ -161,20 +130,11 @@ const WhyChooseUs = ({ whychooseus }) => {
               unit={index === 2 ? "%" : "+"}
               subtext={
                 index === 0
-                  ? "Projects Delivered"
+                  ? `${t("numberOfProjectsTitle")}`
                   : index === 1
-                  ? "Happy Clients"
-                  : "Client Satisfaction"
+                  ? `${t("happy_ClientsTitle")}`
+                  : `${t("client_SatisfactionTitle")}`
               }
-              subtextdatakey={
-                index === 0
-                  ? "Projects_Delivered"
-                  : index === 1
-                  ? "Happy_Clients"
-                  : "Client_Satisfaction"
-              }
-              datatranslatekeyheading={item.titleKey}
-              datatranslatekeytext={item.descriptionKey}
             />
           ))}
         </motion.div>

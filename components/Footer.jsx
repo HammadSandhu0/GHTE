@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 import SocialIcons from "./SocialIcons";
+import { useTranslations } from "next-intl";
 
 // Animation variants
 const containerVariants = {
@@ -27,22 +28,15 @@ const sectionVariants = {
   },
 };
 
-const linkVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
-
 const Footer = () => {
+  const t = useTranslations("Footer");
+
   return (
     <motion.footer
       className="bg-primary pt-4 sm:pt-6 lg:pt-8"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }} // Trigger when 20% is in view
+      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       <div className="pt-12">
@@ -64,10 +58,7 @@ const Footer = () => {
               </div>
 
               <p className="mb-6 text-white sm:pr-8 text-[16px] font-semibold">
-                Having a prominent position in the Power Electronics market,
-                GHTE has partnered with world-renowned leading manufacturers to
-                provide our valued customers with quality products and systems
-                for long-term service.
+                {t("description")}
               </p>
               <SocialIcons />
             </motion.div>
@@ -75,80 +66,103 @@ const Footer = () => {
             {/* Our Services Section */}
             <motion.div variants={sectionVariants}>
               <div className="mb-4 font-bold uppercase tracking-widest text-secondary text-xl">
-                Our Services
+                {t("OurServicesTitle")}
               </div>
               <nav className="flex flex-col gap-4">
-                {[
-                  "Load Bank",
-                  "Access Control",
-                  "Generators",
-                  "Cyber Security",
-                ].map((service, index) => (
-                  <Link
-                    key={index}
-                    href="#"
-                    className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                    variants={linkVariants}
-                  >
-                    <img src="/arrow.svg" alt="" />
-                    {service}
-                  </Link>
-                ))}
+                <Link
+                  href="/load-bank-rental-saudi-arabia"
+                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                >
+                  <img src="/arrow.svg" alt="" />
+                  {t("OurServices.loadBank")}
+                </Link>
+                <Link
+                  href="/access-control-systems-in-saudi-arabia"
+                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                >
+                  <img src="/arrow.svg" alt="" />
+                  {t("OurServices.accessControl")}
+                </Link>
+                <Link
+                  href="/generators-saudi-arabia"
+                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                >
+                  <img src="/arrow.svg" alt="" />
+                  {t("OurServices.generators")}
+                </Link>
+                <Link
+                  href="/cyber-security-services-in-saudi-arabia"
+                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                >
+                  <img src="/arrow.svg" alt="" />
+                  {t("OurServices.cyberSecurity")}
+                </Link>
               </nav>
             </motion.div>
 
             {/* Company Section */}
             <motion.div variants={sectionVariants}>
               <div className="mb-4 font-bold uppercase tracking-widest text-secondary text-xl">
-                Company
+                {t("CompanyTitle")}
               </div>
               <nav className="flex flex-col gap-4">
-                {["About Us", "Projects", "Company Profile", "Contact Us"].map(
-                  (item, index) => (
-                    <Link
-                      key={index}
-                      href="#"
-                      className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                      variants={linkVariants}
-                    >
-                      <img src="/arrow.svg" alt="" />
-                      {item}
-                    </Link>
-                  )
-                )}
+                <Link
+                  href="/about"
+                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                >
+                  <img src="/arrow.svg" alt="" />
+                  {t("Company.about")}
+                </Link>
+                <Link
+                  href="/client-projects"
+                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                >
+                  <img src="/arrow.svg" alt="" />
+                  {t("Company.projects")}
+                </Link>
+                <Link
+                  href="/companyprofile.pdf"
+                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                >
+                  <img src="/arrow.svg" alt="" />
+                  {t("Company.companyProfile")}
+                </Link>
+                <Link
+                  href="/conatct"
+                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                >
+                  <img src="/arrow.svg" alt="" />
+                  {t("Company.contact")}
+                </Link>
               </nav>
             </motion.div>
 
             {/* Contact Us Section */}
             <motion.div variants={sectionVariants}>
               <div className="mb-4 font-bold uppercase tracking-widest text-secondary text-xl">
-                Contact Us
+                {t("ContactUsTitle")}
               </div>
               <nav className="flex flex-col gap-4">
                 <Link
-                  href="#"
+                  href="tel:+966122873071"
                   className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                  variants={linkVariants}
                 >
                   <img src="/icon-phone.svg" alt="" className="w-6 h-6" />
-                  +966 122 873 071
+                  {t("ContactUs.phone")}
                 </Link>
                 <Link
-                  href="#"
+                  href="mailto:Info@gulfhorizontele.com"
                   className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                  variants={linkVariants}
                 >
                   <img src="/icon-mail.svg" alt="" className="w-6 h-6" />
-                  Info@gulfhorizontele.com
+                  {t("ContactUs.email")}
                 </Link>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="text-white flex items-start justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                  variants={linkVariants}
                 >
                   <img src="/icon-location.svg" alt="" className="w-6 h-6" />
-                  Gulf Horizon Telecom Est, Level 7, Al Murjanah Tower, Prince
-                  Sultan St., Jeddah 21433
+                  {t("ContactUs.address")}
                 </Link>
               </nav>
             </motion.div>

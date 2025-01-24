@@ -1,0 +1,688 @@
+{
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+  },
+  "NotFoundPage": {
+    "title": "Welcome to Gulf Horizon Telecom Est NOt found"
+  },
+
+  "Navigations": {
+    "home": "Home",
+    "about": "About us",
+    "projects": "Projects",
+    "contact": "Contact",
+    "power": "Power",
+    "ups_system": "UPS Systems",
+    "batteries": "Battery",
+    "generators": "Generators",
+    "load_banks": "Load Banks",
+    "avrs": "AVR'S",
+    "security": "Security",
+    "cctv": "CCTV Systems",
+    "access_control": "Access Control",
+    "firefighting": "Fire Fighting Systems",
+    "cybersecurity": "Cyber Security",
+    "sound_system": "Sound Systems",
+    "it": "IT",
+    "racks": "Racks & PDUs",
+    "networking_switches": "Networking Solutions",
+    "servers_computers": "Servers & Computers"
+  },
+  "HomePage": {
+    "title": "Welcome to Gulf Horizon Telecom Est",
+    "maintitle": "Explore how Gulf Horizon Telecom Est can help you achieve your goals.",
+    "description": "Your One-Stop Engineering Solution for Power, Security & IT Across the Kingdom. At Gulf Horizon Telecom Est, we are best at providing perfect and reliable solutions for power security systems, IT infrastructure, and advanced security technologies.",
+    "getstarted": "Get Started",
+    "viewprojects": "View Projects"
+  },
+  "AboutPage": {
+    "pageheader": {
+      "title": "About Gulf Horizon Telecom Est.",
+      "home": "Home",
+      "about": "About Us"
+    },
+
+    "title": "About Us",
+    "maintitle": "Gulf Horizon Telecom Est.",
+    "description": "With a powerful respect in the market, Gulf Horizon Telecom Est is pleased to partner with world-famous producers to make premier products and systems specially made for long-term reliability. Our clients believe us as a reliable solution for all projects required, from establishment to post-sales guidance."
+  },
+  "AboutReach": {
+    "Respect": "Respect: Hold various opinions and digital plans",
+    "Ownership": "Ownership: Operating success with responsibility and getting perfect output.",
+    "Fairness": "Fairness: Confirm honesty and believe in each interactivity.",
+    "Quality": "Quality: Construct an inheritance of excellence with steady commitment."
+  },
+  "CompanyHistory": {
+    "title": "Our History",
+    "maintitle": "Crafting structures that last a lifetime.",
+    "description": "Since 2007, we have been proudly serving the Kingdom of Saudi Arabia with a wide range of engineering services. From power management solutions like UPS systems and generators to advanced security installations such as CCTV, we ensure the highest standards of quality and reliability. Our offerings also include cutting-edge software solutions, load banks, data center services, server management, and computer systems. With over a decade of experience, we continue to support the diverse engineering needs of our clients across various sectors in Saudi Arabia.",
+    "yearofexperience": "Years of Experience",
+    "years": "20"
+  },
+  "Mission-vision-value": {
+    "mission-title": "Our Mission",
+    "mission-description": "Our goal is to become Saudi Arabia's leading and most preferred provider of engineering solutions and services, delivering excellence and innovation across all projects.",
+    "vision-title": "Our Vision",
+    "vision-description": "We provide quality products, empower employees, ensure shareholder returns, uphold ethical standards, and actively contribute to the socio-economic development of our country.",
+    "values-title": "Our Values",
+    "values-description": "Our core values shape our culture, emphasizing fairness, diversity, respect, quality, long-term commitment, and meaningful results. These principles define our organizational identity."
+  },
+  "CompanyBtn": {
+    "CompanyProfile": "Company Profile",
+    "Support": " 24/7 Support",
+    "phone": "+966 122 873 071"
+  },
+  "CTA": {
+    "title": "Let’s Work on Something Great Together!",
+    "description": "We are coupled with Gulf Horizon Telecom Est and undergo exceptional service, quality, and innovation. Let’s make your engineering imagination come to life with solutions that stand with the time.",
+    "free-quote-btn": "Get Free Quote Today"
+  },
+  "Vendor": {
+    "title": "PRINCIPAL PARTNERS",
+    "description": "At GHTE, we collaborate with industry-leading partners to deliver cutting-edge technologies and innovative solutions. Our partnerships with renowned global brands ensure our clients receive the highest quality products backed by expertise and reliability across various industries."
+  },
+  "Contact": {
+    "pageheader": {
+      "title": "Contact Us",
+      "home": "Home",
+      "about": "Contact Us"
+    },
+    "title": "Contact Us",
+    "maintitle": "Get in touch with us",
+    "submit-btn": "Submit",
+    "Support": "Call Support Center 24/7",
+    "phone": "+966 122 873 071",
+    "write-to-us": "Write to us",
+    "email": "Info@gulfhorizontele.com",
+    "placeHolder-name": "Enter your name",
+    "placeHolder-email": "Enter your email",
+    "placeHolder-phone": "Phone number",
+    "placeHolder-subject": "Subject",
+    "placeHolder-message": "Write to us...",
+    "form": {
+      "success": "Your inquiry has been submitted successfully!",
+      "error": "An error occurred. Please try again later."
+    }
+  },
+  "Footer": {
+    "description": "Having a prominent position in the Power Electronics market, GHTE has partnered with world-renowned leading manufacturers to provide our valued customers with quality products and systems for long-term service.",
+    "OurServicesTitle": "Our Services",
+    "OurServices": {
+      "loadBank": "Load Bank",
+      "accessControl": "Access Control",
+      "generators": "Generators",
+      "cyberSecurity": "Cyber Security"
+    },
+    "CompanyTitle": "Company",
+    "Company": {
+      "about": "About Us",
+      "projects": "Projects",
+      "companyProfile": "Company Profile",
+      "contact": "Contact Us"
+    },
+    "ContactUsTitle": "Contact Us",
+    "ContactUs": {
+      "phone": "+966 122 873 071",
+      "email": "Info@gulfhorizontele.com",
+      "address": "Gulf Horizon Telecom Est, Level 7, Al Murjanah Tower, Prince Sultan St., Jeddah 21433"
+    }
+  },
+  "Services": {
+    "heading": "Let’s Make These Solutions Together.",
+    "subheading": "What Solutions Do We Offer?",
+    "description": "At Gulf Horizon Telecom Est, we deliver servers for particular services in Power, Security, and IT products, guaranteeing smooth operations while preventing prospective risks. Our solutions contain.",
+    "categories": {
+      "all": "All",
+      "power": "Power",
+      "security": "Security",
+      "it": "IT"
+    },
+    "view_more_btn": "View More",
+    "services": {
+      "ups_system": {
+        "title": "(UPS) in Saudi Arabia",
+        "description": "Invent Gulf Horizon Tele’s digital UPS systems for each requirement, from industrial to modular solutions. As dealers for Schneider Electric and RELIABILITY POWER SYSTEMS, we are committed to remarkable power and unbeatable support."
+      },
+      "load_bank": {
+        "title": "Load Bank Rental Services",
+        "description": "Gulf Horizon Tele provides reliable AC and DC load banks for sale and rental usage perfect for generator experimenting, data centers, and industrial usage. With 15+ years of expertise, we offer modified solutions and expert support."
+      },
+      "Battery_Solutions": {
+        "title": "Reliable Battery Solutions",
+        "description": "Gulf Horizon Tele is particularly in the highest battery solutions, providing VRLA, Lithium-ion, and industrial batteries. With 20+ years of expertise, we make, install, and continue energy-systematic systems that monitor your requirements."
+      },
+      "AVR": {
+        "title": "Automatic Voltage Regulator (AVR) Services",
+        "description": "At Gulf Horizon Tele, we are best at providing high-quality Automatic Voltage Regulators (AVRs) for homes, offices, and industrial applications. Save from your electrical systems with our remarkable solutions, containing 220V AVRs, 3-phase regulators, and generator-specific models."
+      },
+      "Generator": {
+        "title": "Reliable Generator Solutions",
+        "description": "Gulf Horizon Tele provides the highest quality generator sales, rentals, maintenance, and spare parts guide to industrial, commercial, and domestic requirements. Even if you want diesel generators, portable solutions, or light tower rentals, we are committed to uninterrupted power with expert support and quick service."
+      },
+      "CCTV": {
+        "title": "CCTV Systems Services",
+        "description": "Gulf HorizonTele provides premium CCTV solutions containing installation, maintenance, and digital custom plans for homes, businesses, and industries in Saudi Arabia. With expertise in guiding brands such as HikVision, we are committed to your property’s safety using the main parts of technology that fulfill your requirements."
+      },
+      "Access_Control": {
+        "title": "Access Control Systems",
+        "description": "Gulf Horizon Tele offers modern access control systems in Saudi Arabia, promoting biometric, mobile, and cloud-based solutions. Increase your security system with each level of technology and smooth integration."
+      },
+      "Fire_Fighting": {
+        "title": "Fire Fighting Systems",
+        "description": "Gulf Horizon Tele delivers modern fire fighting systems that contain alarms, sprinklers, and suppression solutions, committed to security and compliance around Saudi Arabia."
+      },
+      "Sound_System": {
+        "title": "Sound System Services",
+        "description": "Gulf Horizon Tele provides top-class sound system services in Saudi Arabia, promoting brands such as Sony, Bose, and JBL. Our service is from home theatres to car audio systems, we are committed to professional installation and affordable rates."
+      },
+      "Cyber_Security": {
+        "title": "Cyber Security Services",
+        "description": "Gulf Horizon Tele provides complete cybersecurity services in Saudi Arabia, containing risky assessment, incident response, and dangers management, committed to your business protection."
+      },
+      "Server_Computer": {
+        "title": "Server and Computer Solutions",
+        "description": "Gulf Horizon Tele delivers high class servers, firewalls, desktops, and laptops for businesses throughout Saudi Arabia, committed to smooth operations with remarkable and safe technology solutions."
+      },
+      "Networking_Switches": {
+        "title": "Networking / Switches",
+        "description": "Commitment shapes our legacy; rely on us for high-performance switches."
+      },
+      "Racks_Power": {
+        "title": "Racks and Power Distribution Units (PDUs)",
+        "description": "Gulf Horizon Tele provides modified server racks and intelligent PDUs for data centers, IT frameworks, and businesses throughout Saudi Arabia. Our solutions guarantee smooth power distribution, logical management, and excellent performance."
+      }
+    }
+  },
+  "Mainwhychoose": {
+    "title": "Why Choose Us?",
+    "subtitle": "Why Choose Gulf Horizon Telecom Est?",
+    "description": "Core Values are what support the vision, shape the culture and reflect what an organization values. They are the essence of the organization’s identity – the principles, beliefs or philosophy of values.",
+    "numberOfProjectsTitle": "Projects Delivered",
+    "happy_ClientsTitle": "Happy Clients",
+    "client_SatisfactionTitle": "Client Satisfaction"
+  },
+  "MainPageWhyChoose": {
+    "main_page_why_choose_title": "Complete Power, Security, and IT Solutions",
+    "main_page_why_choose_content": "At Gulf Horizon Telecom Est, we provide a large variety of services, containing uninterrupted power supply (UPS) systems, cybersecurity solutions, CCTV systems, and the highest working IT and networking equipment. We have a commitment to smooth operations for businesses in Saudi Arabia with assisting, trusted solutions for each requirement.",
+    "main_page_expertise_and_experience_title": "Expertise and Experience You Can Trust",
+    "main_page_expertise_and_experience_content": "With more than 17 years of experience, we have fully completed more than 1,000 projects, earning the belief of 400+ long-term clients. Our team provides high-quality, customized solutions using digital technologies, guaranteeing that your power, security, and IT infrastructure work smoothly and safely.",
+    "main_page_end_to_end_services_title": "End-to-End Services and Support",
+    "main_page_end_to_end_services_content": "From installation to post-sales support, Gulf Horizon Telecom Est provides 24/7 customer service and expert assistance in every step of your project. We partner with guiding brands such as Schneider Electric, HikVision, and Sony to offer top-class products and guarantee your structure's longevity and trust."
+  },
+  "FeaturedProjects": {
+    "heading": "Our Projects",
+    "subheading": "Our Featured Projects",
+    "description": "Our complete portfolio shows our expertise in power systems, IT solutions, and security services throughout various industries.",
+    "view_more_btn": "View More",
+    "view_projects": "View Projects",
+    "STC_Headquarters": {
+      "title": "STC Headquarters",
+      "description": "At STC Headquarters, UPTIME GHTE conducted comprehensive data center testing using engineers and load banks for optimal performance."
+    },
+    "Riyadh_Metro": {
+      "title": "Riyadh Metro",
+      "description": "Riyadh Metro's UPS Testing guarantees smooth operations by maintaining uninterrupted power during outages."
+    },
+    "National_CyberCrime_Agency": {
+      "title": "National CyberCrime Agency",
+      "description": "The CyberCrime Agency's Data Center Testing ensures efficient operations for high-demand and critical systems."
+    },
+    "Batterjee_Medical_College": {
+      "title": "Batterjee Medical College",
+      "description": "At STC Headquarters, UPTIME GHTE conducted comprehensive data center testing using engineers and load banks for optimal performance."
+    }
+  },
+  "AllProjects": {
+    "pageheader": {
+      "title": "Projects by Gulf Horizon Telecom Est.",
+      "home": "Home",
+      "about": "Projects"
+    },
+
+    "heading": "Our projects",
+    "subheading": "OUR SELECTED PROJECTS",
+    "description": "We have successfully completed a variety of projects, including testing and commissioning services for major sites like STC Headquarters and Riyadh Metro. Our expertise also extends to engineering services for healthcare facilities. Additionally, we specialize in power systems with reliable UPS installations and provide advanced CCTV security solutions for different sectors.",
+    "categories": {
+      "all": "All",
+      "power": "Power",
+      "security": "Security",
+      "it": "IT",
+      "Testing_Comissioning": "Testing & Comissioning",
+      "Engineering": "Engineering"
+    },
+    "view_more_btn": "View More",
+    "projects": {
+      "Saudia_Technic": {
+        "title": "Saudia Technic",
+        "description": "Saudia Technic specializes in power systems supply, installation, testing, and commissioning, ensuring seamless and efficient operations."
+      },
+      "STC_Headquarters": {
+        "title": "STC Headquarters",
+        "description": "At STC Headquarters, UPTIME GHTE conducted comprehensive data center testing using engineers and load banks for optimal performance."
+      },
+      "Royal_Commission_of_AlUla": {
+        "title": "Royal Commission of AlUla",
+        "description": "The AlUla UPS Systems project guarantees continuous power supply through reliable installation, testing, and commissioning services."
+      },
+      "National_Water_Company_Jeddah": {
+        "title": "National Water Company Jeddah",
+        "description": "National Water Company relies on Load Banks to provide dependable backup power during unexpected outages."
+      },
+      "King_Abdulaziz_Endowment": {
+        "title": "King Abdulaziz Endowment",
+        "description": "The AVR System installed for the King Abdulaziz Endowment ensures stable voltage, delivering uninterrupted and reliable power."
+      },
+      "King_Salman_Air_Base": {
+        "title": "King Salman Air Base",
+        "description": "Outdoor UPS Systems at King Salman Air Base are meticulously installed to maintain reliable backup power during critical situations."
+      },
+      "Al_Kofeia_Restaurant": {
+        "title": "Al Kofeia Restaurant",
+        "description": "A robust CCTV solution was implemented at Al Kofeia Restaurant to enhance security and ensure comprehensive surveillance."
+      },
+      "Al_Falah_Bukhari_Restaurant_Jeddah": {
+        "title": "Al Falah Bukhari Restaurant Jeddah",
+        "description": "CCTV systems installed at Al Falah Bukhari Restaurant deliver continuous and efficient security monitoring for all operations."
+      },
+      "ASIC": {
+        "title": "ASIC",
+        "description": "ASIC projects encompass testing, commissioning, and advanced security solutions to ensure reliable system performance."
+      },
+      "The_Ritz_Carlton_Hotel": {
+        "title": "The Ritz-Carlton Hotel",
+        "description": "Ritz-Carlton Hotel projects include state-of-the-art power and security solutions, ensuring smooth and secure operations."
+      },
+      "King_Faisal_Air_Academy": {
+        "title": "King Faisal Air Academy",
+        "description": "King Faisal Air Academy projects combine power systems and security solutions, providing reliable and efficient operations."
+      },
+      "King_Abdulaziz_International_Airport": {
+        "title": "King Abdulaziz International Airport",
+        "description": "King Abdulaziz Airport's projects included installing and testing advanced power and security systems to ensure reliable functionality."
+      },
+      "Riyadh_Metro": {
+        "title": "Riyadh Metro",
+        "description": "Riyadh Metro's UPS Testing guarantees smooth operations by maintaining uninterrupted power during outages."
+      },
+      "Ma’aden": {
+        "title": "Ma’aden",
+        "description": "Ma’aden's projects involve comprehensive power systems supply, installation, testing, and commissioning for dependable functionality."
+      },
+      "NEOM": {
+        "title": "NEOM",
+        "description": "NEOM’s Generator Testing ensures uninterrupted and reliable backup power for its state-of-the-art facilities."
+      },
+      "Aramco": {
+        "title": "Aramco",
+        "description": "Aramco's projects include supplying, installing, and testing power and security systems to meet their rigorous operational standards."
+      },
+      "Mecca_Haram": {
+        "title": "Mecca Haram",
+        "description": "Projects at Makkah Haram involved the installation and testing of reliable power and security systems for efficient operations."
+      },
+      "National_CyberCrime_Agency": {
+        "title": "National CyberCrime Agency",
+        "description": "The CyberCrime Agency's Data Center Testing ensures efficient operations for high-demand and critical systems."
+      },
+      "Batterjee_Medical_College": {
+        "title": "Batterjee Medical College",
+        "description": "At STC Headquarters, UPTIME GHTE conducted comprehensive data center testing using engineers and load banks for optimal performance."
+      },
+      "King_Salman_Hospital_Madinah": {
+        "title": "King Salman Hospital Madinah",
+        "description": "King Salman Hospital’s project delivers reliable power, data, and infrastructure systems to support critical healthcare services."
+      }
+    }
+  },
+  "UPS_SYSTEM": {
+    "pageheader": {
+      "title": "UPS System",
+      "home": "Home",
+      "about": "UPS System"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Power Products",
+      "details": {
+        "Batteries": "Batteries",
+        "Load_bank": "Load Banks",
+        "Generators": "Generators",
+        "AVR": "AVR's"
+      }
+    },
+    "heading": "UPS System",
+    "description": "At Gulf HorizonTelecom, we consider the important role Uninterruptible Power Supply (UPS) systems play in the safety of your operations. We committed that each system is unique and designed by proper personal planning. Our considerable portfolio of UPS systems ensures uninterrupted power for a large range of applications. Preservation of loss of data and business quality mainly depends on UPS solutions. As authorized dealers for Schneider Electric and the single distributors for RELIABILITY POWER SYSTEMS in the MENA region, we guarantee to deliver high-quality products and exceptional support. With almost 20+ years of experience, a hard-working team of factory-trained engineers, and more than 500 satisfied clients, we provide dependable and customized power protection solutions to fulfil your basic requirements. During voltage fluctuations or power outages, UPS provides a huge power source that delivers electricity to various vital equipment.",
+    "Products": {
+      "productTitle": "Our UPS Solutions Categories",
+      "out_dooor_ups": {
+        "title": "Outdoor UPS Systems",
+        "description": "Outdoor UPS systems are committed to remarkable power systems in severe conditions. These solutions are best for remote locations and challenging climates, providing outdoor power protection systems that take the experiment of time. Ups provide stable and clear power supply in various types of equipment.in case of power failure, it has its own stored backup data."
+      },
+      "Industrial_UPS_Solutions": {
+        "title": "Industrial UPS Solutions",
+        "description": "Our industrial-grade UPS systems are mainly designed for heavy-duty applications, providing robust power protection for factories, manufacturing plants, and other preferable environments. With industrial UPS solutions, your operations can always remain uninterrupted, even during power outages."
+      },
+      "Modular_UPS_Solutions": {
+        "title": "Modular UPS Solutions",
+        "description": "Scalability is basic for businesses with developing power demands. Our modular UPS systems are manufactured to modify according to your requirements. These solutions offer moderate configurations, making them best for data centres, corporate facilities, and many more."
+      },
+      "Data_Center_UPS_Systems": {
+        "title": "Data Center UPS Systems",
+        "description": "Our data centre UPS solutions are designed for harsh environments within capacities that range between 600VA to 2 MVA. These high-power capacity systems guarantee your IT system to operate smoothly and safely for your vital data."
+      }
+    },
+    "benefitItems": {
+      "title": "Advantages of UPS Systems",
+      "description": "Protect your operations with the perfect UPS systems and services in Saudi Arabia. Even if you want an industrial UPS, a data centre UPS, or temporary UPS rentals, Gulf Horizon Telecom Est has you modified. Contact us today to fulfil your requirements and explain why we are the trusted choice for power protection solutions throughout the region.",
+      "details": {
+        "data_protection": {
+          "title": "Equipment Protection",
+          "description": "your equipment protection is our top priority. It provides your system with power skips and surgeries."
+        },
+        "Equipment_Protection": {
+          "title": "Equipment Protection",
+          "description": "your equipment protection is our top priority. It provides your system with power skips and surgeries."
+        },
+        "compliance": {
+          "title": "Compliance",
+          "description": "it supports companies in fulfilment of regulatory requirements and data safety."
+        }
+      }
+    },
+    "whychoose": {
+      "comprehensive_ups_solutions_title": "Comprehensive UPS Solutions",
+      "comprehensive_ups_solutions_content": "Gulf Horizon Tele Est provides the highest range of services, containing custom UPS design, installation, and maintenance for data centers, industrial systems, and outdoor environments, committed to remarkable energy backup that fulfills your requirements.",
+      "expertise_and_partnerships_title": "Trusted Expertise and Partnerships",
+      "expertise_and_partnerships_content": "As an authorized dealer of top brands like Schneider Electric and a distributor of Reliability Power Systems in the MENA region, we offer high-quality, basic parts of UPS systems for the highest efficiency and long-lasting use.",
+      "nationwide_title": "Nationwide Service and Flexibility",
+      "nationwide_content": "Even if you want UPS rentals for events, industrial-grade systems, or maintenance services in Riyadh, Jeddah, Dammam, or Makkah, Gulf Horizon Tele Est is committed to fast, professional, and measuring solutions throughout Saudi Arabia."
+    }
+  },
+  "Batteries": {
+    "pageheader": {
+      "title": "Reliable Battery Solutions",
+      "home": "Home",
+      "about": "Reliable Battery Solutions"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Power Products",
+      "details": {
+        "ups_system": "UPS System",
+        "Load_bank": "Load Banks",
+        "Generators": "Generators",
+        "AVR": "AVR's"
+      }
+    },
+    "heading": "Battery Solutions by Gulf Horizon Telecom Est.",
+    "description": "At Gulf Horizon Telecom Est, we are perfect in offering top-class battery solutions to fulfil the wide energy requirements at small-scale and also large-scale applications. Even if you require power for industrial systems, commercial systems, or any personal devices, our high-production batteries guarantee reliable energy storage and acting power supply.",
+    "Products": {
+      "productTitle": "Our Comprehensive Battery Solutions",
+      "product_1": {
+        "title": "Valve-Regulated Sealed Lead Acid (VRLA) Batteries",
+        "description": "Our VRLA batteries are perfect for maintenance-free power solutions, plan for long term service life and are also trustworthy. These batteries are perfect for many backup systems, industrial setups, and complicated organizational systems."
+      },
+      "product_2": {
+        "title": "Lithium-Ion Batteries",
+        "description": "With top class energy density and fast-charging qualities, lithium-ion batteries are best for modern applications requiring high power and normal size."
+      },
+      "product_3": {
+        "title": "Traction Batteries",
+        "description": "Our resistance batteries provide sustainable energy resources for forklifts, also for electric vehicles, and industrial machinery, guaranteeing continuous performance in required environments."
+      },
+      "product_4": {
+        "title": "Central Battery Systems",
+        "description": "Our central battery systems deliver smooth backup power for commercial and industrial system installation, providing energy-efficient and affordable solutions."
+      },
+      "product_5": {
+        "title": "Battery System Design and Installation",
+        "description": "Our experts build traditional battery systems to monitor your energy requirements, committed efficiency and capacity for long-time usage."
+      },
+      "product_6": {
+        "title": "Battery Testing and Commissioning",
+        "description": "We plan diligent testing and commissioning to guarantee your battery systems by fulfilling all performance and security levels."
+      },
+      "product_7": {
+        "title": "Health Checks and Maintenance",
+        "description": "Timely battery health checks and maintenance services help expand the lifetime of your batteries, committing consistent and uninterrupted powerful systems."
+      },
+      "product_8": {
+        "title": "Troubleshooting and Engineering",
+        "description": "Our factory-trained engineers offer complete guidance in problematic and engineering services to settle any technical issues and continue favourable performance."
+      }
+    },
+    "benefitItems": {
+      "title": "Powering Industries with Advanced Battery Solutions",
+      "description": "Our battery solutions are designed to meet diverse energy needs with cutting-edge technology and reliability. From maintenance-free VRLA and high-energy lithium-ion batteries to heavy-duty traction and forklift batteries, we deliver power for various applications. With customized energy-efficient systems, we ensure seamless operations for both domestic and industrial use.",
+      "details": {
+        "benefit_1": {
+          "title": "VRLA and Lithium-Ion Batteries",
+          "description": "Maintenance-free VRLA batteries and high-energy lithium-ion batteries designed to support modern energy systems and wide-ranging applications."
+        },
+        "benefit_2": {
+          "title": "Traction and Forklift Batteries",
+          "description": "Heavy-duty traction batteries for industrial equipment and electric vehicles, along with forklift batteries for seamless operational efficiency."
+        },
+        "benefit_3": {
+          "title": "Customized Energy-Efficient Systems",
+          "description": "Tailored battery solutions for domestic and industrial use, ensuring optimal energy efficiency and performance."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "End-to-End Battery Solutions",
+      "why_1_description": "Gulf Horizon Tele Est delivers customized battery design, installation, and maintenance for different industries, particularly lithium-ion batteries, VRLA batteries, and industrial energy storage solutions, to meet your particular requirements.",
+      "why_2_title": "Exclusive Distributorship and Expert Team",
+      "why_2_description": "With Reliability Power Systems battery distributor in MENA and an authorized battery dealer in Saudi Arabia, we provide top-class products assisted by our factory-trained engineers to guarantee management performance and reliability.",
+      "why_3_title": "Nationwide Coverage and Complete Support",
+      "why_3_description": "With services spanning battery solutions in Riyadh, VRLA battery supply in Jeddah, industrial battery maintenance in Dammam, and lithium-ion distribution in Makkah, Gulf Horizon Tele Est is committed to smooth, high-class guidance around Saudi Arabia."
+    }
+  },
+  "Generator": {
+    "pageheader": {
+      "title": "Reliable Generator Solutions",
+      "home": "Home",
+      "about": "Reliable Generator Solutions"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Power Products",
+      "details": {
+        "ups_system": "UPS System",
+        "Load_bank": "Load Banks",
+        "Batteries": "Batteries",
+        "AVR": "AVR's"
+      }
+    },
+    "heading": "Reliable Generator Solutions in Saudi Arabia",
+    "description": "At Gulf Horizon Telecom Est, we feel pleasure in developing your trusted partner for all types of generator solutions in Saudi Arabia. Even if you want diesel generators for industrial use, power generator rentals, or any casual maintenance, we offer unbeatable quality, trustworthy and strong support.Our team contains expert engineers and technicians guaranteeing your power systems to stand systematic, durable, and monitor to your versatile requirements.",
+    "Products": {
+      "productTitle": "Our Generator Solutions",
+      "product_1": {
+        "title": "Generator Sales",
+        "description": "We provide huge ranges of generators in Saudi Arabia to fulfil your various power requirements. Diesel generators are specialized for industrial and commercial applications.Portable generators for domestic use and various events. Remarkably used generators for sale in Saudi Arabia observed and certified for quality.Our genius and awarded team guide you to select the best power generator for your requirements, ensuring you provide excellent performance and quality."
+      },
+      "product_2": {
+        "title": "Generator Rentals",
+        "description": "When you want temporary power, our generator rental services in Saudi Arabia provide customised and flexible choices, Power generator rentals range from 10 kVA to 1250 kVA.Mobile generator rental and standby generator rental solutions are specialized for events, construction, and any emergency conditions.Flexible plans containing fixed monthly packages or data usage-based billing.We offer 24/7 breakdown guidance, protective maintenance, and on-site guidance to ensure uninterrupted power supply."
+      },
+      "product_3": {
+        "title": "Maintenance Services",
+        "description": "Regular maintenance is necessary to increase the lifespan of your generator. Our generator maintenance services include the following , Diagnostics and maintained by qualified technicians.Scheduled preventive maintenance programs to minimize downtime.Complete observation ,Fluid ranges, battery condition, and time overtire systems and air inlet piping.Voltage, frequency, and pressure are also checked as per manufacturer time specifications.Our Power Care Program is committed to operating your generator at high-level performance throughout the year."
+      },
+      "product_4": {
+        "title": "Spare Parts",
+        "description": "We commodities original spare parts for industrial generators to decrease downtime and ensure reliability. Our listing contains elements for all famous brands, providing punctuality to your location."
+      },
+      "product_5": {
+        "title": "Why Generators Are Essential in Saudi Arabia?",
+        "description": "Generators take an important role in securing power disruptions in homes, businesses, and also in industrial operations. From committing smooth and reliable business operations to offering a remarkable backup plan to take part in power during emergencies, our diesel generators and power generators are essential."
+      }
+    },
+    "benefitItems": {
+      "title": "Empowering You with Specialized Generator Services",
+      "description": "Our generator services are tailored to provide reliable power solutions for diverse needs. From custom generator systems designed for domestic and industrial use to robust light tower rentals for outdoor projects, we ensure excellence in every solution. ",
+
+      "details": {
+        "benefit_1": {
+          "title": "Custom Generator Systems",
+          "description": "Our engineers plan, install, and commission customized generator systems to monitor your power needs."
+        },
+        "benefit_2": {
+          "title": "Light Tower Rentals",
+          "description": "For outdoor events and construction sites, our light tower rental services deliver strong and remarkable lighting solutions."
+        },
+        "benefit_3": {
+          "title": "Emergency Standby Generators",
+          "description": "Stay ready for unpredicted supply with our standby generator rental services. We guarantee your business or home stays powered during harsh times."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "Proven Expertise in Generator Solutions",
+      "why_1_description": "With many years of experience and a developing portfolio of the happiest clients, Gulf Horizon Tele Est has accepted itself as a guide in providing trusted and systematic generator solutions around Saudi Arabia.",
+      "why_2_title": "Comprehensive Generator Services",
+      "why_2_description": "From custom system design and installation to maintenance and genuine spare parts supply, we deliver a complete variety of services that manage to fulfill your industrial and commercial energy requirements.",
+      "why_3_title": "Dedicated Support and Maintenance",
+      "why_3_description": "Our relationship isn't finished with project fulfillment. Gulf Horizon Tele Est provides existing maintenance contracts, annual servicing packages, and occasion repair services to commit your generators to operate at the highest performance."
+    }
+  },
+  "Load_Banks": {
+    "pageheader": {
+      "title": "Load Bank",
+      "home": "Home",
+      "about": "Load Bank"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Power Products",
+      "details": {
+        "ups_system": "UPS System",
+        "Generators": "Generators",
+        "Batteries": "Batteries",
+        "AVR": "AVR's"
+      }
+    },
+    "heading": "Load Bank Rental Saudi Arabia Solutions",
+    "description": "At Gulf Horizon Telecom Est, we are best at delivering high-quality AC and DC load banks for both sale and rental. Our customized solutions are specially made to fulfill the exact testing and powerful management needs of our clients. With more than 15 years of experience, we consider the important part load banks play in guaranteeing the trustworthiness and production of power systems.Even if you're checking backup power systems in data centers, industrial systems, or generators, our high-performance load banks provide exact and accurate outputs. We provide both temporary load bank rentals for short time needs and also for permanent load bank sales that are mainly for long-term solutions.Our expert engineers offer complete support with the procedure, containing guidance on selection, installation, operation, and also for maintenance. Gulf Horizon Telecom Est is guaranteed to guarantee quality, reliability, and customer satisfaction, committed to making surety of your power systems work at the highest performance.",
+    "Products": {
+      "productTitle": "Our Load Bank Rental Saudi Arabia Services",
+      "product_1": {
+        "title": "Load Bank Sales",
+        "description": "We provide a complete range of AC and DC load banks for sale, designed for accuracy and flexibility. Perfect for appliances like: Generator Testing: check your generator’s performance within real-world conditions.Data Centers: guarantee to provide uninterrupted operations by observing backup power systems."
+      },
+      "product_2": {
+        "title": "Generator Testing",
+        "description": "Our load banks guarantee to provide the trustworthy and remarkable performance of your generators by duplicating real-world situations. Best for load testing to guide accurate power systems and recognize potential problems as they become complicated."
+      },
+      "product_3": {
+        "title": "Data Centers",
+        "description": "Effective data area performance with our load bank testing solutions. Timely load testing assists in maintaining backup systems and guarantees complete and uninterrupted operations during the supply period."
+      },
+      "product_4": {
+        "title": "Backup Power Validation",
+        "description": "For commercial and industrial setups, our load banks check backup power systems in different loads, committing your operations will remain unaltered during any power failures."
+      },
+      "product_5": {
+        "title": "Industrial and Commercial Power Systems",
+        "description": "Manage, arrange and check complicated power setups effectively."
+      },
+      "product_6": {
+        "title": "Load Bank Rentals",
+        "description": "Our short-term load bank rental services provide customized solutions for particular checking projects."
+      },
+      "product_7": {
+        "title": "Temporary Load Bank Rentals:",
+        "description": "Best for generator testing, power system checking and as well as in maintenance projects. Delivery, domestic setup, and on-site support from our expert team side."
+      }
+    },
+    "benefitItems": {
+      "title": "Complete Load Bank Solutions for Testing, Maintenance, and Customization",
+      "description": "We offer a comprehensive range of affordable and high-quality load bank solutions for power system testing, from cost-effective rentals to durable AC/DC load banks. Our tailored services include customized load banks for commercial use, professional maintenance, and generator testing to ensure optimal performance. With expert solutions for industrial and complex systems, we provide reliable and precise load testing to meet diverse and evolving requirements.",
+
+      "details": {
+        "benefit_1": {
+          "title": "Affordable Rentals and Purchases",
+          "description": "Whether you need short-term rentals or high-quality AC/DC load banks for purchase, we provide cost-effective and durable solutions for precise power system testing."
+        },
+        "benefit_2": {
+          "title": "Customized and Reliable Services",
+          "description": "Tailored load bank systems for commercial use, along with professional maintenance and generator load bank testing, ensure optimal performance and safety."
+        },
+        "benefit_3": {
+          "title": "Expertise in Load Testing",
+          "description": "Dependable solutions designed for industrial and complex systems, offering accurate results and scalable options to meet diverse requirements."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "Proven Excellence in Load Bank Services",
+      "why_1_description": "Gulf Horizon Tele Est particularly in AC and DC load bank testing, sales, and rentals, delivering high-working solutions for industrial, commercial, and data center applications throughout Saudi Arabia.",
+      "why_2_title": "Complete Load Bank Solutions",
+      "why_2_description": "From custom system design to professional installation and reliable maintenance, we provide a large variety of services to monitor productive and systematic load testing for backup energy systems and generators.",
+      "why_3_title": "Nationwide Coverage and Expertise",
+      "why_3_description": "With services that will be accessible in Riyadh, Jeddah, Dammam, and Makkah, Gulf Horizon Tele Est provides temporary rental options, durable load banks for sale, and real-world load testing solutions to fulfill your particular requirements."
+    }
+  },
+  "AVR": {
+    "pageheader": {
+      "title": "Automatic Voltage Regulator (AVR) Services",
+      "home": "Home",
+      "about": "AVR Services"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Power Products",
+      "details": {
+        "ups_system": "UPS System",
+        "Generators": "Generators",
+        "Batteries": "Batteries",
+        "Load_Banks": "Load Bank"
+      }
+    },
+    "heading": "Automatic Voltage Regulator (AVR) Services in Saudi Arabia",
+    "description": "Welcome to Gulf Horizon Telecom Est, your believable partner delivering high-quality Automatic Voltage Regulators (AVRs) in Saudi Arabia. We are particular in providing remarkable voltage rule solutions to save your precious electrical devices and commit to their favourable performance. With complete distributorship of RELIABILITY POWER SYSTEMS in the MENA area, we are your business partner for trustworthy voltage regulation solutions.Suppose you’re searching for a 3-phase automatic voltage regulator, an AVR for generators, or particular models like the automatic voltage regulator Vmark. In that case, we have the expertise and products to fulfil your requirements.",
+    "Products": {
+      "productTitle": "Our Products and Services",
+      "product_1": {
+        "title": "Fully Automatic AC Voltage Regulators",
+        "description": "Perfect for home and office work, our fully automatic AC voltage regulators deliver secure voltage results for tactful equipment. These are especially best for committed, uninterrupted operation of electronic devices like refrigerators, computers, and air conditioners."
+      },
+      "product_2": {
+        "title": "Automatic Voltage Regulators for Generators",
+        "description": "We provide AVRs planned for generators containing brands like Caterpillar and Kubota. These units secure stable voltage levels in power generation, committing the security of connected appliances and equipment."
+      },
+      "product_3": {
+        "title": "3-Phase Automatic Voltage Regulators",
+        "description": "For industrial and commercial applications, our 3-phase automatic voltage regulators provide remarkable solutions to control high voltage loads to a maximum level."
+      },
+      "product_4": {
+        "title": "Custom Solutions",
+        "description": "Require a versatile voltage regulation solution? We also offer, Automatic voltage regulator circuit schematics for houses.Particularly in AVRs for transformers and other custom applications."
+      }
+    },
+    "benefitItems": {
+      "title": "Engineering Services",
+      "description": "In addition to our products, we provide expert engineering services to support the design and implementation of effective voltage regulation solutions.",
+
+      "details": {
+        "benefit_1": {
+          "title": "System Design",
+          "description": "Optimize designs to integrate AVRs seamlessly into your existing systems."
+        },
+        "benefit_2": {
+          "title": "Installation Support",
+          "description": "Professional installation services are available to ensure your AVRs are efficiently incorporated into your system."
+        },
+        "benefit_3": {
+          "title": "Maintenance and Support",
+          "description": "Ongoing support and maintenance services to keep your systems operating efficiently."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "Monitor AVR Solutions for Every Need",
+      "why_1_description": "Gulf Horizon Tele Est provides custom-designed AVR systems and professional installation services, committed to dependable voltage regulation for the highest range of industrial, commercial, and residential applications.",
+      "why_2_title": "State-of-the-Art AVR Technology",
+      "why_2_description": "We offer high-performance AVRs equipped with digital energy-efficient technology to provide fixed voltage and increase the trust of electrical equipment.",
+      "why_3_title": "Trusted Expertise Across Saudi Arabia",
+      "why_3_description": "With the highest experience in Riyadh, Jeddah, Dammam, and Makkah, Gulf Horizon Tele Est provides expert AVR design, integration services, and continuous support as an authorized Reliability Power Systems distributor in the MENA area."
+    }
+  }
+}

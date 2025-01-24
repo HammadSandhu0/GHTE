@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const TransparentBtn = ({ href, text, className = "", datatranslatekey }) => {
+const TransparentBtn = ({ href, text, className = "" }) => {
   return (
     <Link
       href={href}
@@ -12,9 +12,7 @@ const TransparentBtn = ({ href, text, className = "", datatranslatekey }) => {
       <span className="absolute inset-0 bg-secondary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
 
       {/* Button Text */}
-      <span className="relative z-10" data-translate-key={datatranslatekey}>
-        {text}
-      </span>
+      <span className="relative z-10">{text}</span>
 
       {/* Arrow Icon */}
       <img

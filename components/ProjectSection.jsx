@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion"; // Ensure you are using framer-motion
+import { useTranslations } from "next-intl";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -43,40 +44,29 @@ const buttonVariants = {
 };
 
 const ProjectsSection = () => {
+  const t = useTranslations("FeaturedProjects");
   const projects = [
     {
-      title: "STC Headquarters",
-      titleKey: "stc_headquarters_title",
-      description:
-        "At STC Headquarters, UPTIME GHTE conducted comprehensive data center testing using engineers and load banks for optimal performance.",
-      descriptionKey: "stc_headquarters_description",
+      title: t("STC_Headquarters.title"),
+      description: t("STC_Headquarters.description"),
       image: "/stc.png",
       link: "#",
     },
     {
-      title: "Riyadh Metro",
-      titleKey: "riyadh_metro_title",
-      description:
-        "Riyadh Metro's UPS Testing guarantees smooth operations by maintaining uninterrupted power during outages.",
-      descriptionKey: "riyadh_metro_description",
+      title: t("Riyadh_Metro.title"),
+      description: t("Riyadh_Metro.description"),
       image: "/riyadhmetro.png",
       link: "#",
     },
     {
-      title: "National CyberCrime Agency",
-      titleKey: "national_cybercrime_agency_title",
-      description:
-        "The CyberCrime Agency's Data Center Testing ensures efficient operations for high-demand and critical systems.",
-      descriptionKey: "national_cybercrime_agency_description",
+      title: t("National_CyberCrime_Agency.title"),
+      description: t("National_CyberCrime_Agency.description"),
       image: "/cybercrime.png",
       link: "#",
     },
     {
-      title: "Batterjee Medical College",
-      titleKey: "batterjee_medical_college_title",
-      description:
-        "Batterjee Medical College’s projects include testing data center and power systems to guarantee consistent and reliable performance.",
-      descriptionKey: "batterjee_medical_college_description",
+      title: t("Batterjee_Medical_College.title"),
+      description: t("Batterjee_Medical_College.description"),
       image: "/batterjee.png",
       link: "#",
     },
@@ -87,31 +77,27 @@ const ProjectsSection = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }} // Trigger animation when 30% of the section is in view
+      viewport={{ once: true, amount: 0.3 }}
     >
       {/* Header Section */}
       <motion.div className="text-center mb-12">
         <motion.h3
           className="text-secondary sm:text-lg md:text-xl font-semibold"
-          data-translate-key="projects_section_title"
           variants={headingVariants}
         >
-          Our Projects
+          {t("heading")}
         </motion.h3>
         <motion.h2
           className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mt-2"
-          data-translate-key="featured_projects_title"
           variants={headingVariants}
         >
-          Our Featured Projects
+          {t("subheading")}
         </motion.h2>
         <motion.p
           className="text-textcolor text-lg lg:text-xl my-8 max-w-4xl mx-auto"
-          data-translate-key="projects_section_overview"
           variants={paragraphVariants}
         >
-          Our complete portfolio shows our expertise in power systems, IT
-          solutions, and security services throughout various industries.
+          {t("description")}
         </motion.p>
       </motion.div>
 
@@ -139,24 +125,17 @@ const ProjectsSection = () => {
 
             {/* Project Info */}
             <div className="absolute bottom-12 left-6 right-6 bg-opacity-0 text-left transform translate-y-full group-hover:translate-y-0 group-hover:bg-opacity-100 transition-all duration-500">
-              <h3
-                className="text-xl font-bold text-white capitalize mb-7"
-                data-translate-key={project.titleKey}
-              >
+              <h3 className="text-xl font-bold text-white capitalize mb-7">
                 {project.title}
               </h3>
-              <p
-                className="text-lg text-white mb-4 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
-                data-translate-key={project.descriptionKey}
-              >
+              <p className="text-lg text-white mb-4 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out">
                 {project.description}
               </p>
               <a
                 href={project.link}
                 className="absolute text-secondary font-semibold capitalize text-lg hover:text-white flex items-center justify-start -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
-                data-translate-key="view_more"
               >
-                View more
+                {t("view_more_btn")}
                 <img
                   src="/arrow.svg"
                   alt="svg"
@@ -178,12 +157,7 @@ const ProjectsSection = () => {
           <span className="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
 
           {/* Button Text */}
-          <span
-            className="relative z-10"
-            data-translate-key="View_All_Projects"
-          >
-            View Projects
-          </span>
+          <span className="relative z-10">{t("view_projects")}</span>
 
           {/* Arrow Icon */}
           <img

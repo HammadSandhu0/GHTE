@@ -8,6 +8,7 @@ import PageHeader from "@/components/PageHeader";
 import VendorSlider from "@/components/Vendor";
 import TransitionEffect from "@/components/Loader";
 import Head from "next/head";
+import { useTranslations } from "next-intl";
 
 export const metadata = {
   title: {
@@ -20,15 +21,13 @@ export const metadata = {
 };
 
 const page = () => {
+  const t = useTranslations("AboutPage");
   const pageHeader = {
-    title: "About Us",
-    titleKey: "about_title",
-    backto: "Home",
-    backtokey: "home",
+    title: `${t("pageheader.title")}`,
+    backto: `${t("pageheader.home")}`,
     breadcrumbs: [
       {
-        name: "About Us",
-        titlekey: "about_title",
+        name: `${t("pageheader.about")}`,
         link: "/",
         active: true,
       },
@@ -38,7 +37,7 @@ const page = () => {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://www.gulfhorizontele.com/about" />
+        <link rel="canonical" href="http://localhost:3000/en/about" />
       </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />

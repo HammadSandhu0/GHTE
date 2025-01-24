@@ -5,8 +5,10 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image"; // Optimized image handling
 import CompanyBTn from "./CompanyBTn";
 import Reach from "./Reach";
+import { useTranslations } from "next-intl";
 
 const About = () => {
+  const t = useTranslations("AboutPage");
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   // Animation variants
@@ -77,33 +79,26 @@ const About = () => {
 
         {/* Text Section */}
         <motion.div
-          className="text-center lg:text-start space-y-6"
+          className="text-center lg:text-start space-y-3"
           variants={containerVariants}
         >
           <motion.h3
             className="text-secondary text-lg md:text-xl font-semibold"
-            data-translate-key="Aboutus"
             variants={headingVariants}
           >
-            About Us
+            {t("title")}
           </motion.h3>
           <motion.h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary"
-            data-translate-key="Aboutheading"
             variants={headingVariants}
           >
-            Gulf Horizon Telecom Est.
+            {t("maintitle")}
           </motion.h2>
           <motion.p
             className="text-lg lg:text-xl text-textcolor"
-            data-translate-key="Aboutdescription"
             variants={paragraphVariants}
           >
-            With a powerful respect in the market, Gulf Horizon Telecom Est is
-            pleased to partner with world-famous producers to make premier
-            products and systems specially made for long-term reliability. Our
-            clients believe us as a reliable solution for all projects required,
-            from establishment to post-sales guidance.
+            {t("description")}
           </motion.p>
           {/* Reach Section */}
           <MemoizedReach />

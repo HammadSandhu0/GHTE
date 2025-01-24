@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useTranslations } from "next-intl";
 
 // Animation variants
 const containerVariants = {
@@ -45,6 +46,7 @@ const cardAnimation = {
 };
 
 const MissionVision = () => {
+  const t = useTranslations("Mission-vision-value");
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -88,15 +90,13 @@ const MissionVision = () => {
               className="text-2xl md:text-3xl font-bold text-primary mb-4"
               variants={headingVariants}
             >
-              Our Mission
+              {t("mission-title")}
             </motion.h3>
             <motion.p
               className="text-textcolor text-base font-medium md:text-lg"
               variants={paragraphVariants}
             >
-              Our goal is to become Saudi Arabia's leading and most preferred
-              provider of engineering solutions and services, delivering
-              excellence and innovation across all projects.
+              {t("mission-description")}
             </motion.p>
           </motion.div>
 
@@ -116,15 +116,13 @@ const MissionVision = () => {
               className="text-2xl md:text-3xl font-bold text-primary mb-4"
               variants={headingVariants}
             >
-              Our Vision
+              {t("vision-title")}
             </motion.h3>
             <motion.p
               className="text-textcolor text-base font-medium md:text-lg"
               variants={paragraphVariants}
             >
-              We provide quality products, empower employees, ensure shareholder
-              returns, uphold ethical standards, and actively contribute to the
-              socio-economic development of our country.
+              {t("vision-description")}
             </motion.p>
           </motion.div>
 
@@ -144,15 +142,13 @@ const MissionVision = () => {
               className="text-2xl md:text-3xl font-bold text-primary mb-4"
               variants={headingVariants}
             >
-              Our Values
+              {t("values-title")}
             </motion.h3>
             <motion.p
               className="text-textcolor text-base font-medium md:text-lg"
               variants={paragraphVariants}
             >
-              Our core values shape our culture, emphasizing fairness,
-              diversity, respect, quality, long-term commitment, and meaningful
-              results. These principles define our organizational identity.
+              {t("values-description")}
             </motion.p>
           </motion.div>
         </motion.div>

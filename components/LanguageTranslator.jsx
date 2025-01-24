@@ -1,27 +1,59 @@
 "use client";
-import React, { useState } from "react";
-import { useLanguage } from "./LanguageProvider"; // Import the context hook
+
+import { useParams, usePathname, useRouter } from "next/navigation";
+import React, { useState, useEffect, useTransition } from "react";
 
 const LanguageTranslator = ({ className = "" }) => {
-  const { setLanguage } = useLanguage(); // Get the function to update the global language
+  const router = useRouter();
+  const params = useParams();
+  const pathname = usePathname();
+  const [isPending, startTransition] = useTransition();
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState({
     flag: "https://flagcdn.com/w40/gb.png",
     label: "English",
-    code: "en", // Language code to sync with context
+    code: "en",
   });
+
+  useEffect(() => {
+    // Load language from URL (if available)
+    const currentLang = pathname.split("/")[1] || "en"; // e.g., '/en' or '/ar'
+    if (currentLang) {
+      switch (currentLang) {
+        case "ar":
+          setSelectedLanguage({
+            flag: "https://flagcdn.com/w40/sa.png",
+            label: "العربية",
+            code: "ar",
+          });
+          break;
+        case "en":
+        default:
+          setSelectedLanguage({
+            flag: "https://flagcdn.com/w40/gb.png",
+            label: "English",
+            code: "en",
+          });
+          break;
+      }
+    }
+  }, [pathname]);
 
   const handleLanguageChange = (e, lang, flag, label) => {
     e.stopPropagation(); // Prevent click event propagation
     setSelectedLanguage({ flag, label, code: lang }); // Update local state
-    setLanguage(lang); // Update global context for language
-    setShowDropdown(false); // Close dropdown
+    setShowDropdown(false); // Close dropdown after selection
+
+    const nextLocalePath = `/${lang}${pathname.slice(3) || ""}`; // Update the path
+    startTransition(() => {
+      router.replace(nextLocalePath); // Use the new locale path
+    });
   };
 
   return (
     <div
       className="relative inline-block cursor-pointer mx-2 min-w-[115px]"
-      onClick={() => setShowDropdown((prev) => !prev)}
+      onClick={() => setShowDropdown((prev) => !prev)} // Toggle dropdown visibility
     >
       {/* Selected Language */}
       <div
@@ -38,7 +70,7 @@ const LanguageTranslator = ({ className = "" }) => {
       {/* Dropdown */}
       {showDropdown && (
         <ul
-          className={`absolute top-full left-0 bg-primary text-white rounded-md list-none p-0 mt-1 min-w-[115px] z-10 ${className} !mt-1`}
+          className={`absolute top-full left-0 bg-primary text-white rounded-md list-none p-0 mt-1 min-w-[115px] z-10 ${className}`}
         >
           {/* Arabic Option */}
           <li

@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "tailwindcss/tailwind.css";
+import { useTranslations } from "next-intl";
 
 // Animation variants
 const containerVariants = {
@@ -36,12 +37,13 @@ const paragraphVariants = {
 };
 
 const VendorSlider = () => {
+  const t = useTranslations("Vendor");
   return (
     <motion.section
       className="py-20"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }} // Trigger animation when the section is 20% in view
+      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       <div className="container mx-auto">
@@ -52,18 +54,14 @@ const VendorSlider = () => {
             data-translate-key="section_title_vendor"
             variants={headingVariants}
           >
-            PRINCIPAL PARTNERS
+            {t("title")}
           </motion.h2>
           <motion.p
             className="text-textcolor mt-6 md:w-1/2 mx-auto w-full text-lg lg:text-xl"
             data-translate-key="section_description_vendor"
             variants={paragraphVariants}
           >
-            At GHTE, we collaborate with industry-leading partners to deliver
-            cutting-edge technologies and innovative solutions. Our partnerships
-            with renowned global brands ensure our clients receive the highest
-            quality products backed by expertise and reliability across various
-            industries.
+            {t("description")}
           </motion.p>
         </motion.div>
 
