@@ -5,12 +5,14 @@ import { routing } from "@/i18n/routing";
 import "./globals.css";
 import { DM_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
-import Head from "next/head"; // Ensure correct Head import for SEO
+import Head from "next/head";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm_sans",
 });
+
+const baseUrl = "https://www.gulfhorizontele.com";
 
 export const metadata = {
   title: {
@@ -20,21 +22,41 @@ export const metadata = {
   },
   description:
     "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
+  keywords: ["Gulfhorizontelecom", "telecomEst", "Gulf", "Horizon"],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: baseUrl,
+    siteName: "GHTE",
+    title:
+      "Power, Security & IT Solutions Around Saudi Arabia | Gulf Horizon Telecom Est",
+    description:
+      "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
+    images: [
+      {
+        url: `${baseUrl}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "GHTE Open Graph Image",
+      },
+    ],
+  },
+  icons: {
+    icon: `${baseUrl}/favicon.ico`,
+    shortcut: `${baseUrl}/favicon-16x16.png`,
+    apple: `${baseUrl}/apple-touch-icon.png`,
+  },
 };
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
 
-  // Ensure the locale is valid
   if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  // Fetch messages for the current locale
   const messages = await getMessages(locale);
 
-  // Construct alternate language links dynamically
-  const baseUrl = "https://www.gulfhorizontele.com";
   const alternateLinks = routing.locales.map((lang) => (
     <link
       key={lang}
@@ -43,32 +65,45 @@ export default async function LocaleLayout({ children, params }) {
       href={`${baseUrl}/${lang}`}
     />
   ));
+  alternateLinks.push(
+    <link rel="alternate" hrefLang="x-default" href={baseUrl} key="default" />
+  );
+
+  const pageTitle = metadata.title.template.replace("%s", "Client Projects");
 
   return (
     <html lang={locale}>
       <Head>
-        {/* SEO: Canonical URL */}
-        <link rel="canonical" href={`${baseUrl}/${locale}/client-projects`} />
-        {/* SEO: hreflang Tags */}
+        <link rel="canonical" href={`${baseUrl}/${locale}`} />
         {alternateLinks}
-        {/* SEO: Title and Description */}
-        <title>{metadata.title.default}</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={metadata.description} />
-        {/* SEO: Open Graph for better social sharing */}
-        <meta property="og:title" content={metadata.title.default} />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${baseUrl}/${locale}/client-projects`}
-        />
-        <meta property="og:image" content="/path-to-image.jpg" />{" "}
-        {/* Adjust this path for an image */}
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:title" content={metadata.title.default} />
+        <meta property="og:url" content={`${baseUrl}/${locale}`} />
+        <meta property="og:image" content={`${baseUrl}/og-image.jpg`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content="/path-to-image.jpg" />{" "}
-        {/* Adjust this path for an image */}
+        <meta name="twitter:image" content={`${baseUrl}/og-image.jpg`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Gulf Horizon Telecom Est",
+              url: baseUrl,
+              logo: `${baseUrl}/logo.png`,
+              description: metadata.description,
+              sameAs: [
+                "https://www.facebook.com/yourpage",
+                "https://www.linkedin.com/yourpage",
+              ],
+            }),
+          }}
+        />
       </Head>
       <body className={`${dm_sans.variable} font-dm_sans w-full min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>

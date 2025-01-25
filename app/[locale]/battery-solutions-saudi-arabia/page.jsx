@@ -6,7 +6,7 @@ import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
+import { headers } from "next/headers";
 import React from "react";
 
 const metadata = {

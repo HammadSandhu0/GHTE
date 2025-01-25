@@ -144,11 +144,11 @@ const Portfolio = () => {
   ];
 
   const [selectedCategory, setSelectedCategory] = useState(
-    `${t("categories.all")}`
+    `${t("categories.all")}` || "All"
   );
 
   const filteredServices =
-    selectedCategory === t("categories.all")
+    selectedCategory == `${t("categories.all")}`
       ? services.flatMap((service) => service.items)
       : services.find((service) => service.category === selectedCategory)
           ?.items || [];
@@ -189,11 +189,11 @@ const Portfolio = () => {
           <ul className="flex space-x-4">
             <li
               className={`px-4 py-2 rounded cursor-pointer ${
-                selectedCategory === t("categories.all")
+                selectedCategory == `${t("categories.all")}`
                   ? "bg-secondary text-white"
                   : "bg-gray-200 text-gray-700"
               }`}
-              onClick={() => setSelectedCategory(t("categories.all"))}
+              onClick={() => setSelectedCategory(`${t("categories.all")}`)}
             >
               {t("categories.all")}
             </li>
