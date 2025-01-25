@@ -684,5 +684,567 @@
       "why_3_title": "Trusted Expertise Across Saudi Arabia",
       "why_3_description": "With the highest experience in Riyadh, Jeddah, Dammam, and Makkah, Gulf Horizon Tele Est provides expert AVR design, integration services, and continuous support as an authorized Reliability Power Systems distributor in the MENA area."
     }
+  },
+  "CCTV": {
+    "pageheader": {
+      "title": "CCTV Systems Services",
+      "home": "Home",
+      "about": "CCTV Systems Services"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Security Products",
+      "details": {
+        "access_control": "Access Control",
+        "fire_fighting": "Fire Fighting System",
+        "sound_system": "Sound System",
+        "cyber_security": "Cyber Security"
+      }
+    },
+    "heading": "Secure Your World with Gulf Horizon Telecom Est Advanced CCTV Systems Services",
+    "description": "At Gulf Horizon Telecom Est, we are particular in offering trustworthy CCTV systems that fulfill the safety requirements of homes, businesses, and industries throughout Saudi Arabia. From HikVision CCTV cameras to custom surveillance solutions, we guarantee your property is fully secure with cutting-edge technology.",
+    "Products": {
+      "productTitle": "Our CCTV System Services",
+      "product_1": {
+        "title": "Installation Services",
+        "description": "Professional installation is done for indoor and outdoor CCTV systems for homes, offices, and industrial sites.Expertise in wireless CCTV system installation for advanced and stress-free systems.Particular solutions like motion detection CCTV systems and solar-powered CCTV systems."
+      },
+      "product_2": {
+        "title": "System Design & Customization",
+        "description": "Specialized in tailored designs for small businesses, enterprises, and residential properties.Complete planning with CCTV system requirements to guarantee your successful coverage.Expertise in IP CCTV system components and combination with some other security systems."
+      },
+      "product_3": {
+        "title": "Maintenance & Support",
+        "description": "Annual and on-requirements maintenance will be delivered for CCTV security systems to be committed for best performance.Solving problems and repairing systems for HikVision, Honeywell, and other famous brands.24-hour support for settling technical issues rapidly."
+      },
+      "product_4": {
+        "title": "Smart Surveillance Solutions",
+        "description": "Facial recognition CCTV cameras and smart analytics specially for advanced tailoring.Cloud-based CCTV systems are available for remote Access and digital rapid control.Combination of CCTV and alarm systems for increasing security."
+      }
+    },
+    "benefitItems": {
+      "title": "Comprehensive CCTV Systems for Every Environment",
+      "description": "Our specialized CCTV solutions are designed to meet the unique security needs of residential, commercial, and institutional spaces. From protecting homes and monitoring business operations to enhancing security in schools and healthcare facilities, we provide tailored systems to ensure safety and reliability across all environments.",
+
+      "details": {
+        "benefit_1": {
+          "title": "Residential Security",
+          "description": "Safeguard your home with advanced CCTV camera systems designed for optimal safety and peace of mind."
+        },
+        "benefit_2": {
+          "title": "Commercial Monitoring",
+          "description": "Comprehensive surveillance solutions for offices, retail stores, and factories, ensuring secure and efficient operations."
+        },
+        "benefit_3": {
+          "title": "Specialized Industry Applications",
+          "description": "Customized CCTV systems for schools, campuses, hospitals, and clinics, enhancing safety and monitoring in educational and healthcare environments."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "Complete CCTV Services and Solutions",
+      "why_1_description": "Gulf Horizon Tele Est offers a complete range of services, from professional CCTV system design and installation to ongoing maintenance. We provide customized solutions for both businesses and homes, ensuring comprehensive surveillance coverage.",
+      "why_2_title": "Cutting-Edge Technology",
+      "why_2_description": "As an authorized trader of HikVision CCTV systems, Gulf Horizon Tele Est offer high-definition cameras, motion detection, and facial recognition capacity. Our smart surveillance systems combine digital analytics to increase safety and operational organization.",
+      "why_3_title": "Expert Installation and Support Nationwide",
+      "why_3_description": "Gulf Horizon Tele Est provides reliable CCTV installations around Riyadh, Jeddah, Dammam, and Makkah, with expert system troubleshooting and annual maintenance services committed to the best performance throughout the year."
+    }
+  },
+  "access_control": {
+    "pageheader": {
+      "title": "Access Control",
+      "home": "Home",
+      "about": "Access Control"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Security Products",
+      "details": {
+        "cctv": "CCTV",
+        "fire_fighting": "Fire Fighting System",
+        "sound_system": "Sound System",
+        "cyber_security": "Cyber Security"
+      }
+    },
+    "heading": "Access Control Solutions in Saudi Arabia",
+    "description": "At Gulf Horizon Telecom Est, we specialize in delivering state-of-the-art access control systems to businesses and resources within Saudi Arabia. Since 2008, we have delivered digital solutions to fulfill the developing security requirements of advanced enterprises. Our expertise ranges from small offices to large-level industrial facilities, providing monitor systems that ensure favorable security and operative regulation.",
+    "Products": {
+      "productTitle": "Our Access Control Offerings",
+      "product_1": {
+        "title": "Biometric Access Control",
+        "description": "Commitment to accurate and safe attacks with all of our biometric systems. We specialize in Fingerprint Recognition , Facial Recognition,Iris Scanning , These digital solutions remove the risk of unofficial access with increasing user convenience."
+      },
+      "product_2": {
+        "title": "Card-Based Systems",
+        "description": "Our span of the based access systems contains smart Cards, RFID Cards, Proximity Cards, These systems are best for systematic and cost-effective access management."
+      },
+      "product_3": {
+        "title": "Mobile Access Control",
+        "description": "We give you Experience with the benefits of smartphones-totally based on an access control system, our qualifying users to enter establishments using their own mobile devices."
+      },
+      "product_4": {
+        "title": "Integrated Security Solutions",
+        "description": "Gulf Horizon Telecom Est provides access to control systems that can be smoothly interlinked with the following Intrusion Detection Systems, CCTV Camera Systems, It provides a merged platform for complete security systems."
+      },
+      "product_5": {
+        "title": "Cloud-Based Solutions",
+        "description": "Guide and tailor your access control system remotely with our cloud-based services. Key advantages contain Real-Time Monitoring, Scalability, Enhanced Security"
+      },
+      "product_6": {
+        "title": "Industries We Serve",
+        "description": "We provide access control solutions for different sectors containing, Educational Institutions, Healthcare Facilities, Industrial Sites, Residential Complexes, Corporate Offices"
+      }
+    },
+    "benefitItems": {
+      "title": "Benefits of Our Advanced Access Control Systems for Optimal Security",
+      "description": "Our access control systems deliver top-notch security, operational efficiency, and scalability, making them the ideal choice for businesses seeking reliable and customizable solutions. With cost-effective, long-lasting designs, we ensure that your investment provides ongoing value and protection tailored to your unique requirements.",
+
+      "details": {
+        "benefit_1": {
+          "title": "Enhanced Security",
+          "description": "Our access control systems offer high-level security by restricting unauthorized entry and ensuring only authorized personnel have access."
+        },
+        "benefit_2": {
+          "title": "Operational Efficiency",
+          "description": "Streamlined entry processes reduce delays, ensuring smooth and quick access without compromising security."
+        },
+        "benefit_3": {
+          "title": "Scalability and Customization",
+          "description": "Designed to grow with your business, our systems offer tailored solutions that meet specific security needs, providing long-term value and adaptability."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "Customized Access Control Solutions",
+      "why_1_description": "Gulf Horizon Tele Est is particular in delivering monitor access control systems, from biometric and card-based solutions to cloud-based technology, guaranteeing safe entry and increased security for your business or living requirements.",
+      "why_2_title": "Advanced Access Management Technology",
+      "why_2_description": "We provide mobile access control, fingerprint recognition, facial recognition, and RFID-based systems, offering high-tech security with simple-to-use and remote management choices.",
+      "why_3_title": "Nationwide Installation and Support",
+      "why_3_description": "With professional installation services around Riyadh, Jeddah, Dammam, and Makkah, Gulf Horizon Tele Est gives effective access control solutions along with annual servicing, committed to sustaining your security system's peak performance."
+    }
+  },
+  "fire_fighting": {
+    "pageheader": {
+      "title": "Fire Fighting Systems",
+      "home": "Home",
+      "about": "Fire Fighting Systems"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Security Products",
+      "details": {
+        "cctv": "CCTV",
+        "access_control": "Access Control",
+        "sound_system": "Sound System",
+        "cyber_security": "Cyber Security"
+      }
+    },
+    "heading": "Fire Fighting Systems Solution by Gulf Horizon Telecom Est.",
+    "description": "At Gulf Horizon Telecom Est, we provide modern fire fighting systems to save lives and properties in Saudi Arabia. Our solutions are monitored in the residential, commercial, and industrial environments, and we are committed to complying with the level of security standards. With a skilled team of experts and modern technology, we provide everything from fire alarm systems to digital fire suppression solutions.",
+    "Products": {
+      "productTitle": "Our Fire Fighting Solutions",
+      "product_1": {
+        "title": "Fire Alarm Systems",
+        "description": "We are particular in making and fitting fire fighting sprinkler systems that provide real-time fire suppression. Best for, Warehouses Factories Office buildings Our systems contain calculation-based designs for favorable efficiency."
+      },
+      "product_2": {
+        "title": "Sprinkler Systems",
+        "description": "Our span of the based access systems contains smart Cards, RFID Cards, Proximity Cards, These systems are best for systematic and cost-effective access management."
+      },
+      "product_3": {
+        "title": "Fire Extinguishers",
+        "description": "We deliver the largest range of extinguishers monitor to your particular requirements, CO2, dry chemical, and foam extinguishers Movable and fixed models Fire extinguisher prices in KSA that is according to all types of budget"
+      },
+      "product_4": {
+        "title": "Fire Suppression Systems",
+        "description": "Our particular suppression systems are best for controlling high-risk environments like, Server rooms Kitchens Chemical storage areas We provide solutions like as:FM200 fire suppression systemsWater mist fire fighting systemsAerosol fire suppression systems"
+      },
+      "product_5": {
+        "title": "Firefighting Systems offered (Co2)",
+        "description": "The Carbon Dioxide (CO2) Fire Suppression System is made for the use of CO2, an engineered set nozzle agent at the separation network, a pipe reel or a combination. The CO2 System is mainly designed to fix the amount of CO2 that can be passed through pipes and nozzles.CO2 Systems is particularly set by removing oxygen from the room. The Carbon Dioxide system is most powerful when it is used in risk where an electrically non-conductive extinguishing medium is used or preferred, where the cleaning of other materials becomes a problematic condition, or where the dangerous barriers are required for the use of a gaseous agent."
+      },
+      "product_6": {
+        "title": "Fire suppression System",
+        "description": "A fire suppression system is a productive fire protection method that emits rays within 10 seconds and extinguishes fire immediately. A suppression system is a chemical fire suppression gas that extinguishes fire by detaching one side of the fire chain, which contains Oxygen, Heat and Fuel. One of the largest advantages of Firefighting systems is that a relatively minimum quantity of this chemical is used to extinguish a fire. A fire suppression system attains extinguishing levels in only ten seconds, protecting common combustible, electrical and burnable liquid fire from destroying any property. It means that some cylinders and some storage space required for FM200 cylinders are necessary features of this system."
+      },
+      "product_7": {
+        "title": "Novec Fire Suppression System",
+        "description": "The novec1230 fire suppression system is also called a cleaning agent fire extinguisher that was introduced into the market as a halon exchanger and HFC replacement. Novec fire suppression system includes Novec1230 fluid that has the largest margin of security for human occupation within the clean agents containing inert gas.Total flooding systems commonly have the elements in cylinders of liquid which is pressurized by nitrogen gas. Automatic detection sensors deliver when the fire is at its minimum developing stage, and it keeps out the fire in a few seconds."
+      }
+    },
+    "benefitItems": {
+      "title": "Ensuring Safety with Expert Fire Fighting Services",
+      "description": "Our additional services provide complete support for fire fighting systems, from regular maintenance to expert design and testing. With professional training and commissioning services, we ensure that your systems are always prepared to protect lives and property effectively and reliably.",
+
+      "details": {
+        "benefit_1": {
+          "title": "System Maintenance and Reliability",
+          "description": "Regular inspections and preventive maintenance ensure your fire fighting systems deliver consistent and optimal performance."
+        },
+        "benefit_2": {
+          "title": "Expert Design and Testing",
+          "description": "Tailored system designs for high-rise buildings and industrial setups, combined with thorough testing and commissioning for guaranteed reliability."
+        },
+        "benefit_3": {
+          "title": "Training and Preparedness",
+          "description": "Professional training programs by experienced teams ensure effective use of fire safety equipment in critical situations."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "Top Fire Safety Solutions",
+      "why_1_description": "Gulf Horizon Tele Est offers advanced fire safety systems, including sprinklers, alarms, extinguishers, and smoke detectors, to guarantee maximum safety for your building or industrial system.",
+      "why_2_title": "Complete  Solutions",
+      "why_2_description": "From custom system design to professional installation and reliable maintenance, we provide a large variety of services to monitor productive and systematic load testing for backup energy systems and generators.",
+      "why_3_title": "Nationwide Fire Safety Services",
+      "why_3_description": "We provide services across Saudi Arabia, ensuring full implementation and compliance with fire safety regulations. From consultations to systems installation and maintenance in Riyadh, Jeddah, Dammam, and Makkah, we are committed to your safety."
+    }
+  },
+  "cyber_security": {
+    "pageheader": {
+      "title": "Cybersecurity Services",
+      "home": "Home",
+      "about": "Cybersecurity Services"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Security Products",
+      "details": {
+        "cctv": "CCTV",
+        "access_control": "Access Control",
+        "sound_system": "Sound System",
+        "fire_fighting": "Fire Fighting System"
+      }
+    },
+    "heading": "Cybersecurity Services Saudi Arabia",
+    "description": "Secure Your Business with Gulf Horizon Telecom Est Cybersecurity Solutions In today’s fast-developing modern era, businesses in Saudi Arabia face ever-progressive cyber threats. Here Gulf Horizon Telecom Est is your trusted companion, providing comprehensive cybersecurity services in Saudi Arabia which monitor to provide security to your organization from internal and external ultimatum",
+    "Products": {
+      "productTitle": "Our Cybersecurity Services",
+      "product_1": {
+        "title": "Threat Assessment and Management",
+        "description": "We work at the beneath of cyber threat analysis for businesses, recognizing both internal and external threats. By using digital tools, our team assesses your systems to feel vulnerabilities and deliver sufficient perception."
+      },
+      "product_2": {
+        "title": "Vulnerability Management Systems",
+        "description": "Our IT vulnerability management solutions contain uninterrupted inspecting tools to understand your security sickness before attackers can utilize them. We provide a complete network vulnerability assessment service to secure your IT infrastructure."
+      },
+      "product_3": {
+        "title": "Penetration Testing Services",
+        "description": "Our moral hacking experts reproduce real-world cyberattacks to detect your defences. This service contains penetration testing for network security and cybersecurity defences with simulated attacks committed to robust defence for your systems."
+      },
+      "product_4": {
+        "title": "Incident Response Team Saudi Arabia",
+        "description": "In case of any violation, our 24/7 security breach response team reduces damage and guarantees business progression. We specialize in cyber incident response services that help you recover rapidly from any attack."
+      },
+      "product_5": {
+        "title": "Compliance and Risk Management",
+        "description": "Continuing to complain is necessary for businesses in Saudi Arabia. We guide you with GDPR-compliance cybersecurity solutions, ISO-certified cybersecurity services, and IT security risk management strategies to maintain your business safe and accommodating with local structure, just as the SAMA cybersecurity framework."
+      },
+      "product_6": {
+        "title": "Managed Cybersecurity Services Provider",
+        "description": "Our managed cybersecurity services contain advanced threat detection by Gulf Horizon Telecom Est, continuous guiding, and assist cybersecurity plans for your particular requirements."
+      },
+      "product_7": {
+        "title": "Why Cybersecurity Matters in Saudi Arabia?",
+        "description": "Saudi Arabia’s developed digital economy commands robust security computers to secure businesses against cyberattacks. With a complete framework like the National Cybersecurity Authority (NCA) and abilities such as the Saudi Federation for Cybersecurity, Programming, and Drones, the country highlights the need for cybersecurity for all types of businesses."
+      }
+    },
+    "benefitItems": {
+      "title": "Empowering Businesses with Reliable Cybersecurity Services",
+      "description": "Our business-focused cybersecurity solutions provide robust protection against data breaches, enhance regulatory compliance, and improve IT infrastructure security. With tailored approaches and proactive measures, we ensure your business is equipped to prevent attacks and recover swiftly from any cybersecurity challenges.",
+
+      "details": {
+        "benefit_1": {
+          "title": "Cyber Risk Management",
+          "description": "Offering proactive measures and tailored solutions to protect organizations across industries like finance, healthcare, and IT from cybersecurity threats."
+        },
+        "benefit_2": {
+          "title": "Enhanced Compliance and Security",
+          "description": "Helping businesses adhere to global and local regulations while strengthening IT infrastructure to safeguard critical data."
+        },
+        "benefit_3": {
+          "title": "Swift Incident Recovery",
+          "description": "Ensuring rapid response and recovery from cybersecurity incidents to minimize downtime and protect business continuity."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "Comprehensive Cybersecurity Solutions",
+      "why_1_description": "Gulf Horizon Tele Est provides a broad range of cybersecurity services, containing threat detection, incident management, and vulnerability assessments to protect digital infrastructures from attacks and risks.",
+      "why_2_title": "Protecting Your Data and Network",
+      "why_2_description": "We provide effective penetration testing, malware protection, and disaster recovery services to ensure that your critical systems and sensitive data remain secure from evolving digital threats.",
+      "why_3_title": "Expert Analysis and Consultancy",
+      "why_3_description": "Our cybersecurity consultants offer tailored solutions, guiding you through threat analysis, system hardening, and compliance with global standards to guarantee your organization remains secure and resilient."
+    }
+  },
+  "sound_system": {
+    "pageheader": {
+      "title": "Sound System Services",
+      "home": "Home",
+      "about": "Sound System"
+    },
+    "Sidebarcategories": {
+      "heading": "Other Security Products",
+      "details": {
+        "cctv": "CCTV",
+        "access_control": "Access Control",
+        "cyber_security": "Cyber Security",
+        "fire_fighting": "Fire Fighting System"
+      }
+    },
+    "heading": "Sound System",
+    "description": "At Gulf Horizon Telecom Est, we are perfect for delivering the highest quality sound system solutions throughout Saudi Arabia. So, if you want to modernize your home entertainment system, furnish a mosque, or increase your car’s audio, our complete range of services is a guide to fulfilling your requirements. With a commitment to excellence, we guarantee you to achieve the perfect sound experience at any time.",
+    "Products": {
+      "productTitle": "Our Sound System Services",
+      "product_1": {
+        "title": "Home Sound Systems",
+        "description": "Change your living room into a cinema-by experience with our home theatre sound systems. Even if you want a Sony 5.1 surround sound system, a Bose sound system, or even an LG home theatre, we’ve received you to cover. Popular Brands: Sony, Bose, JBL, LG, Panasonic. Integrated Solutions: We are specialized in providing an integrated home sound system for a smooth audio experience. Smart Features: have a command of your audio system with mobile applications such as the Sony Sound System App."
+      },
+      "product_2": {
+        "title": "Car Sound Systems",
+        "description": "Increase your driving practice with transparent, clear audio from the highest-level car sound systems. We also offer and install systems for all types of vehicles, such as Lexus LX 570 sound systems and Toyota Avalon sound systems. Premium Brands: Alpine, Rockford, Bose. Customized Installations: monitor system that will be perfect for your car’s interior. High-Performance Packages: various choices such as Bose car sound system packages and top 10 car sound systems."
+      },
+      "product_3": {
+        "title": "Public Address and Mosque Sound Systems",
+        "description": "We are perfect for making and installing sound systems for public places and mosques, with a commitment to clear communication and top-quality sound systems."
+      },
+      "product_4": {
+        "title": "Multi-Room and Business Audio Solutions",
+        "description": "Hosting an event? Rent high-buffer sound systems from our service for any occasion.Event Solutions: specialize for Weddings, conferences, and private parties.Affordable Rentals: changeable plans that are set according to your budget.Quick Setup: Professional installation and disassembling."
+      },
+      "product_5": {
+        "title": "Sound System Rentals",
+        "description": "Hosting an event? Rent high-buffer sound systems from our service for any occasion.Event Solutions: specialize for Weddings, conferences, and private parties.Affordable Rentals: changeable plans that are set according to your budget.Quick Setup: Professional installation and disassembling."
+      }
+    },
+    "benefitItems": {
+      "title": "Transforming Audio Experiences with Leading Brands",
+      "description": "Explore a diverse range of sound systems from top brands like Sony, Bose, JBL, Rockford, and Bosch. Whether you need immersive home audio, durable outdoor setups, or professional public address solutions, we provide the perfect system to match your requirements and elevate your sound experience.",
+
+      "details": {
+        "benefit_1": {
+          "title": "High-Performance Options",
+          "description": "From Sony’s powerful 22000-watt sound systems to Bose’s Solo 5 TV soundbars, we offer advanced audio solutions to enhance your experience."
+        },
+        "benefit_2": {
+          "title": "Durable and Versatile Systems",
+          "description": "JBL provides long-lasting, high-potency sound, while Rockford delivers exceptional audio for cars and outdoor setups."
+        },
+        "benefit_3": {
+          "title": "Industry-Leading Public Address Systems",
+          "description": "Bosch stands as a leader in delivering reliable and high-quality public address systems for various environments."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "Proven Excellence in Load Bank Services",
+      "why_1_description": "Gulf Horizon Tele Est particularly in AC and DC load bank testing, sales, and rentals, delivering high-working solutions for industrial, commercial, and data center applications throughout Saudi Arabia.",
+      "why_2_title": "Complete Load Bank Solutions",
+      "why_2_description": "From custom system design to professional installation and reliable maintenance, we provide a large variety of services to monitor productive and systematic load testing for backup energy systems and generators.",
+      "why_3_title": "Nationwide Coverage and Expertis",
+      "why_3_description": "With services that will be accessible in Riyadh, Jeddah, Dammam, and Makkah, Gulf Horizon Tele Est provides temporary rental options, durable load banks for sale, and real-world load testing solutions to fulfill your particular requirements."
+    }
+  },
+  "Racks": {
+    "pageheader": {
+      "title": "Racks and Power Distribution Units (PDUs)",
+      "home": "Home",
+      "about": "(PDUs)"
+    },
+    "Sidebarcategories": {
+      "heading": "Other IT Products",
+      "details": {
+        "network_switches": "Networking / switches",
+        "computer_solution": "Server's and  Computer's solutions"
+      }
+    },
+    "heading": "Racks and Power Distribution Units (PDUs) in Saudi Arabia",
+    "description": "At Gulf Horizon Telecom Est, we provide top quality racks and Power Distribution Units (PDUs) made to assist data centers, IT infrastructure, and networking atmosphere. Our solutions are committed to the modified organization, relaxing and smooth, powerful management, and remarkable guidance for your business requirements throughout Saudi Arabia, which contains Riyadh, Jeddah, and Dammam",
+    "Products": {
+      "productTitle": "Our Comprehensive Racks and PDU Solutions",
+      "product_1": {
+        "title": "Server Racks",
+        "description": "Our server racks are perfect for housing schemes and safe from sensitive  IT equipment. Even for small offices or enterprise-level data centers, Gulf Horizon Telecom Est provides long-lasting, trusted, and managed storage solutions."
+      },
+      "product_2": {
+        "title": "Network Racks",
+        "description": "Gulf Horizon Telecom Est offers you particular network racks for routers, switches, and patch panels. Our solutions are engineered to guarantee optimal organization and are easy to use and easy to access."
+      },
+      "product_3": {
+        "title": "Power Distribution Units (PDUs)",
+        "description": "Our PDUs offer intelligent and trusted power distribution throughout Saudi Arabia. We are committed to uninterrupted operations for IT systems and networks."
+      },
+      "product_4": {
+        "title": "Customized Solutions for Businesses in Saudi Arabia",
+        "description": "We offer and monitor racks and PDU solutions for businesses in Riyadh, Jeddah, Dammam, and behind areas. From server rack installation to modern power distribution solutions, Gulf Horizon Telecom Est guarantees to provide your IT infrastructure work easily, smoothly and efficiently."
+      },
+      "product_5": {
+        "title": "Gulf Horizon Telecom Est - Your Partner in Racks and Power Management",
+        "description": "We provide cost-effective and reliable racks and PDUs for smooth IT infrastructure and power management throughout Saudi Arabia. Manage your data center and also networking systems with Gulf Horizon Telecom Est tailored solutions."
+      }
+    },
+    "benefitItems": {
+      "title": "Maximizing Efficiency and Protection with Gulf Horizon Telecom Est Racks and PDUs",
+      "description": "Our racks and PDUs offer efficient power management, robust protection for your equipment, and seamless installation services. With optimized cooling and continuous power supply, our solutions ensure your IT infrastructure runs smoothly with minimal downtime.",
+
+      "details": {
+        "benefit_1": {
+          "title": "Optimized Power and Equipment Protection",
+          "description": "Efficient power distribution for IT infrastructure, combined with durable racks that protect sensitive hardware from damage."
+        },
+        "benefit_2": {
+          "title": "Seamless Installation and Enhanced Cooling",
+          "description": "Professional installation services for server racks and PDUs, ensuring perfect airflow and optimal working conditions for your equipment."
+        },
+        "benefit_3": {
+          "title": "Minimized Downtime and Continuous Power Supply",
+          "description": "Trusted PDUs that ensure uninterrupted power, reducing system downtime and enhancing overall reliability."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "Tailored Racks and Power Distribution Solutions",
+      "why_1_description": "At Gulf Horizon Tele Est, we excel in providing customized server racks and PDUs designed to meet the specific needs of your business. Whether it's networking racks for data centers or efficient power distribution, we deliver solutions that optimize your IT infrastructure.",
+      "why_2_title": "Reliable Installation and Maintenance Services",
+      "why_2_description": "We offer professional server rack installation and PDU setup to ensure your data center or office is fully equipped with the best storage and power management solutions. Our expert team guarantees smooth installation and long-lasting support.",
+      "why_3_title": "High-Performance and Scalable Solutions",
+      "why_3_description": "We provide high-performance PDUs and durable server racks that ensure your IT systems are efficiently powered and managed. From network rack storage solutions to intelligent PDUs, Gulf Horizon Tele Est is dedicated to maximizing efficiency for your infrastructure, supported by reliable post-installation services."
+    }
+  },
+  "network_switches": {
+    "pageheader": {
+      "title": "Networking / Switches",
+      "home": "Home",
+      "about": "Networking / Switches"
+    },
+    "Sidebarcategories": {
+      "heading": "Other IT Products",
+      "details": {
+        "racks": "Racks and Power Distribution Units (PDUs)",
+        "computer_solution": "Server's and  Computer's solutions"
+      }
+    },
+    "heading": "Networking and Switches Solutions",
+    "description": "At Gulf Horizon Tele (Gulf Horizon Tele EST), we are proudly delivering you complete networking and switch solutions guidance that will meet your business’s basic needs. We aim to assist you in assembling and managing a high-production, changeable, and safe network infrastructure. From small businesses to large enterprises, we provide industry-supreme products and services to manage connectivity and guarantee to provide you with uninterrupted operations.",
+    "Products": {
+      "productTitle": "Our Networking Products and Solutions",
+      "product_1": {
+        "title": "High-Performance Network Switches",
+        "description": "Even if you need an organized network system or a purely modern infrastructure, our network switches provide you with a smooth data transmitter. Our portfolio consists on:Managed and Unmanaged Switches,24-Port PoE Network Switches,Gigabit and Fiber Optic Switches,Industrial-Grade Switches,These products assist you with serious functions like VLANs, network monitoring, and stackable configurations committed to scalability and organization."
+      },
+      "product_2": {
+        "title": "Cabling Solutions (CAT 6 and Fiber Optics)",
+        "description": "Strong and trusted cabling is the backbone of any robust network. We offer:CAT 6 Ethernet Cables: speedily, interference-free data transmission necessary for your business requirements.Fiber Optic Cables: best for high-frequencies applications needed for long-distance and tight communication skills."
+      },
+      "product_3": {
+        "title": "Patch Cords and Patch Panels",
+        "description": "Manage and smoothness your network with our:Patch Cords: Flexible and long-lasting solutions with connecting devices well organized.Patch Panels: clearly enable management and increase performance with our top-quality panels."
+      },
+      "product_4": {
+        "title": "Network Security Products",
+        "description": "Safe your business against cyber fear with our state-of-the-art safety solutions, containing:Firewalls,Network Access Control Products,Intrusion Detection"
+      },
+      "product_5": {
+        "title": "Software Defined Networking",
+        "description": "Transform your network management with SDN solutions, allow centralized control, enhance speed, and slow down operational costs."
+      },
+      "product_6": {
+        "title": "Customized Networking for Unique Needs",
+        "description": "We also meet particular industries needs, like as Production Networks: we provide perfect Solutions for factories and industrial systems.Network Monitoring: equipment that is used for real-time perception of network performance.Wireless Networking Solutions: Smooth connection with digital work area."
+      }
+    },
+    "benefitItems": {
+      "title": "Empowering Connectivity with Advanced Networking Solutions",
+      "description": "We provide a wide range of premium networking products, trusted partnerships with global leaders, and customized solutions tailored to your needs. Our expert support ensures your network operates efficiently and reliably, delivering seamless connectivity for your business.",
+
+      "details": {
+        "benefit_1": {
+          "title": "Diverse Product Range",
+          "description": "Offering a wide selection of high-quality networking products, including switches, cables, patch panels, and more, to meet all your connectivity needs."
+        },
+        "benefit_2": {
+          "title": "Global Partnerships and Technology",
+          "description": "Collaborating with industry leaders like Cisco, Huawei, TP-Link, and Legrand to provide access to the latest and most reliable networking technologies."
+        },
+        "benefit_3": {
+          "title": "Tailored Solutions and Expert Support",
+          "description": "Designing customized networking systems to align with your goals, backed by exceptional technical guidance to ensure smooth and reliable performance."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "High-Performance Networking Products",
+      "why_1_description": "Gulf Horizon Tele Est offers high-performance switches, CAT 6 cables, and fiber optics for seamless data transmission and robust network performance. Whether you need managed switches for network optimization or fiber optic cables for high-bandwidth applications, we deliver network infrastructure solutions tailored to your business needs.",
+      "why_2_title": "Expert Network Design and Installation Services",
+      "why_2_description": "Our team specializes in custom network design services and networking switch installation to ensure your network infrastructure is organized and scalable. We offer reliable network switches and provide patch cords and patch panel solutions to streamline and organize your network effectively.",
+      "why_3_title": "Scalable and Reliable Networking Solutions",
+      "why_3_description": "Whether you need Layer 2 and Layer 3 switches for advanced network management or PoE switches for power delivery, Gulf Horizon Tele Est provides scalable networking solutions for businesses of all sizes. Our customized solutions ensure long-term reliability and optimal performance."
+    }
+  },
+  "computer_solution": {
+    "pageheader": {
+      "title": "Server and Computer Solutions",
+      "home": "Home",
+      "about": "Server and Computer Solutions"
+    },
+    "Sidebarcategories": {
+      "heading": "Other IT Products",
+      "details": {
+        "racks": "Racks and Power Distribution Units (PDUs)",
+        "network_switches": "Networking / switches"
+      }
+    },
+    "heading": "High-Performance Server and Computer Solutions",
+    "description": "At Gulf Horizon Telecom Est, we are proud to offer you top-class server and computer solutions that monitor the versatile requirements of businesses in Saudi Arabia. With the guidance of many experts in providing the highest working servers, robust firewalls, and top-class desktop computers and laptops, we are committed to ensuring your business works smoothly by increasing quality and safety.",
+    "Products": {
+      "productTitle": "Our Computer's / Server's Products and Solutions",
+      "product_1": {
+        "title": "High-Performance Servers",
+        "description": "Allow your business with many latest server solutions that are made for reliability, measurability and regulation. Enterprise-Grade Servers: best for modifying and managing the sensitive issues of business operations with safe data storage and increasing the working power.Rack-Mounted Servers: perfect for businesses with space limitations that provide optimized performance for different applications.Blade Servers: A close-packed solution for undertaking needed maximum efficiency and assisting power.Server Installation and Setup: Expert services with commitment to the smooth movement of servers monitor to your business requirements. Custom Server Design: construct servers that range excellently with your business purposes."
+      },
+      "product_2": {
+        "title": "Robust Firewall Solutions",
+        "description": "Save your business with digital firewall security systems constructed to secure your networks against cyber threats.Next-Gen Firewalls: Complete security for advanced businesses, containing  AI-driven threat perception.Enterprise-Grade Firewalls: make for broad scale networks, guarantee to provide you safe data exchange and uninterrupted operations.Small Business Firewall Solutions: Customized and trusted for protection for lower-level businesses."
+      },
+      "product_3": {
+        "title": "Desktop Computers and Laptops",
+        "description": "Explore your team's productivity with desktop computers and laptops to guide your operational requirements.Business Desktop Computers: High-potency and trusted systems best for office work.Portable Laptops: Low-weight and powerful laptops for professionals at work.Custom Hardware Solutions: Desktops and laptops put in to manage your particular workloads.Reliable Support: guide with hardware selection, system, and Maintenance and arrangement."
+      },
+      "product_4": {
+        "title": "Server Integration and Maintenance",
+        "description": "Commitment to smooth operations with our complete server perception and maintenance services:Server and Computer Systems Integration: manage your infrastructure with a merged solution.Ongoing Maintenance: frequently updates and guides systems to ensure your systems work smoothly.Troubleshooting and Repairs: fast solutions with any technical challenges"
+      },
+      "product_5": {
+        "title": "Industries We Serve",
+        "description": "Transform your network management with SDN solutions, allow centralized control, enhance speed, and slow down operational costs."
+      },
+      "product_6": {
+        "title": "Customized Networking for Unique Needs",
+        "description": "Gulf Horizon Telecom Est pleasure serves to introduce a complete range of industries within Saudi Arabia:Corporate Offices: The highest working servers are available for smooth business operations.Educational Institutions: Provide remarkable and trusted desktops and laptops for students and staff.Retail Businesses: Firewall solutions for safe and preventive transactions.Healthcare Organizations: traditional systems for maintaining critical data safely."
+      }
+    },
+    "benefitItems": {
+      "title": "Empowering Your Business with Local Expertise and Advanced Technology",
+      "description": "We bring localized knowledge and cutting-edge technology to businesses across Saudi Arabia and the MENA region, offering comprehensive solutions from consultation to continuous support. With partnerships with top industry brands, we provide systems that guarantee the highest performance and security for your business.",
+
+      "details": {
+        "benefit_1": {
+          "title": "Localized Expertise",
+          "description": "Our team understands the technological challenges businesses face across Saudi Arabia and the MENA region, providing customized solutions for local requirements."
+        },
+        "benefit_2": {
+          "title": "Cutting-Edge Technology",
+          "description": "Partnering with industry leaders like HP and Dell to deliver state-of-the-art systems, ensuring superior performance, security, and reliability for your business."
+        },
+        "benefit_3": {
+          "title": "Comprehensive End-to-End Support",
+          "description": "Offering a complete package of services, from initial consultation and system setup to ongoing support and continuous improvements, ensuring long-term success."
+        }
+      }
+    },
+    "whychoose": {
+      "why_1_title": "High-Performance Servers for Your Business Needs",
+      "why_1_description": "Gulf Horizon Tele Est offers high-performance servers, including rack-mounted and blade servers designed for enterprise infrastructure. Whether you need scalable solutions for growing businesses or reliable systems, we provide customized server solutions for smooth operations.",
+      "why_2_title": "Complete Business Desktop and Laptop Solutions",
+      "why_2_description": "We provide desktops for productivity and laptops for business professionals, ensuring your team has the right tools to excel. Our high-speed desktops for enterprises and portable laptops for remote work enhance productivity and efficiency.",
+      "why_3_title": "Advanced Firewall Security for Network Protection",
+      "why_3_description": "With increasing cyber risks, Gulf Horizon Tele Est offers next-gen firewalls and enterprise-grade firewalls for secure networks. Our firewall systems protect your network and ensure the safety of your sensitive data and resources."
+    }
   }
 }

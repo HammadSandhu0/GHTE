@@ -18,6 +18,7 @@ export const config = {
     "/fire-fighting-systems-solution-in-saudi-arabia",
     "/cyber-security-services-in-saudi-arabia",
     "/sound-system-services-in-saudi-arabia",
+    "/networking-solutions",
     "/racks-and-power-distribution-units-in-saudi-arabia",
     "/server-and-computer-solution-in-saudia-arabia",
     "/client-projects",
