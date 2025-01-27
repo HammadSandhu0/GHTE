@@ -69,40 +69,33 @@ export default async function LocaleLayout({ children, params }) {
     <link rel="alternate" hrefLang="x-default" href={baseUrl} key="default" />
   );
 
-  const pageTitle = metadata.title.template.replace("%s", "Client Projects");
+  const schemaMarkup = {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    name: "Power, Security & IT Solutions Around Saudi Arabia | Gulf Horizon Telecom Est",
+    description:
+      "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
+    url: "https://www.gulfhorizontele.com/en",
+  };
 
   return (
     <html lang={locale}>
       <Head>
         <link rel="canonical" href="https://www.gulfhorizontele.com/en" />
-        {alternateLinks}
-        <title>{pageTitle}</title>
+        <title>{metadata.pageTitle}</title>
         <meta name="description" content={metadata.description} />
-        <meta property="og:title" content={pageTitle} />
+        <meta property="og:title" content={metadata.pageTitle} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${baseUrl}/${locale}`} />
         <meta property="og:image" content={`${baseUrl}/og-image.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:title" content={metadata.pageTitle} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={`${baseUrl}/og-image.jpg`} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Gulf Horizon Telecom Est",
-              url: baseUrl,
-              logo: `${baseUrl}/logo.png`,
-              description: metadata.description,
-              sameAs: [
-                "https://www.facebook.com/yourpage",
-                "https://www.linkedin.com/yourpage",
-              ],
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         />
       </Head>
       <body className={`${dm_sans.variable} font-dm_sans w-full min-h-screen`}>
