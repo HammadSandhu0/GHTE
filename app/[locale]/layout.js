@@ -74,7 +74,7 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale}>
       <Head>
-        <link rel="canonical" href={`${baseUrl}/${locale}`} />
+        <link rel="canonical" href="https://www.gulfhorizontele.com/en" />
         {alternateLinks}
         <title>{pageTitle}</title>
         <meta name="description" content={metadata.description} />

@@ -6,35 +6,16 @@ import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import { headers } from "next/headers";
+import Head from "next/head";
 import React from "react";
 
-const metadata = {
+export const metadata = {
   title: {
     absolute: "Battery Solutions - Reliable Energy Systems & Services",
   },
   description:
     "Premium battery solutions, including Lithium-ion, VRLA, and industrial batteries. Expert system design, maintenance, and custom energy-efficient options.",
 };
-
-export async function generateMetadata() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get("accept-language") || "en";
-  const locale = acceptLanguage.split(",")[0];
-  const baseUrl = "https://www.gulfhorizontele.com";
-  const canonicalUrl =
-    locale === "en"
-      ? `${baseUrl}/battery-solutions-saudi-arabia`
-      : `${baseUrl}/${locale}/battery-solutions-saudi-arabia`;
-
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  };
-}
 
 const page = () => {
   const t = useTranslations("Batteries");
@@ -156,6 +137,12 @@ const page = () => {
 
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.gulfhorizontele.com/en/battery-solutions-saudi-arabia"
+        />
+      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

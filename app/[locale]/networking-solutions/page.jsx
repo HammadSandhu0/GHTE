@@ -6,35 +6,16 @@ import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import { headers } from "next/headers";
+import Head from "next/head";
 import React from "react";
 
-const metadata = {
+export const metadata = {
   title: {
     absolute: "Networking Solutions and Switches | Gulf Horizon Tele EST",
   },
   description:
     "Discover Gulf Horizon Tele’s highest working networking solutions. We offer switches, cables, patch panels, and many more to guarantee you for safe and trusted connection for your business.",
 };
-export async function generateMetadata() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get("accept-language") || "en";
-  const locale = acceptLanguage.split(",")[0];
-  const baseUrl = "https://www.gulfhorizontele.com";
-  const paramsUrl = "networking-solutions";
-  const canonicalUrl =
-    locale === "en"
-      ? `${baseUrl}/${paramsUrl}`
-      : `${baseUrl}/${locale}/${paramsUrl}`;
-
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  };
-}
 
 const page = () => {
   const t = useTranslations("network_switches");
@@ -141,6 +122,12 @@ const page = () => {
 
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.gulfhorizontele.com/en/networking-solutions"
+        />
+      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

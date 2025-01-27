@@ -7,35 +7,15 @@ import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
 import Head from "next/head";
-import { headers } from "next/headers";
 import React from "react";
 
-const metadata = {
+export const metadata = {
   title: {
     absolute: "Fire Fighting Systems Solution in Saudi Arabia",
   },
   description:
     "Explore Gulf Horizon Telecom Est expert fire fighting systems solution, including alarms, sprinklers, and extinguishers, customized for safety and Compliance in Saudi Arabia.",
 };
-export async function generateMetadata() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get("accept-language") || "en";
-  const locale = acceptLanguage.split(",")[0];
-  const baseUrl = "https://www.gulfhorizontele.com";
-  const paramsUrl = "fire-fighting-systems-solution-in-saudi-arabia";
-  const canonicalUrl =
-    locale === "en"
-      ? `${baseUrl}/${paramsUrl}`
-      : `${baseUrl}/${locale}/${paramsUrl}`;
-
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  };
-}
 const page = () => {
   const t = useTranslations("fire_fighting");
   const pageHeader = {
@@ -155,7 +135,7 @@ const page = () => {
       <Head>
         <link
           rel="canonical"
-          href="https://www.gulfhorizontele.com/fire-fighting-systems-solution-in-saudi-arabia"
+          href="https://www.gulfhorizontele.com/en/fire-fighting-systems-solution-in-saudi-arabia"
         />
       </Head>
       <TransitionEffect />

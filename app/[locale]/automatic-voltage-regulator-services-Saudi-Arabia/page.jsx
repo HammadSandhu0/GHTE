@@ -10,7 +10,7 @@ import Head from "next/head";
 import { headers } from "next/headers";
 import React from "react";
 
-const metadata = {
+export const metadata = {
   title: {
     absolute:
       "Automatic Voltage Regulator Services in Saudi Arabia | Gulf Horizon Telecom Est",
@@ -18,25 +18,6 @@ const metadata = {
   description:
     "Find top-quality AVRs at Gulf Horizon Telecom Est, Saudi Arabia. Choose Automatic Voltage Regulator from 220V, 3-phase, and generator-specific models.",
 };
-export async function generateMetadata() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get("accept-language") || "en";
-  const locale = acceptLanguage.split(",")[0];
-  const baseUrl = "https://www.gulfhorizontele.com";
-  const paramsUrl = "automatic-voltage-regulator-services-Saudi-Arabia";
-  const canonicalUrl =
-    locale === "en"
-      ? `${baseUrl}/${paramsUrl}`
-      : `${baseUrl}/${locale}/${paramsUrl}`;
-
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  };
-}
 const page = () => {
   const t = useTranslations("AVR");
   const pageHeader = {
@@ -138,6 +119,12 @@ const page = () => {
 
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.gulfhorizontele.com/en/automatic-voltage-regulator-services-Saudi-Arabia"
+        />
+      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

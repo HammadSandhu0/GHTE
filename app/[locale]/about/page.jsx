@@ -37,7 +37,7 @@ const page = () => {
   return (
     <>
       <Head>
-        <link rel="canonical" href="http://localhost:3000/en/about" />
+        <link rel="canonical" href="https://www.gulfhorizontele.com/en/about" />
       </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />

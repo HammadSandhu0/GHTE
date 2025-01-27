@@ -6,7 +6,7 @@ import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import { headers } from "next/headers";
+import Head from "next/head";
 import React from "react";
 
 const metadata = {
@@ -16,24 +16,24 @@ const metadata = {
   description:
     "Explore Gulf Horizon Telecom Est UPS systems in Saudi Arabia, including outdoor, modular, and industrial solutions. Authorized dealers for Schneider Electric and RPS.",
 };
-export async function generateMetadata() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get("accept-language") || "en";
-  const locale = acceptLanguage.split(",")[0];
-  const baseUrl = "https://www.gulfhorizontele.com";
-  const canonicalUrl =
-    locale === "en"
-      ? `${baseUrl}/ups-saudi-arabia`
-      : `${baseUrl}/${locale}/ups-saudi-arabia`;
+// export async function generateMetadata() {
+//   const headersList = await headers();
+//   const acceptLanguage = headersList.get("accept-language") || "en";
+//   const locale = acceptLanguage.split(",")[0];
+//   const baseUrl = "https://www.gulfhorizontele.com";
+//   const canonicalUrl =
+//     locale === "en"
+//       ? `${baseUrl}/ups-saudi-arabia`
+//       : `${baseUrl}/${locale}/ups-saudi-arabia`;
 
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  };
-}
+//   return {
+//     title: metadata.title,
+//     description: metadata.description,
+//     alternates: {
+//       canonical: canonicalUrl,
+//     },
+//   };
+// }
 
 const page = () => {
   const t = useTranslations("UPS_SYSTEM");
@@ -140,6 +140,12 @@ const page = () => {
 
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.gulfhorizontele.com/en/ups-saudi-arabia"
+        />
+      </Head>
       <TransitionEffect />
 
       <PageHeader pageHeader={pageHeader} />

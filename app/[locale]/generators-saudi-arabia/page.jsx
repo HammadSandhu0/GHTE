@@ -7,10 +7,9 @@ import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
 import Head from "next/head";
-import { headers } from "next/headers";
 import React from "react";
 
-const metadata = {
+export const metadata = {
   title: {
     absolute:
       "Premium Generator Solutions in Saudi Arabia – Sales, Rentals, and Maintenance",
@@ -18,24 +17,6 @@ const metadata = {
   description:
     "Premium generator solutions in Saudi Arabia with Gulf Horizon Telecom Est. We offer portable, diesel generator sales, rentals, maintenance, and spare parts for uninterrupted power.",
 };
-export async function generateMetadata() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get("accept-language") || "en";
-  const locale = acceptLanguage.split(",")[0];
-  const baseUrl = "https://www.gulfhorizontele.com";
-  const canonicalUrl =
-    locale === "en"
-      ? `${baseUrl}/generators-saudi-arabia`
-      : `${baseUrl}/${locale}/generators-saudi-arabia`;
-
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  };
-}
 
 const page = () => {
   const t = useTranslations("Generator");
@@ -145,6 +126,12 @@ const page = () => {
 
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.gulfhorizontele.com/en/generators-saudi-arabia"
+        />
+      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

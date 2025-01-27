@@ -7,10 +7,9 @@ import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
 import Head from "next/head";
-import { headers } from "next/headers";
 import React from "react";
 
-const metadata = {
+export const metadata = {
   title: {
     absolute:
       "Top Cybersecurity Services Saudi Arabia - Gulf Horizon Telecom Est Solutions",
@@ -18,26 +17,6 @@ const metadata = {
   description:
     "Secure your business with Gulf Horizon Telecom Est top-rated cybersecurity services in Saudi Arabia, including threat assessment, incident response, and risk management. Contact us today!",
 };
-
-export async function generateMetadata() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get("accept-language") || "en";
-  const locale = acceptLanguage.split(",")[0];
-  const baseUrl = "https://www.gulfhorizontele.com";
-  const paramsUrl = "cyber-security-services-in-saudi-arabia";
-  const canonicalUrl =
-    locale === "en"
-      ? `${baseUrl}/${paramsUrl}`
-      : `${baseUrl}/${locale}/${paramsUrl}`;
-
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  };
-}
 
 const page = () => {
   const t = useTranslations("cyber_security");
@@ -155,6 +134,12 @@ const page = () => {
 
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.gulfhorizontele.com/en/cyber-security-services-in-saudi-arabia"
+        />
+      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

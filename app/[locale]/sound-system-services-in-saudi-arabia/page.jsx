@@ -7,10 +7,9 @@ import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
 import Head from "next/head";
-import { headers } from "next/headers";
 import React from "react";
 
-const metadata = {
+export const metadata = {
   title: {
     absolute:
       "Sound System Services in Saudi Arabia | Gulf Horizon Telecom Est",
@@ -18,26 +17,6 @@ const metadata = {
   description:
     "Premium sound system services in Saudi Arabia by Gulf Horizon Telecom Est. From home theatres to car audio systems, we offer top brands like Sony, Bose, and JBL. Professional installation and affordable Pricing are guaranteed.",
 };
-
-export async function generateMetadata() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get("accept-language") || "en";
-  const locale = acceptLanguage.split(",")[0];
-  const baseUrl = "https://www.gulfhorizontele.com";
-  const paramsUrl = "sound-system-services-in-saudi-arabia";
-  const canonicalUrl =
-    locale === "en"
-      ? `${baseUrl}/${paramsUrl}`
-      : `${baseUrl}/${locale}/${paramsUrl}`;
-
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  };
-}
 
 const page = () => {
   const t = useTranslations("sound_system");
@@ -147,6 +126,12 @@ const page = () => {
 
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.gulfhorizontele.com/en/sound-system-services-in-saudi-arabia"
+        />
+      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle
