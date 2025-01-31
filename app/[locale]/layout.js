@@ -75,28 +75,36 @@ export default async function LocaleLayout({ children, params }) {
     name: "Power, Security & IT Solutions Around Saudi Arabia | Gulf Horizon Telecom Est",
     description:
       "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
-    url: "https://www.gulfhorizontele.com/en",
+    url: `${baseUrl}/${locale}`, // Dynamic URL
   };
 
   return (
     <html lang={locale}>
       <Head>
-        <link rel="canonical" href="https://www.gulfhorizontele.com/en" />
-        <title>{metadata.pageTitle}</title>
+        {/* Debugging: Add a test meta tag */}
+        <meta name="test" content="This is a test meta tag" />
+
+        {/* Dynamic Canonical URL */}
+        <link
+          rel="canonical"
+          href={`https://www.gulfhorizontele.com/${locale}`}
+        />
+        <title>{metadata.title.default}</title>
         <meta name="description" content={metadata.description} />
-        <meta property="og:title" content={metadata.pageTitle} />
+        <meta property="og:title" content={metadata.title.default} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${baseUrl}/${locale}`} />
         <meta property="og:image" content={`${baseUrl}/og-image.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metadata.pageTitle} />
+        <meta name="twitter:title" content={metadata.title.default} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={`${baseUrl}/og-image.jpg`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         />
+        {alternateLinks}
       </Head>
       <body className={`${dm_sans.variable} font-dm_sans w-full min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
