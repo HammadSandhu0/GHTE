@@ -59,7 +59,8 @@ const ContactUs = () => {
     subject: "",
     message: "",
   });
-
+  // State for button loading
+  const [loading, setLoading] = useState(false);
   // Handle form field changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -69,10 +70,14 @@ const ContactUs = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true); // Set loading state to true
     try {
       // Post data to your API endpoint
-      const response = await axios.post("/api/contact", formData);
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}`,
+        formData
+      );
+      console.log(response.data);
       toast.success(t("form.success"), {
         position: "top-right",
         autoClose: 3000,
@@ -103,6 +108,8 @@ const ContactUs = () => {
         progress: undefined,
         theme: "colored",
       });
+    } finally {
+      setLoading(false); // Reset loading state
     }
   };
 
@@ -256,16 +263,23 @@ const ContactUs = () => {
               <div className="flex justify-start">
                 <motion.button
                   type="submit"
-                  className="group relative text-white flex items-center justify-between py-3 px-8 rounded-xl border-light border-[1px] bg-secondary overflow-hidden transition-all duration-300"
+                  disabled={loading} // Disable button when loading
+                  className={`group relative text-white flex items-center justify-between py-3 px-8 rounded-xl border-light border-[1px] ${
+                    loading ? "bg-gray-400" : "bg-secondary"
+                  } overflow-hidden transition-all duration-300`}
                   variants={buttonVariants}
                 >
                   <span className="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
-                  <span className="relative z-10">{t("submit-btn")}</span>
-                  <img
-                    src="/arrow.svg"
-                    alt="svg"
-                    className="ml-2 relative z-10 transform transition-transform duration-300 group-hover:translate-x-2"
-                  />
+                  <span className="relative z-10">
+                    {loading ? "Sending..." : t("submit-btn")}
+                  </span>
+                  {!loading && (
+                    <img
+                      src="/arrow.svg"
+                      alt="svg"
+                      className="ml-2 relative z-10 transform transition-transform duration-300 group-hover:translate-x-2"
+                    />
+                  )}
                 </motion.button>
               </div>
             </motion.form>

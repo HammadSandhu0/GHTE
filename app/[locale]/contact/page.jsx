@@ -31,7 +31,8 @@ const page = () => {
       <Head>
         <link
           rel="canonical"
-          href="https://www.gulfhorizontele.com/en/contact"
+          href="https://example.com/blog/original-post"
+          key="canonical"
         />
       </Head>
       <TransitionEffect />
