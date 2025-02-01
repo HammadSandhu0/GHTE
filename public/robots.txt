@@ -1,11 +1,9 @@
-User-Agent: *
+# *
+User-agent: *
 Allow: /
-Disallow: /private/
 
-Disallow: /admin/
-Disallow: /login/
-Disallow: /signup/
-Disallow: /cart/
+# Host
+Host: https://www.gulfhorizontele.com
 
-
+# Sitemaps
 Sitemap: https://www.gulfhorizontele.com/sitemap.xml

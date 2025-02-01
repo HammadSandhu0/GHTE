@@ -2,7 +2,6 @@ import ContactUs from "@/components/ContactUs";
 import TransitionEffect from "@/components/Loader";
 import PageHeader from "@/components/PageHeader";
 import VendorSlider from "@/components/Vendor";
-import Head from "next/head";
 import React from "react";
 import { useTranslations } from "next-intl";
 
@@ -28,13 +27,6 @@ const page = () => {
   };
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://example.com/blog/original-post"
-          key="canonical"
-        />
-      </Head>
       <TransitionEffect />
 
       <PageHeader pageHeader={pageHeader} />

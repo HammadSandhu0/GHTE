@@ -6,7 +6,6 @@ import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
 import React from "react";
 
 export const metadata = {
@@ -119,12 +118,6 @@ const page = () => {
 
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.gulfhorizontele.com/en/server-and-computer-solution-in-saudia-arabia"
-        />
-      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

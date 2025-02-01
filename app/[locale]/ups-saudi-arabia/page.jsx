@@ -6,10 +6,9 @@ import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
 import React from "react";
 
-const metadata = {
+export const metadata = {
   title: {
     absolute: "UPS Saudi Arabia - Reliable Systems & Services",
   },
@@ -140,12 +139,6 @@ const page = () => {
 
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.gulfhorizontele.com/en/ups-saudi-arabia"
-        />
-      </Head>
       <TransitionEffect />
 
       <PageHeader pageHeader={pageHeader} />
