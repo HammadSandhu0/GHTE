@@ -8,6 +8,7 @@ import PageHeader from "@/components/PageHeader";
 import VendorSlider from "@/components/Vendor";
 import TransitionEffect from "@/components/Loader";
 import { useTranslations } from "next-intl";
+import Head from "next/head";
 
 export const metadata = {
   title: {
@@ -35,6 +36,9 @@ const page = () => {
   };
   return (
     <>
+      <Head>
+        <link rel="canonical" href="https://www.gulfhorizontele.com/en/about" />
+      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
 

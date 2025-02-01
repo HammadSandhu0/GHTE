@@ -4,6 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import VendorSlider from "@/components/Vendor";
 import React from "react";
 import { useTranslations } from "next-intl";
+import Head from "next/head";
 
 export const metadata = {
   title: "Contact Gulf Horizon Telecom Est - Get in Touch",
@@ -27,6 +28,12 @@ const page = () => {
   };
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.gulfhorizontele.com/en/contact"
+        />
+      </Head>
       <TransitionEffect />
 
       <PageHeader pageHeader={pageHeader} />

@@ -44,6 +44,12 @@ const Page = () => {
   ];
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.gulfhorizontele.com/en/client-projects"
+        />
+      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <Projects />
