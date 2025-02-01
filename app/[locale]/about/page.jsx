@@ -12,8 +12,7 @@ import Head from "next/head";
 
 export const metadata = {
   title: {
-    default:
-      "Power, Security & IT Solutions Around Saudi Arabia | Gulf Horizon Telecom Est",
+    default: "About - Gulf Horizon Telecom Est",
     template: "%s",
   },
   description:
@@ -36,9 +35,6 @@ const page = () => {
   };
   return (
     <>
-      <Head>
-        <link rel="canonical" href="https://www.gulfhorizontele.com/en/about" />
-      </Head>
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
 
