@@ -17,8 +17,6 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export const metadata = {
   title: {
     default: "Power, Security & IT Solutions Around Saudi Arabia | GHTE",
-    template:
-      "%s - Power, Security & IT Solutions Around Saudi Arabia | Gulf Horizon Telecom Est",
   },
   description:
     "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
@@ -72,9 +70,7 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale}>
       <head>
-        <title>
-          {metadata.title.template.replace("%s", locale.toUpperCase())}
-        </title>
+        <title>{metadata.title.default}</title>
         {/* Canonical Tag (Fix for Homepage & Other Pages) */}
         <link
           rel="canonical"
