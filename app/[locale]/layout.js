@@ -12,7 +12,7 @@ const dm_sans = DM_Sans({
   variable: "--font-dm_sans",
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = "https://www.gulfhorizontele.com";
 
 export const metadata = {
   title: {
