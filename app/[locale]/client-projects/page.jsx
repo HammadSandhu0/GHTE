@@ -1,18 +1,23 @@
+"use client";
 import CtaBox from "@/components/CtaBox";
 import TransitionEffect from "@/components/Loader";
 import PageHeader from "@/components/PageHeader";
 import Projects from "@/components/projects";
+import SEOHead from "@/components/SeoHead";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
-export const metadata = {
-  title: "Clients projects by Gulf Horizon Tele Est",
+const metadata = {
+  title: {
+    default: "Clients projects by Gulf Horizon Tele Est",
+  },
   description:
     "Explore Gulf Horizon Tele Est's expertise in power systems, security solutions, and data center projects for top clients across various industries.",
 };
 
-const Page = () => {
+const Page = ({ params }) => {
   const t2 = useTranslations("MainPageWhyChoose");
   const t = useTranslations("AllProjects");
 
@@ -42,14 +47,26 @@ const Page = () => {
       description: `${t2("main_page_end_to_end_services_content")}`,
     },
   ];
+
+  const [resolvedParams, setResolvedParams] = useState(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolved = await params; // Unwrap the Promise
+      setResolvedParams(resolved);
+    };
+
+    fetchParams();
+  }, [params]);
+  if (!resolvedParams) return null; // You might want to handle loading states
+
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.gulfhorizontele.com/en/client-projects"
-        />
-      </Head>
+      <SEOHead
+        title={metadata.title.default}
+        description={metadata.description}
+        locale={resolvedParams.locale} // Use the resolved locale
+        pageUrl="/client-projects" // Use the resolved locale
+      />
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <Projects />

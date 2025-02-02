@@ -1,22 +1,22 @@
+"use client";
 import CtaBox from "@/components/CtaBox";
 import TransitionEffect from "@/components/Loader";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SeoHead";
 import ServiceBenefit from "@/components/ServiceBenefit";
 import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
-import React from "react";
-
-export const metadata = {
+import React, { useEffect, useState } from "react";
+const metadata = {
   title: {
-    absolute: "Fire Fighting Systems Solution in Saudi Arabia",
+    default: "Fire Fighting Systems Solution in Saudi Arabia",
   },
   description:
     "Explore Gulf Horizon Telecom Est expert fire fighting systems solution, including alarms, sprinklers, and extinguishers, customized for safety and Compliance in Saudi Arabia.",
 };
-const page = () => {
+const page = ({ params }) => {
   const t = useTranslations("fire_fighting");
   const pageHeader = {
     title: t("pageheader.title"),
@@ -130,14 +130,25 @@ const page = () => {
     },
   ];
 
+  const [resolvedParams, setResolvedParams] = useState(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolved = await params; // Unwrap the Promise
+      setResolvedParams(resolved);
+    };
+
+    fetchParams();
+  }, [params]);
+  if (!resolvedParams) return null; // You might want to handle loading states
+
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.gulfhorizontele.com/en/fire-fighting-systems-solution-in-saudi-arabia"
-        />
-      </Head>
+      <SEOHead
+        title={metadata.title.default}
+        description={metadata.description}
+        locale={resolvedParams.locale} // Use the resolved locale
+        pageUrl="/fire-fighting-systems-solution-in-saudi-arabia" // Use the resolved locale
+      />
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

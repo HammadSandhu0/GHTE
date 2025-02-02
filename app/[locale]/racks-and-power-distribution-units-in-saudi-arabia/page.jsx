@@ -1,24 +1,25 @@
+"use client";
 import CtaBox from "@/components/CtaBox";
 import TransitionEffect from "@/components/Loader";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SeoHead";
 import ServiceBenefit from "@/components/ServiceBenefit";
 import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export const metadata = {
+const metadata = {
   title: {
-    absolute:
+    default:
       "Best Racks and Power Distribution Units (PDUs) in Saudi Arabia | Gulf Horizon Telecom Est",
   },
   description:
     "Racks and power distribution units (PDUs) from IT systems, data centers, and businesses in Saudi Arabia. Gulf Horizon Telecom Est provides modified server racks, intelligent PDUs, and smooth and easy installation services.",
 };
 
-const page = () => {
+const page = ({ params }) => {
   const t = useTranslations("Racks");
   const pageHeader = {
     title: t("pageheader.title"),
@@ -115,15 +116,25 @@ const page = () => {
       description: `${t("whychoose.why_3_description")}`,
     },
   ];
+  const [resolvedParams, setResolvedParams] = useState(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolved = await params; // Unwrap the Promise
+      setResolvedParams(resolved);
+    };
+
+    fetchParams();
+  }, [params]);
+  if (!resolvedParams) return null; // You might want to handle loading states
 
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.gulfhorizontele.com/en/racks-and-power-distribution-units-in-saudi-arabia"
-        />
-      </Head>
+      <SEOHead
+        title={metadata.title.default}
+        description={metadata.description}
+        locale={resolvedParams.locale} // Use the resolved locale
+        pageUrl="/racks-and-power-distribution-units-in-saudi-arabia" // Use the resolved locale
+      />
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

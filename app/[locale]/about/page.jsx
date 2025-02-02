@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import About from "@/components/About";
 import CompanyHistory from "@/components/CompanyHistory";
 import ContactUs from "@/components/ContactUs";
@@ -8,9 +9,9 @@ import PageHeader from "@/components/PageHeader";
 import VendorSlider from "@/components/Vendor";
 import TransitionEffect from "@/components/Loader";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
+import SEOHead from "@/components/SeoHead";
 
-export const metadata = {
+const metadata = {
   title: {
     default: "About - Gulf Horizon Telecom Est",
     template: "%s",
@@ -19,7 +20,7 @@ export const metadata = {
     "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
 };
 
-const page = () => {
+const page = ({ params }) => {
   const t = useTranslations("AboutPage");
   const pageHeader = {
     title: `${t("pageheader.title")}`,
@@ -33,8 +34,26 @@ const page = () => {
     ],
     backgroundImage: "/about.png",
   };
+
+  const [resolvedParams, setResolvedParams] = useState(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolved = await params; // Unwrap the Promise
+      setResolvedParams(resolved);
+    };
+
+    fetchParams();
+  }, [params]);
+  if (!resolvedParams) return null; // You might want to handle loading states
+
   return (
     <>
+      <SEOHead
+        title={metadata.title.default}
+        description={metadata.description}
+        locale={resolvedParams.locale} // Use the resolved locale
+        pageUrl="/about"
+      />
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
 

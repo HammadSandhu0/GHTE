@@ -13,12 +13,21 @@ import VendorSlider from "@/components/Vendor";
 import ContactUs from "@/components/ContactUs";
 import TransitionEffect from "@/components/Loader";
 import { useTranslations } from "next-intl";
+import SEOHead from "@/components/SeoHead";
+import { useEffect, useState } from "react";
 
-const Home = () => {
+const metadata = {
+  title: {
+    default: "Power, Security & IT Solutions Around Saudi Arabia | GHTE",
+  },
+  description:
+    "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
+};
+
+const Home = ({ params }) => {
   const t = useTranslations("HomePage");
   const t2 = useTranslations("MainPageWhyChoose");
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
-
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -78,8 +87,25 @@ const Home = () => {
     },
   ];
 
+  const [resolvedParams, setResolvedParams] = useState(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolved = await params; // Unwrap the Promise
+      setResolvedParams(resolved);
+    };
+
+    fetchParams();
+  }, [params]);
+  if (!resolvedParams) return null; // You might want to handle loading states
+
   return (
     <>
+      <SEOHead
+        title={metadata.title.default}
+        description={metadata.description}
+        locale={resolvedParams.locale} // Use the resolved locale
+        pageUrl="/" // Use the resolved locale
+      />
       <TransitionEffect />
       <div className="relative overflow-hidden bg-cover bg-center bg-no-repeat md:mt-10 md:mx-10 md:rounded-[40px] px-4">
         <Navbar />
@@ -143,7 +169,6 @@ const Home = () => {
           </div>
         </motion.div>
       </div>
-
       <About />
       <Portfolio />
       <WhyChooseUs whychooseus={whychooseus} />

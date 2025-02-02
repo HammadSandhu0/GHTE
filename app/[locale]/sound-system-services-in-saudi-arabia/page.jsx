@@ -1,24 +1,24 @@
+"use client";
 import CtaBox from "@/components/CtaBox";
 import TransitionEffect from "@/components/Loader";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SeoHead";
 import ServiceBenefit from "@/components/ServiceBenefit";
 import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export const metadata = {
+const metadata = {
   title: {
-    absolute:
-      "Sound System Services in Saudi Arabia | Gulf Horizon Telecom Est",
+    default: "Sound System Services in Saudi Arabia | Gulf Horizon Telecom Est",
   },
   description:
     "Premium sound system services in Saudi Arabia by Gulf Horizon Telecom Est. From home theatres to car audio systems, we offer top brands like Sony, Bose, and JBL. Professional installation and affordable Pricing are guaranteed.",
 };
 
-const page = () => {
+const page = ({ params }) => {
   const t = useTranslations("sound_system");
   const pageHeader = {
     title: t("pageheader.title"),
@@ -124,14 +124,25 @@ const page = () => {
     },
   ];
 
+  const [resolvedParams, setResolvedParams] = useState(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolved = await params; // Unwrap the Promise
+      setResolvedParams(resolved);
+    };
+
+    fetchParams();
+  }, [params]);
+  if (!resolvedParams) return null; // You might want to handle loading states
+
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.gulfhorizontele.com/en/sound-system-services-in-saudi-arabia"
-        />
-      </Head>
+      <SEOHead
+        title={metadata.title.default}
+        description={metadata.description}
+        locale={resolvedParams.locale} // Use the resolved locale
+        pageUrl="/sound-system-services-in-saudi-arabia" // Use the resolved locale
+      />
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

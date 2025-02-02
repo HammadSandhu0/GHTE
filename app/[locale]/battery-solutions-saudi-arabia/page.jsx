@@ -1,23 +1,24 @@
+"use client";
 import CtaBox from "@/components/CtaBox";
 import TransitionEffect from "@/components/Loader";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SeoHead";
 import ServiceBenefit from "@/components/ServiceBenefit";
 import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export const metadata = {
+const metadata = {
   title: {
-    absolute: "Battery Solutions - Reliable Energy Systems & Services",
+    default: "Battery Solutions - Reliable Energy Systems & Services",
   },
   description:
     "Premium battery solutions, including Lithium-ion, VRLA, and industrial batteries. Expert system design, maintenance, and custom energy-efficient options.",
 };
 
-const page = () => {
+const page = ({ params }) => {
   const t = useTranslations("Batteries");
   const pageHeader = {
     title: t("pageheader.title"),
@@ -135,14 +136,25 @@ const page = () => {
     },
   ];
 
+  const [resolvedParams, setResolvedParams] = useState(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolved = await params; // Unwrap the Promise
+      setResolvedParams(resolved);
+    };
+
+    fetchParams();
+  }, [params]);
+  if (!resolvedParams) return null; // You might want to handle loading states
+
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.gulfhorizontele.com/en/battery-solutions-saudi-arabia"
-        />
-      </Head>
+      <SEOHead
+        title={metadata.title.default}
+        description={metadata.description}
+        locale={resolvedParams.locale} // Use the resolved locale
+        pageUrl="/battery-solutions-saudi-arabia" // Use the resolved locale
+      />
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

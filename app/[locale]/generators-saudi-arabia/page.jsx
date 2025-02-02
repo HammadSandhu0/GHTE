@@ -1,24 +1,25 @@
+"use client";
 import CtaBox from "@/components/CtaBox";
 import TransitionEffect from "@/components/Loader";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SeoHead";
 import ServiceBenefit from "@/components/ServiceBenefit";
 import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export const metadata = {
+const metadata = {
   title: {
-    absolute:
+    default:
       "Premium Generator Solutions in Saudi Arabia – Sales, Rentals, and Maintenance",
   },
   description:
     "Premium generator solutions in Saudi Arabia with Gulf Horizon Telecom Est. We offer portable, diesel generator sales, rentals, maintenance, and spare parts for uninterrupted power.",
 };
 
-const page = () => {
+const page = ({ params }) => {
   const t = useTranslations("Generator");
   const pageHeader = {
     title: t("pageheader.title"),
@@ -124,14 +125,25 @@ const page = () => {
     },
   ];
 
+  const [resolvedParams, setResolvedParams] = useState(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolved = await params; // Unwrap the Promise
+      setResolvedParams(resolved);
+    };
+
+    fetchParams();
+  }, [params]);
+  if (!resolvedParams) return null; // You might want to handle loading states
+
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.gulfhorizontele.com/en/generators-saudi-arabia"
-        />
-      </Head>
+      <SEOHead
+        title={metadata.title.default}
+        description={metadata.description}
+        locale={resolvedParams.locale} // Use the resolved locale
+        pageUrl="/generators-saudi-arabia" // Use the resolved locale
+      />
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle

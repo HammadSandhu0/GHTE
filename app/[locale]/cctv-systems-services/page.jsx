@@ -1,23 +1,24 @@
+"use client";
 import CtaBox from "@/components/CtaBox";
 import TransitionEffect from "@/components/Loader";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SeoHead";
 import ServiceBenefit from "@/components/ServiceBenefit";
 import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
-import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export const metadata = {
+const metadata = {
   title: {
-    absolute: "CCTV Systems Services | Installation, Maintenance & Solutions",
+    default: "CCTV Systems Services | Installation, Maintenance & Solutions",
   },
   description:
     "Top-class CCTV systems services by Gulf Horizon Telecom Est: Custom observation systems, installation, maintenance, monitoring, and modern designs for homes and businesses. Secure your space today!",
 };
 
-const page = () => {
+const page = ({ params }) => {
   const t = useTranslations("CCTV");
   const pageHeader = {
     title: t("pageheader.title"),
@@ -118,15 +119,25 @@ const page = () => {
       description: `${t("whychoose.why_3_description")}`,
     },
   ];
+  const [resolvedParams, setResolvedParams] = useState(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolved = await params; // Unwrap the Promise
+      setResolvedParams(resolved);
+    };
+
+    fetchParams();
+  }, [params]);
+  if (!resolvedParams) return null; // You might want to handle loading states
 
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.gulfhorizontele.com/en/cctv-systems-services"
-        />
-      </Head>
+      <SEOHead
+        title={metadata.title.default}
+        description={metadata.description}
+        locale={resolvedParams.locale} // Use the resolved locale
+        pageUrl="/cctv-systems-services" // Use the resolved locale
+      />
       <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle
