@@ -1,7 +1,7 @@
 import React from "react";
 import { routing } from "@/i18n/routing";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URI;
+const baseUrl = `https://www.gulfhorizontele.com`;
 
 const SEOHead = ({
   title,
