@@ -7,6 +7,7 @@ import "./globals.css";
 import { DM_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -35,9 +36,10 @@ export default async function LocaleLayout({ children, params }) {
       <body className={`${dm_sans.variable} font-dm_sans w-full min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
-          <SpeedInsights />
           <Footer />
         </NextIntlClientProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

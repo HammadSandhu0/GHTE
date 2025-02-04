@@ -74,7 +74,7 @@ const ContactUs = () => {
     try {
       // Post data to your API endpoint
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}`,
+        `https://ghtebackend.vercel.app/api/send-email`,
         formData
       );
       console.log(response.data);
