@@ -8,19 +8,12 @@ import { DM_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import FeaturedLinks from "@/components/FeaturedLinks";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm_sans",
 });
-
-// export const metadata = {
-//   title: {
-//     default: "Power, Security & IT Solutions Around Saudi Arabia | GHTE",
-//   },
-//   description:
-//     "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
-// };
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
@@ -36,6 +29,7 @@ export default async function LocaleLayout({ children, params }) {
       <body className={`${dm_sans.variable} font-dm_sans w-full min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <FeaturedLinks />
           <Footer />
         </NextIntlClientProvider>
         <SpeedInsights />

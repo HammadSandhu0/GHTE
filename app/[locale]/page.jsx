@@ -15,6 +15,7 @@ import TransitionEffect from "@/components/Loader";
 import { useTranslations } from "next-intl";
 import SEOHead from "@/components/SeoHead";
 import { useEffect, useState } from "react";
+import FeaturedLinks from "@/components/FeaturedLinks";
 
 const metadata = {
   title: {
