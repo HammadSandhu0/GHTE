@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import FeaturedLinks from "@/components/FeaturedLinks";
-
+import Head from "next/head";
 const dm_sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm_sans",
