@@ -26,6 +26,12 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale}>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="l09wHtR1yWh8kQM8jR3JC0ec8Mz5qs6Z88xCFirVzZA"
+        />
+      </Head>
       <body className={`${dm_sans.variable} font-dm_sans w-full min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
