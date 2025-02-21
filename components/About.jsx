@@ -1,56 +1,20 @@
-"use client";
 import React, { memo } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Image from "next/image"; // Optimized image handling
+import Image from "next/image";
 import CompanyBTn from "./CompanyBTn";
 import Reach from "./Reach";
 import { useTranslations } from "next-intl";
+import {
+  containerVariants,
+  headingVariants,
+  imageVariants,
+  paragraphVariants,
+} from "@/utils/animations";
 
-const About = () => {
+const About = memo(() => {
   const t = useTranslations("AboutPage");
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.3,
-        ease: [0.42, 0, 0.58, 1],
-      },
-    },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
-    },
-  };
-
-  const headingVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
-    },
-  };
-
-  const paragraphVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
-    },
-  };
 
   return (
     <div className="container mx-auto py-16 lg:py-32 px-4 sm:px-0" ref={ref}>
@@ -64,7 +28,6 @@ const About = () => {
         <motion.div
           className="w-full flex justify-center lg:justify-start"
           variants={imageVariants}
-          style={{ willChange: "transform, opacity" }} // Performance optimization
         >
           <Image
             src="/about.png"
@@ -74,6 +37,8 @@ const About = () => {
             className="w-full rounded-3xl xl:w-[80%]"
             quality={90}
             loading="lazy"
+            placeholder="blur"
+            blurDataURL="/about-placeholder.png" // Placeholder image for better UX
           />
         </motion.div>
 
@@ -100,17 +65,15 @@ const About = () => {
           >
             {t("description")}
           </motion.p>
-          {/* Reach Section */}
           <MemoizedReach />
-          {/* Button Section */}
           <MemoizedCompanyBTn />
         </motion.div>
       </motion.div>
     </div>
   );
-};
+});
 
-// Wrap Reach and CompanyBTn components in React.memo to prevent unnecessary re-renders
+// Memoized components to prevent unnecessary re-renders
 const MemoizedReach = memo(Reach);
 const MemoizedCompanyBTn = memo(CompanyBTn);
 
