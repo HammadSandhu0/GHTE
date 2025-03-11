@@ -48,8 +48,6 @@ const page = ({ params }) => {
         locale={resolvedParams.locale} // Use the resolved locale
         pageUrl="/contact" // Use the resolved locale
       />
-      <TransitionEffect />
-
       <PageHeader pageHeader={pageHeader} />
       <ContactUs />
       <VendorSlider />

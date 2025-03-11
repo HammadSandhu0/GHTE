@@ -1,50 +1,16 @@
 "use client";
 import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslations } from "next-intl";
+import {
+  containerVariants,
+  motion,
+  headingVariants,
+  paragraphVariants,
+  cardAnimation,
+} from "@/utils/animations";
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.4,
-      ease: [0.25, 0.8, 0.25, 1],
-    },
-  },
-};
-
-const headingVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
-
-const paragraphVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
-
-const cardAnimation = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
-
+// Animation varian
 const MissionVision = () => {
   const t = useTranslations("Mission-vision-value");
   const controls = useAnimation();

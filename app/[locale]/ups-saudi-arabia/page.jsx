@@ -158,8 +158,6 @@ const page = ({ params }) => {
         locale={resolvedParams.locale} // Use the resolved locale
         pageUrl="/ups-saudi-arabia" // Use the resolved locale
       />
-      <TransitionEffect />
-
       <PageHeader pageHeader={pageHeader} />
       <ServiceSingle
         mainPageContent={mainPageContent}

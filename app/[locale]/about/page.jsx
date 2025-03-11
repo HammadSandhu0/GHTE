@@ -54,9 +54,7 @@ const page = ({ params }) => {
         locale={resolvedParams.locale} // Use the resolved locale
         pageUrl="/about"
       />
-      <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
-
       <div className="">
         <About />
         <CompanyHistory />

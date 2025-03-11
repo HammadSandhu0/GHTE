@@ -1,56 +1,19 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import axios from "axios";
 import { useTranslations } from "next-intl";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.4,
-      ease: [0.25, 0.8, 0.25, 1],
-    },
-  },
-};
-
-const headingVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
-
-const paragraphVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
-
-const buttonVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
+import {
+  containerVariants,
+  headingVariants,
+  paragraphVariants,
+  buttonVariants,
+  motion,
+} from "@/utils/animations";
 
 const ContactUs = () => {
   const t = useTranslations("Contact");
-
-  // State for form data
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,20 +21,15 @@ const ContactUs = () => {
     subject: "",
     message: "",
   });
-  // State for button loading
   const [loading, setLoading] = useState(false);
-  // Handle form field changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
-
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Set loading state to true
+    setLoading(true);
     try {
-      // Post data to your API endpoint
       const response = await axios.post(
         `https://ghtebackend.vercel.app/api/send-email`,
         formData
@@ -87,8 +45,6 @@ const ContactUs = () => {
         progress: undefined,
         theme: "colored",
       });
-
-      // Clear the form
       setFormData({
         name: "",
         email: "",
@@ -108,7 +64,7 @@ const ContactUs = () => {
         theme: "colored",
       });
     } finally {
-      setLoading(false); // Reset loading state
+      setLoading(false);
     }
   };
 
@@ -285,7 +241,6 @@ const ContactUs = () => {
           </motion.div>
         </div>
       </div>
-      {/* React Toastify container */}
       <ToastContainer />
     </motion.div>
   );

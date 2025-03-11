@@ -1,63 +1,48 @@
 "use client";
+import { useTranslations } from "next-intl";
+import SEOHead from "@/components/SeoHead";
+import Main from "@/components/Main";
 import About from "@/components/About";
-import Portfolio from "@/components/Portfolio";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ProjectsSection from "@/components/ProjectSection";
 import CtaBox from "@/components/CtaBox";
 import VendorSlider from "@/components/Vendor";
 import ContactUs from "@/components/ContactUs";
-import TransitionEffect from "@/components/Loader";
-import { useTranslations } from "next-intl";
-import SEOHead from "@/components/SeoHead";
+import whyChooseUs from "@/data/whyChooseUs";
+import Services from "@/components/Services";
 import { useEffect, useState } from "react";
-import VideoHome from "@/components/VideoHome";
 
 const metadata = {
-  title: {
-    default: "Power, Security & IT Solutions Around Saudi Arabia | GHTE",
-  },
+  title: "Power, Security & IT Solutions Around Saudi Arabia | GHTE",
   description:
-    "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
+    "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, securing smooth operations in Saudi Arabia.",
 };
+
 const Home = ({ params }) => {
   const t2 = useTranslations("MainPageWhyChoose");
-  const whychooseus = [
-    {
-      heading: `${t2("main_page_why_choose_title")}`,
-      description: `${t2("main_page_why_choose_content")}`,
-    },
-    {
-      heading: `${t2("main_page_expertise_and_experience_title")}`,
-      description: `${t2("main_page_expertise_and_experience_content")}`,
-    },
-    {
-      heading: `${t2("main_page_end_to_end_services_title")}`,
-      description: `${t2("main_page_end_to_end_services_content")}`,
-    },
-  ];
   const [resolvedParams, setResolvedParams] = useState(null);
   useEffect(() => {
     const fetchParams = async () => {
-      const resolved = await params;
+      const resolved = await params; // Unwrap the Promise
       setResolvedParams(resolved);
     };
 
     fetchParams();
   }, [params]);
   if (!resolvedParams) return null;
+
   return (
     <>
       <SEOHead
-        title={metadata.title.default}
+        title={metadata.title}
         description={metadata.description}
-        locale={resolvedParams.locale}
+        locale={resolvedParams?.locale}
         pageUrl="/"
       />
-      <TransitionEffect />
-      <VideoHome />
+      <Main />
       <About />
-      <Portfolio />
-      <WhyChooseUs whychooseus={whychooseus} />
+      <Services />
+      <WhyChooseUs whychooseus={whyChooseUs(t2)} />
       <ProjectsSection />
       <CtaBox />
       <VendorSlider />

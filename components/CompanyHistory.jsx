@@ -1,79 +1,35 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-import CompanyBTn from "./CompanyBTn";
+import CompanyBTn from "./CustomButtonGroup";
 import { useTranslations } from "next-intl";
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.4,
-      ease: [0.25, 0.8, 0.25, 1],
-    },
-  },
-};
-
-const headingVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
-
-const paragraphVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
-
-const buttonVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
+import {
+  containerVariants,
+  motion,
+  headingVariants,
+  buttonVariants,
+} from "@/utils/animations";
+import { Description, Header, Heading, SubHeading } from "./Headings";
 
 const CompanyHistory = () => {
   const t = useTranslations("CompanyHistory");
   return (
     <motion.div
       className="container mx-auto px-4"
-      variants={containerVariants}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Content Section */}
         <div>
-          {/* Section Title */}
-          <motion.div variants={headingVariants}>
-            <h3 className="text-base md:text-lg font-semibold text-secondary mb-2">
-              {t("title")}
-            </h3>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-primary mb-8">
-              {t("maintitle")}
-            </h2>
-          </motion.div>
-
-          {/* Description */}
-          <motion.p
-            className="text-textcolor md:text-xl text-base leading-relaxed mb-6"
-            variants={paragraphVariants}
-          >
-            {t("description")}
-          </motion.p>
+          <Header className="text-start">
+            <SubHeading>{t("title")}</SubHeading>
+            <Heading className="!text-primary">{t("maintitle")}</Heading>
+            <Description>{t("description")}</Description>
+            <Description>{t("description2")}</Description>
+            <Description>{t("description3")}</Description>
+          </Header>
 
           {/* Buttons & Support */}
           <motion.div

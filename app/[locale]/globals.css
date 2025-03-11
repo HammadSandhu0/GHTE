@@ -19,3 +19,81 @@
 ::-webkit-scrollbar-track {
   background: #01ae47; /* Light gray */
 }
+/* styles/globals.css */
+#container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #01ae46f3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out; /* Add fade-out effect */
+}
+
+.loading-circle {
+  display: block;
+  border-left: 5px solid;
+  border-top-left-radius: 100%;
+  border-top: 5px solid;
+  margin: 5px;
+  animation-name: Loader_611;
+  animation-duration: 1500ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.sp1 {
+  border-left-color: #ffb703;
+  border-top-color: #ffb703;
+  width: 40px;
+  height: 40px;
+}
+
+.sp2 {
+  border-left-color: white;
+  border-top-color: white;
+  width: 30px;
+  height: 30px;
+}
+
+.sp3 {
+  width: 20px;
+  height: 20px;
+  border-left-color: #03f363;
+  border-top-color: #00f060;
+}
+
+@keyframes Loader_611 {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: right bottom;
+  }
+  25% {
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+  }
+  50% {
+    transform: rotate(180deg);
+    transform-origin: right bottom;
+  }
+  75% {
+    transform: rotate(270deg);
+    transform-origin: right bottom;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: right bottom;
+  }
+}
+
+/* Fade-out effect once loading is complete */
+#container.fade-out {
+  opacity: 0;
+}

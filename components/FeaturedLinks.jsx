@@ -1,9 +1,11 @@
+"use client";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import React from "react";
+import { containerVariants, motion, headingVariants } from "@/utils/animations";
+import { Header, Heading } from "./Headings";
 
 const FeatureCard = ({ title, link }) => (
-  <div className="p-2 w-full">
+  <motion.div className="p-2 w-full" variants={headingVariants}>
     <div className="bg-light hover:bg-light/50 transition-all rounded flex p-4 h-full items-center cursor-pointer">
       <svg
         fill="none"
@@ -21,10 +23,10 @@ const FeatureCard = ({ title, link }) => (
         {title}
       </Link>
     </div>
-  </div>
+  </motion.div>
 );
 
-const FeaturedLinks = () => {
+const FeaturedLink = () => {
   const t = useTranslations("Services");
   const features = [
     {
@@ -83,13 +85,17 @@ const FeaturedLinks = () => {
 
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="text-center mb-20">
-          <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
-            {t("heading")}
-          </h1>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full justify-items-center">
+      <div className="container px-5 py-24 mx-auto space-y-10">
+        <Header>
+          <Heading className="!text-primary">{t("heading")}</Heading>
+        </Header>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full justify-items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
@@ -97,10 +103,10 @@ const FeaturedLinks = () => {
               link={feature.link}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default FeaturedLinks;
+export default FeaturedLink;

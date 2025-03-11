@@ -1,6 +1,4 @@
 "use client";
-import Link from "next/link";
-
 const Advantages = () => {
   const UpsSeries = [
     { name: "Powersteady series", titleKey: "data_center_ups_title" },

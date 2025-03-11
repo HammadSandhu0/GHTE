@@ -8,8 +8,8 @@ import { DM_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-import FeaturedLinks from "@/components/FeaturedLinks";
-import Head from "next/head";
+import NextTopLoader from "nextjs-toploader";
+import Loader from "@/components/Loader";
 const dm_sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm_sans",
@@ -26,16 +26,11 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="l09wHtR1yWh8kQM8jR3JC0ec8Mz5qs6Z88xCFirVzZA"
-        />
-      </Head>
       <body className={`${dm_sans.variable} font-dm_sans w-full min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <NextTopLoader color="#01ae47" height={4} />
+          <Loader />
           {children}
-          <FeaturedLinks />
           <Footer />
         </NextIntlClientProvider>
         <SpeedInsights />

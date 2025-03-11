@@ -67,7 +67,6 @@ const Page = ({ params }) => {
         locale={resolvedParams.locale} // Use the resolved locale
         pageUrl="/client-projects" // Use the resolved locale
       />
-      <TransitionEffect />
       <PageHeader pageHeader={pageHeader} />
       <Projects />
       <WhyChooseUs whychooseus={whychooseus} />

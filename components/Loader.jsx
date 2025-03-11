@@ -1,31 +1,34 @@
 "use client";
-import React from "react";
-import { motion } from "motion/react";
+import { useState, useEffect } from "react";
 
-const TransitionEffect = () => {
-  return (
-    <>
-      <motion.div
-        className="fixed top-0 bottom-0 right-full w-screen h-screen z-[100] bg-primary"
-        initial={{ x: "100%", width: "100%" }}
-        animate={{ x: "0%", width: "0%" }}
-        exit={{ x: ["0%", "100%"], width: ["0%", "100%"] }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="fixed top-0 bottom-0 right-full w-screen h-screen z-[90] bg-secondary"
-        initial={{ x: "100%", width: "100%" }}
-        animate={{ x: "0%", width: "0%" }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="fixed top-0 bottom-0 right-full w-screen h-screen z-[80] bg-light"
-        initial={{ x: "100%", width: "100%" }}
-        animate={{ x: "0%", width: "0%" }}
-        transition={{ duration: 0.8, delay: 0.4, ease: "easeInOut" }}
-      />
-    </>
-  );
-};
+export default function Loader() {
+  const [loading, setLoading] = useState(true);
 
-export default TransitionEffect;
+  useEffect(() => {
+    const checkPageReady = () => {
+      if (document.readyState === "complete") {
+        setLoading(false);
+      }
+    };
+    checkPageReady();
+    window.addEventListener("load", checkPageReady);
+
+    return () => {
+      window.removeEventListener("load", checkPageReady);
+    };
+  }, []);
+
+  if (loading) {
+    return (
+      <div id="container">
+        <span className="loading-circle sp1">
+          <span className="loading-circle sp2">
+            <span className="loading-circle sp3"></span>
+          </span>
+        </span>
+      </div>
+    );
+  }
+
+  return null;
+}

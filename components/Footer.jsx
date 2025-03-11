@@ -1,32 +1,10 @@
 "use client";
 import Link from "next/link";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { memo } from "react";
+import Image from "next/image"; // Import next/image for optimized image loading
 import SocialIcons from "./SocialIcons";
 import { useTranslations } from "next-intl";
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.4,
-      ease: [0.25, 0.8, 0.25, 1],
-    },
-  },
-};
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
+import { containerVariants, sectionVariants, motion } from "@/utils/animations";
 
 const Footer = () => {
   const t = useTranslations("Footer");
@@ -69,34 +47,33 @@ const Footer = () => {
                 {t("OurServicesTitle")}
               </div>
               <nav className="flex flex-col gap-4">
-                <Link
-                  href="/load-bank-rental-saudi-arabia"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/arrow.svg" alt="" />
-                  {t("OurServices.loadBank")}
-                </Link>
-                <Link
-                  href="/access-control-systems-in-saudi-arabia"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/arrow.svg" alt="" />
-                  {t("OurServices.accessControl")}
-                </Link>
-                <Link
-                  href="/generators-saudi-arabia"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/arrow.svg" alt="" />
-                  {t("OurServices.generators")}
-                </Link>
-                <Link
-                  href="/cyber-security-services-in-saudi-arabia"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/arrow.svg" alt="" />
-                  {t("OurServices.cyberSecurity")}
-                </Link>
+                {[
+                  {
+                    href: "/load-bank-rental-saudi-arabia",
+                    label: t("OurServices.loadBank"),
+                  },
+                  {
+                    href: "/access-control-systems-in-saudi-arabia",
+                    label: t("OurServices.accessControl"),
+                  },
+                  {
+                    href: "/generators-saudi-arabia",
+                    label: t("OurServices.generators"),
+                  },
+                  {
+                    href: "/cyber-security-services-in-saudi-arabia",
+                    label: t("OurServices.cyberSecurity"),
+                  },
+                ].map((service, index) => (
+                  <Link
+                    key={index}
+                    href={service.href}
+                    className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                  >
+                    <Image src="/arrow.svg" alt="" width={16} height={16} />
+                    {service.label}
+                  </Link>
+                ))}
               </nav>
             </motion.div>
 
@@ -106,34 +83,24 @@ const Footer = () => {
                 {t("CompanyTitle")}
               </div>
               <nav className="flex flex-col gap-4">
-                <Link
-                  href="/about"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/arrow.svg" alt="" />
-                  {t("Company.about")}
-                </Link>
-                <Link
-                  href="/client-projects"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/arrow.svg" alt="" />
-                  {t("Company.projects")}
-                </Link>
-                <Link
-                  href="/companyprofile.pdf"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/arrow.svg" alt="" />
-                  {t("Company.companyProfile")}
-                </Link>
-                <Link
-                  href="/conatct"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/arrow.svg" alt="" />
-                  {t("Company.contact")}
-                </Link>
+                {[
+                  { href: "/about", label: t("Company.about") },
+                  { href: "/client-projects", label: t("Company.projects") },
+                  {
+                    href: "/companyprofile.pdf",
+                    label: t("Company.companyProfile"),
+                  },
+                  { href: "/conatct", label: t("Company.contact") },
+                ].map((company, index) => (
+                  <Link
+                    key={index}
+                    href={company.href}
+                    className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                  >
+                    <Image src="/arrow.svg" alt="" width={16} height={16} />
+                    {company.label}
+                  </Link>
+                ))}
               </nav>
             </motion.div>
 
@@ -143,27 +110,32 @@ const Footer = () => {
                 {t("ContactUsTitle")}
               </div>
               <nav className="flex flex-col gap-4">
-                <Link
-                  href="tel:+966122873071"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/icon-phone.svg" alt="" className="w-6 h-6" />
-                  {t("ContactUs.phone")}
-                </Link>
-                <Link
-                  href="mailto:Info@gulfhorizontele.com"
-                  className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/icon-mail.svg" alt="" className="w-6 h-6" />
-                  {t("ContactUs.email")}
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-white flex items-start justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
-                >
-                  <img src="/icon-location.svg" alt="" className="w-6 h-6" />
-                  {t("ContactUs.address")}
-                </Link>
+                {[
+                  {
+                    href: "tel:+966122873071",
+                    icon: "/icon-phone.svg",
+                    label: t("ContactUs.phone"),
+                  },
+                  {
+                    href: "mailto:Info@gulfhorizontele.com",
+                    icon: "/icon-mail.svg",
+                    label: t("ContactUs.email"),
+                  },
+                  {
+                    href: "/contact",
+                    icon: "/icon-location.svg",
+                    label: t("ContactUs.address"),
+                  },
+                ].map((contact, index) => (
+                  <Link
+                    key={index}
+                    href={contact.href}
+                    className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+                  >
+                    <Image src={contact.icon} alt="" width={24} height={24} />
+                    {contact.label}
+                  </Link>
+                ))}
               </nav>
             </motion.div>
           </div>
@@ -180,4 +152,5 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+// Wrap the Footer component in React.memo to prevent unnecessary re-renders
+export default memo(Footer);

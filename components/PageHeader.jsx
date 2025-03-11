@@ -1,58 +1,33 @@
-"use client";
-import React from "react";
 import PropTypes from "prop-types";
 import Navbar from "./Navbar";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { Header, Heading } from "./Headings";
 
 const PageHeader = ({ pageHeader }) => {
   const router = useRouter();
 
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: "easeInOut" },
-  };
-
-  const breadcrumbVariants = {
-    initial: { opacity: 0, scale: 0.9 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { delay: 0.3, duration: 0.6, ease: "easeOut" },
-  };
-
   return (
-    <div className="relative bg-black bg-opacity-40 md:rounded-3xl md:m-10 m-0">
+    <div className="relative bg-black bg-opacity-40">
       <div className="absolute inset-0">
         <Image
           src={pageHeader.backgroundImage}
           alt="Background"
           layout="fill"
           objectFit="cover"
-          quality={80} // Optimize image quality
-          priority // Load this image first
-          className="md:rounded-3xl"
+          quality={80}
+          priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-40 md:rounded-3xl"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
-
       <Navbar />
       <div className="container mx-auto px-4 py-40">
-        <motion.div
-          className="text-center relative z-10"
-          initial="initial"
-          animate="animate"
-          {...fadeIn}
-        >
-          {/* Page Header Box Start */}
-          <motion.h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-tight">
-            {pageHeader.title}
-          </motion.h1>
+        <div className="text-center relative z-10">
+          <Header>
+            <Heading className="text-white"> {pageHeader.title}</Heading>
+          </Header>
           <nav>
-            <motion.ol
-              className="flex justify-center space-x-4 text-sm md:text-lg font-semibold"
-              {...breadcrumbVariants}
-            >
+            <ol className="flex justify-center space-x-4 text-sm md:text-lg font-semibold">
               {pageHeader.breadcrumbs.map((breadcrumb, index) => (
                 <li
                   key={index}
@@ -73,10 +48,10 @@ const PageHeader = ({ pageHeader }) => {
                   / <span>{breadcrumb.name}</span>
                 </li>
               ))}
-            </motion.ol>
+            </ol>
           </nav>
           {/* Page Header Box End */}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
