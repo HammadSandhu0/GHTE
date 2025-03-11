@@ -13,26 +13,13 @@ import {
 // Animation varian
 const MissionVision = () => {
   const t = useTranslations("Mission-vision-value");
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1, // Animation triggers when 10% of the section is visible
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [inView, controls]);
 
   return (
     <motion.section
-      ref={ref}
       className="py-44"
       initial="hidden"
-      animate={controls}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       <div className="container mx-auto px-4">
