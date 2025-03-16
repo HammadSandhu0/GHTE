@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import LanguageTranslator from "./LanguageTranslator";
+import { motion } from "@/utils/animations";
 
 const CustomLink = ({ href, title, className = "", toggle }) => {
   const t = useTranslations("Navigations"); // Use the "Navigations" namespace for translations
@@ -90,11 +90,11 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full px-4 py-10 font-medium flex items-center justify-between lg:px-16 border-b-2 border-light/20 relative z-20">
+    <header className="w-full px-4 py-4 font-medium flex items-center justify-between lg:px-16 border-b-2 border-light/20 relative z-20">
       {/* Logo */}
-      <div className="text-dark font-bold text-xl">
-        <img src="/logo.png" alt="logo" className="w-36" />
-      </div>
+      <Link href="/">
+        <img src="/logo/logo.webp" alt="logo" className="w-36" />
+      </Link>
 
       {/* Mobile menu toggle button */}
       <button

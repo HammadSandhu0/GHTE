@@ -7,7 +7,6 @@ import CtaBox from "@/components/CtaBox";
 import MissionVision from "@/components/MissionVision";
 import PageHeader from "@/components/PageHeader";
 import VendorSlider from "@/components/Vendor";
-import TransitionEffect from "@/components/Loader";
 import { useTranslations } from "next-intl";
 import SEOHead from "@/components/SeoHead";
 
@@ -32,7 +31,7 @@ const page = ({ params }) => {
         active: true,
       },
     ],
-    backgroundImage: "/about.png",
+    backgroundImage: "/about/about-1.webp",
   };
 
   const [resolvedParams, setResolvedParams] = useState(null);

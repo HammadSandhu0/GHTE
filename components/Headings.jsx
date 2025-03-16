@@ -1,46 +1,102 @@
-import { headingVariants, paragraphVariants, motion } from "@/utils/animations";
+import React, { memo } from "react";
+import {
+  headingVariants,
+  paragraphVariants,
+  motion,
+  containerVariants,
+} from "@/utils/animations";
 
-export const Heading = ({ className = "", children }) => (
-  <motion.div
-    className={`text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold my-4 text-secondary ${className}`}
-    variants={headingVariants}
-  >
-    {children}
-  </motion.div>
-);
-export const CardHeading = ({ className = "", children }) => (
-  <motion.div
-    className={`text-xl lg:text-2xl font-medium mt-10 mb-5 text-primary ${className}`}
-    variants={headingVariants}
-  >
-    {children}
-  </motion.div>
-);
+// Heading component
+export const Heading = memo(({ className = "", children, as = "h2" }) => {
+  const Element = as;
 
-export const SubHeading = ({ className = "", children }) => (
-  <motion.div
-    className={`text-secondary sm:text-lg md:text-xl font-semibold mb-2 ${className}`}
-    variants={headingVariants}
-  >
-    {children}
-  </motion.div>
-);
-
-export const Description = ({ className = "", children }) => (
-  <motion.div
-    className={`text-textcolor text-sm sm:text-base md:text-lg xl:text-xl ${className}`}
-    variants={paragraphVariants}
-  >
-    {children}
-  </motion.div>
-);
-
-export const Header = ({ children, className = "" }) => {
   return (
-    <div
-      className={`max-w-5xl mx-auto text-center flex flex-col space-y-4 ${className}`}
+    <motion.div
+      className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold my-3 sm:my-4 text-secondary ${className}`}
+      variants={headingVariants}
+    >
+      <Element>{children}</Element>
+    </motion.div>
+  );
+});
+
+// CardHeading component
+export const CardHeading = memo(({ className = "", children, as = "h3" }) => {
+  const Element = as;
+
+  return (
+    <motion.div
+      className={`text-lg sm:text-xl lg:text-2xl font-medium mt-6 sm:mt-8 mb-3 sm:mb-4 text-primary ${className}`}
+      variants={headingVariants}
+    >
+      <Element>{children}</Element>
+    </motion.div>
+  );
+});
+
+// SubHeading component
+export const SubHeading = memo(({ className = "", children, as = "h4" }) => {
+  const Element = as;
+
+  return (
+    <motion.div
+      className={`text-secondary text-sm sm:text-base md:text-lg font-semibold ${className}`}
+      variants={headingVariants}
+    >
+      <Element>{children}</Element>
+    </motion.div>
+  );
+});
+
+// Description component
+export const Description = memo(({ className = "", children, lineClamp }) => {
+  const lineClampClass = lineClamp ? `line-clamp-${lineClamp}` : "";
+
+  return (
+    <motion.div
+      className={`text-textcolor text-sm sm:text-base md:text-lg ${lineClampClass} ${className}`}
+      variants={paragraphVariants}
     >
       {children}
-    </div>
+    </motion.div>
   );
-};
+});
+
+// Header component
+export const Header = memo(
+  ({ children, className = "", alignment = "center", spacing = "normal" }) => {
+    const alignmentClass =
+      {
+        center: "text-center mx-auto",
+        left: "text-left",
+        right: "text-right ml-auto",
+        responsive: "text-center mx-auto lg:text-left lg:mx-0",
+      }[alignment] || "text-center mx-auto";
+
+    const spacingClass =
+      {
+        tight: "space-y-2",
+        normal: "space-y-3 sm:space-y-4",
+        wide: "space-y-4 sm:space-y-6",
+      }[spacing] || "space-y-3 sm:space-y-4";
+
+    return (
+      <motion.header
+        className={`max-w-5xl ${alignmentClass} ${spacingClass} mb-6 sm:mb-8 md:mb-10 ${className}`}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+      >
+        {children}
+      </motion.header>
+    );
+  }
+);
+
+// Add display names for better debugging
+Heading.displayName = "Heading";
+CardHeading.displayName = "CardHeading";
+SubHeading.displayName = "SubHeading";
+Description.displayName = "Description";
+Header.displayName = "Header";

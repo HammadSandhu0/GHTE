@@ -1,81 +1,113 @@
+"use client";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
-import Navbar from "./Navbar";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Header, Heading } from "./Headings";
 
-const PageHeader = ({ pageHeader }) => {
+// Dynamically import Navbar with no SSR to reduce initial load time
+const Navbar = dynamic(() => import("./Navbar"), { ssr: false });
+
+const Breadcrumbs = memo(({ breadcrumbs, backto }) => {
   const router = useRouter();
 
   return (
-    <div className="relative bg-black bg-opacity-40">
+    <nav aria-label="Breadcrumb">
+      <ol className="flex justify-center space-x-4 text-sm md:text-lg font-semibold">
+        {breadcrumbs.map((breadcrumb, index) => (
+          <li
+            key={index}
+            className={`capitalize ${
+              breadcrumb.active
+                ? "text-secondary font-bold text-2xl"
+                : "text-white"
+            }`}
+          >
+            <button
+              onClick={() => router.push(breadcrumb.link)}
+              className="text-white hover:text-gray-200 transition-colors"
+              type="button"
+            >
+              {backto}
+            </button>{" "}
+            / <span>{breadcrumb.name}</span>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+});
+
+const PageHeader = memo(({ pageHeader }) => {
+  const { title, backgroundImage, breadcrumbs, backto } = pageHeader;
+
+  return (
+    <div className="relative">
+      {/* Background with optimized Image component */}
       <div className="absolute inset-0">
         <Image
-          src={pageHeader.backgroundImage}
-          alt="Background"
+          src={backgroundImage}
+          alt=""
           layout="fill"
           objectFit="cover"
-          quality={80}
-          priority
+          quality={60} // Reduced quality for better performance
+          priority={true}
+          loading="eager"
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzMzMyIvPjwvc3ZnPg=="
         />
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
+
+      {/* Navbar */}
       <Navbar />
-      <div className="container mx-auto px-4 py-40">
+
+      {/* Content */}
+      <div className="container mx-auto  px-4 sm:px-6 md:px-8 lg:px-12 py-40">
         <div className="text-center relative z-10">
           <Header>
-            <Heading className="text-white"> {pageHeader.title}</Heading>
+            <Heading className="text-white">{title}</Heading>
           </Header>
-          <nav>
-            <ol className="flex justify-center space-x-4 text-sm md:text-lg font-semibold">
-              {pageHeader.breadcrumbs.map((breadcrumb, index) => (
-                <li
-                  key={index}
-                  className={`capitalize ${
-                    breadcrumb.active
-                      ? "text-secondary font-bold text-2xl"
-                      : "text-white"
-                  }`}
-                >
-                  <button
-                    onClick={() => {
-                      router.push(breadcrumb.link);
-                    }}
-                    className="text-white"
-                  >
-                    {pageHeader.backto}
-                  </button>{" "}
-                  / <span>{breadcrumb.name}</span>
-                </li>
-              ))}
-            </ol>
-          </nav>
-          {/* Page Header Box End */}
+          <Breadcrumbs breadcrumbs={breadcrumbs} backto={backto} />
         </div>
       </div>
     </div>
   );
-};
+});
 
+// PropTypes for the pageHeader object
 PageHeader.propTypes = {
-  title: PropTypes.string,
-  breadcrumbs: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      link: PropTypes.string,
-      active: PropTypes.bool,
-    })
-  ),
-  backgroundImage: PropTypes.string.isRequired,
+  pageHeader: PropTypes.shape({
+    title: PropTypes.string,
+    breadcrumbs: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        link: PropTypes.string,
+        active: PropTypes.bool,
+      })
+    ),
+    backgroundImage: PropTypes.string.isRequired,
+    backto: PropTypes.string,
+  }).isRequired,
 };
 
+// Default props with optimized values
 PageHeader.defaultProps = {
-  title: "About Us",
-  breadcrumbs: [
-    { name: "home", link: "", active: false },
-    { name: "about us", link: "", active: true },
-  ],
-  backgroundImage: "https://via.placeholder.com/1920x1080", // Placeholder image
+  pageHeader: {
+    title: "About Us",
+    breadcrumbs: [
+      { name: "home", link: "/", active: false },
+      { name: "about us", link: "", active: true },
+    ],
+    backgroundImage: "https://via.placeholder.com/1920x1080?text=Loading", // Smaller placeholder
+    backto: "Home",
+  },
 };
+
+// Display names for debugging
+Breadcrumbs.displayName = "Breadcrumbs";
+PageHeader.displayName = "PageHeader";
 
 export default PageHeader;

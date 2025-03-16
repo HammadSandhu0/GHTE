@@ -80,6 +80,40 @@ export const cardAnimation = {
     transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
   },
 };
+export const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: [0.42, 0, 0.58, 1] },
+  },
+};
+export const slideVariants = {
+  hiddenRight: {
+    x: "100%",
+    opacity: 0,
+  },
+  hiddenLeft: {
+    x: "-100%",
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeInOut",
+    },
+  },
+  exit: (direction) => ({
+    x: direction === "left" ? "100%" : "-100%",
+    opacity: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeInOut",
+    },
+  }),
+};
 // Export motion directly
 export { motion };
 export { useInView };

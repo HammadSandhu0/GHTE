@@ -1,13 +1,7 @@
-"use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo, useRef } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import {
-  containerVariants,
-  headingVariants,
-  motion,
-  useInView,
-} from "@/utils/animations";
+import { containerVariants, headingVariants, motion } from "@/utils/animations";
 import {
   CardHeading,
   Description,
@@ -16,7 +10,8 @@ import {
   SubHeading,
 } from "./Headings";
 
-const CountCard = ({ icon, heading, text, count, unit, subtext }) => (
+// Memoized CountCard component
+const CountCard = memo(({ icon, heading, text, count, unit, subtext }) => (
   <motion.div
     className="relative group border rounded-[50px] shadow-lg p-7 py-10 flex flex-col items-start justify-between overflow-hidden"
     variants={headingVariants}
@@ -41,48 +36,53 @@ const CountCard = ({ icon, heading, text, count, unit, subtext }) => (
       <Description>{subtext}</Description>
     </div>
   </motion.div>
-);
+));
 
 const WhyChooseUs = ({ whychooseus }) => {
   const t = useTranslations("Mainwhychoose");
   const [counts, setCounts] = useState([0, 0, 0]);
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
-
-  const animationDuration = 2000;
-  const frameRate = 16;
+  const [isVisible, setIsVisible] = useState(false);
+  const targetValues = [1000, 500, 99];
+  const intervalsRef = useRef([]);
 
   useEffect(() => {
-    if (!inView) return;
+    if (!isVisible) return;
 
-    const values = [1000, 500, 99];
+    const animationDuration = 2000;
+    const frameRate = 16;
+    const totalFrames = animationDuration / frameRate;
+    intervalsRef.current = targetValues.map((targetValue, index) => {
+      const increment = Math.ceil(targetValue / totalFrames);
+      let currentValue = 0;
 
-    values.forEach((endValue, index) => {
-      let start = 0;
-      const increment = Math.ceil(endValue / (animationDuration / frameRate));
+      return setInterval(() => {
+        currentValue = Math.min(currentValue + increment, targetValue);
 
-      const interval = setInterval(() => {
         setCounts((prev) => {
           const newCounts = [...prev];
-          newCounts[index] = Math.min(prev[index] + increment, endValue);
+          newCounts[index] = currentValue;
           return newCounts;
         });
-
-        if (start >= endValue) clearInterval(interval);
-        start += increment;
+        if (currentValue >= targetValue) {
+          clearInterval(intervalsRef.current[index]);
+        }
       }, frameRate);
     });
-  }, [inView]);
+    return () => {
+      intervalsRef.current.forEach((interval) => clearInterval(interval));
+    };
+  }, [isVisible]);
 
   return (
-    <motion.div
-      id="why-choose-us"
+    <motion.section
       className="py-16"
-      ref={ref}
       initial="hidden"
-      animate={inView ? "visible" : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
+      onViewportEnter={() => setIsVisible(true)}
     >
-      <div className="container mx-auto px-4 sm:px-2 md:px-4 lg:px-8 space-y-8 flex flex-col items-center justify-center ">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-8 md:space-y-12">
         <Header>
           <SubHeading>{t("title")}</SubHeading>
           <Heading className="!text-primary">{t("subtitle")}</Heading>
@@ -92,7 +92,7 @@ const WhyChooseUs = ({ whychooseus }) => {
         </Header>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-3"
           variants={containerVariants}
         >
           {whychooseus.map((item, index) => (
@@ -114,8 +114,11 @@ const WhyChooseUs = ({ whychooseus }) => {
           ))}
         </motion.div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 
-export default WhyChooseUs;
+// Add display name for better debugging
+CountCard.displayName = "CountCard";
+
+export default memo(WhyChooseUs);

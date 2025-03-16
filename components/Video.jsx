@@ -10,7 +10,7 @@ const Video = () => {
         loop
         playsInline
         loading="lazy"
-        poster="/about---.png"
+        poster="/about/about-1.webp"
       >
         <source src="/herogb.mp4" type="video/mp4" />
         Your browser does not support the video tag.
