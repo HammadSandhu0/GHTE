@@ -1,6 +1,5 @@
 "use client";
 import CtaBox from "@/components/CtaBox";
-import TransitionEffect from "@/components/Loader";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SeoHead";
 import ServiceBenefit from "@/components/ServiceBenefit";
@@ -10,113 +9,20 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
 
-const metadata = {
-  title: {
-    default:
-      "Best Racks and Power Distribution Units (PDUs) in Saudi Arabia | Gulf Horizon Telecom Est",
-  },
-  description:
-    "Racks and power distribution units (PDUs) from IT systems, data centers, and businesses in Saudi Arabia. Gulf Horizon Telecom Est provides modified server racks, intelligent PDUs, and smooth and easy installation services.",
-};
+// Import data from racksAndPduData.js
+import {
+  metadata,
+  pageHeader,
+  Sidebarcategories,
+  mainPageContent,
+  benefitItems,
+  whychooseus,
+} from "@/data/racksAndPduData";
 
 const page = ({ params }) => {
   const t = useTranslations("Racks");
-  const pageHeader = {
-    title: t("pageheader.title"),
-    backto: t("pageheader.home"),
-    breadcrumbs: [
-      {
-        name: t("pageheader.about"),
-        link: "/",
-        active: true,
-      },
-    ],
-    backgroundImage: "/rackbanner.png",
-  };
-  const Sidebarcategories = {
-    heading: t("Sidebarcategories.heading"),
-    details: [
-      {
-        name: t("Sidebarcategories.details.network_switches"),
-        link: "/networking-solutions",
-      },
-      {
-        name: t("Sidebarcategories.details.computer_solution"),
-        link: "/server-and-computer-solution-in-saudia-arabia",
-      },
-    ],
-  };
-
-  const mainPageContent = {
-    images: ["/rack1.png", "/rack2.png", "/rack3.png"],
-    heading: `${t("heading")}`,
-    description: `${t("description")}`,
-
-    products: {
-      productTitle: `${t("Products.productTitle")}`,
-      details: [
-        {
-          name: `${t("Products.product_1.title")}`,
-          description: `${t("Products.product_1.description")}`,
-        },
-        {
-          name: `${t("Products.product_2.title")}`,
-          description: `${t("Products.product_2.description")}`,
-        },
-        {
-          name: `${t("Products.product_3.title")}`,
-          description: `${t("Products.product_3.description")}`,
-        },
-        {
-          name: `${t("Products.product_4.title")}`,
-          description: `${t("Products.product_4.description")}`,
-        },
-        {
-          name: `${t("Products.product_5.title")}`,
-          description: `${t("Products.product_5.description")}`,
-        },
-      ],
-    },
-  };
-
-  const benefitItems = {
-    heading: `${t("benefitItems.title")}`,
-    description: `${t("benefitItems.description")}`,
-    details: [
-      {
-        icon: "/icon-service-benefit-1.svg",
-        heading: `${t("benefitItems.details.benefit_1.title")}`,
-        description: `${t("benefitItems.details.benefit_1.description")}`,
-      },
-      {
-        icon: "/icon-service-benefit-2.svg",
-        heading: `${t("benefitItems.details.benefit_1.title")}`,
-        description: `${t("benefitItems.details.benefit_1.description")}`,
-      },
-      {
-        icon: "/icon-service-benefit-3.svg",
-        heading: "Customized Energy-Efficient Systems",
-        heading: `${t("benefitItems.details.benefit_1.title")}`,
-        description: `${t("benefitItems.details.benefit_1.description")}`,
-      },
-    ],
-  };
-
-  const whychooseus = [
-    {
-      heading: `${t("whychoose.why_1_title")}`,
-      description: `${t("whychoose.why_1_description")}`,
-    },
-    {
-      heading: `${t("whychoose.why_2_title")}`,
-      description: `${t("whychoose.why_2_description")}`,
-    },
-    {
-      heading: `${t("whychoose.why_3_title")}`,
-      description: `${t("whychoose.why_3_description")}`,
-    },
-  ];
   const [resolvedParams, setResolvedParams] = useState(null);
+
   useEffect(() => {
     const fetchParams = async () => {
       const resolved = await params; // Unwrap the Promise
@@ -125,7 +31,8 @@ const page = ({ params }) => {
 
     fetchParams();
   }, [params]);
-  if (!resolvedParams) return null; // You might want to handle loading states
+
+  if (!resolvedParams) return null; // Handle loading states
 
   return (
     <>
@@ -135,13 +42,13 @@ const page = ({ params }) => {
         locale={resolvedParams.locale} // Use the resolved locale
         pageUrl="/racks-and-power-distribution-units-in-saudi-arabia" // Use the resolved locale
       />
-      <PageHeader pageHeader={pageHeader} />
+      <PageHeader pageHeader={pageHeader(t)} />
       <ServiceSingle
-        mainPageContent={mainPageContent}
-        Sidebarcategories={Sidebarcategories}
+        mainPageContent={mainPageContent(t)}
+        Sidebarcategories={Sidebarcategories(t)}
       />
-      <ServiceBenefit items={benefitItems} />
-      <WhyChooseUs whychooseus={whychooseus} />
+      <ServiceBenefit items={benefitItems(t)} />
+      <WhyChooseUs whychooseus={whychooseus(t)} />
       <CtaBox />
       <VendorSlider />
     </>
