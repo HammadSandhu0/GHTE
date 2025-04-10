@@ -10,6 +10,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import NextTopLoader from "nextjs-toploader";
 import Loader from "@/components/Loader";
+import CtaBox from "@/components/CtaBox";
+import VendorSlider from "@/components/Vendor";
 const dm_sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm_sans",
@@ -31,6 +33,8 @@ export default async function LocaleLayout({ children, params }) {
           <NextTopLoader color="#01ae47" height={4} />
           <Loader />
           {children}
+          <CtaBox />
+          <VendorSlider />
           <Footer />
         </NextIntlClientProvider>
         <SpeedInsights />

@@ -12,21 +12,107 @@ import {
 } from "@/utils/animations";
 import { Description, Header, Heading, SubHeading } from "./Headings";
 
-const Services = memo(() => {
-  const t = useTranslations("Services");
-  const services = useMemo(() => getServicesData(t), [t]);
-  const [selectedCategory, setSelectedCategory] = useState(t("categories.all"));
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.01 });
+// Reusable CategoryFilter Component
+const CategoryFilter = memo(
+  ({
+    categories,
+    selectedCategory,
+    onCategoryChange,
+    className = "",
+    activeClassName = "bg-secondary text-white shadow-md",
+    inactiveClassName = "bg-gray-200 text-gray-700 hover:bg-gray-300",
+  }) => (
+    <div className={`overflow-x-auto -mx-4 px-4 pb-3 ${className}`}>
+      <ul className="flex flex-nowrap min-w-max justify-center gap-2 sm:gap-3 md:gap-4">
+        {categories.map((category, index) => (
+          <li
+            key={index}
+            className={`px-3 py-2 sm:px-4 md:py-2.5 text-sm sm:text-base rounded-full cursor-pointer transition-all whitespace-nowrap ${
+              selectedCategory === category
+                ? activeClassName
+                : inactiveClassName
+            }`}
+            onClick={() => onCategoryChange(category)}
+          >
+            {category}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+);
+
+const ServiceGrid = memo(({ services, viewMoreText }) => (
+  <motion.div
+    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
+    variants={containerVariants}
+  >
+    {services.map((service, index) => (
+      <ServiceCard
+        key={index}
+        service={service}
+        index={index}
+        viewMoreText={viewMoreText}
+      />
+    ))}
+  </motion.div>
+));
+
+const ServiceCard = memo(({ service, index }) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+
+  // Handle mouse movement to update tooltip position
+  const handleMouseMove = (e) => {
+    setTooltipPosition({
+      x: e.clientX + 15,
+      y: e.clientY - 10,
+    });
+  };
 
   return (
-    <ServicesSection
-      ref={ref}
-      inView={inView}
-      services={services}
-      translations={t}
-      selectedCategory={selectedCategory}
-      setSelectedCategory={setSelectedCategory}
-    />
+    <motion.div
+      className="relative overflow-hidden mx-auto w-full text-center group rounded-3xl shadow-md hover:shadow-lg transition-shadow duration-300"
+      variants={headingVariants}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+      onMouseMove={handleMouseMove}
+    >
+      <div className="overflow-hidden rounded-3xl relative">
+        <Link href={service.link} className="block relative">
+          <Image
+            src={service.image}
+            alt={service.title}
+            width={400}
+            height={500}
+            className="w-full rounded-2xl aspect-[1/1.2] object-cover transition-transform duration-500 group-hover:scale-110"
+            priority={index < 4}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70 rounded-2xl opacity-90 transition-opacity duration-300 group-hover:opacity-100"></div>
+        </Link>
+      </div>
+      <div className="absolute -bottom-6 left-0 right-0 p-4 sm:p-5 md:p-6 text-left transform translate-y-1/2 group-hover:translate-y-0 transition-all duration-500 ease-out">
+        <SubHeading className="mb-2 sm:mb-3 md:mb-4 text-white">
+          {service.title}
+        </SubHeading>
+        <Description className="!text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-3">
+          {service.description}
+        </Description>
+      </div>
+
+      {/* Elegant round tooltip */}
+      {showTooltip && (
+        <div
+          className="fixed z-50 bg-secondary text-white text-sm font-medium p-2 rounded-full shadow-lg pointer-events-none flex items-center justify-center transition-opacity duration-200 opacity-90 hover:opacity-100"
+          style={{
+            left: `${tooltipPosition.x}px`,
+            top: `${tooltipPosition.y}px`,
+          }}
+        >
+          View
+        </div>
+      )}
+    </motion.div>
   );
 });
 
@@ -92,87 +178,30 @@ const ServicesSection = memo(
   }
 );
 
-const CategoryFilter = memo(
-  ({ categories, selectedCategory, onCategoryChange }) => (
-    <div className="overflow-x-auto -mx-4 px-4 pb-3">
-      <ul className="flex flex-nowrap min-w-max justify-center gap-2 sm:gap-3 md:gap-4">
-        {categories.map((category, index) => (
-          <li
-            key={index}
-            className={`px-3 py-2 sm:px-4 md:py-2.5 text-sm sm:text-base rounded-full cursor-pointer transition-all whitespace-nowrap ${
-              selectedCategory === category
-                ? "bg-secondary text-white shadow-md"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
-            onClick={() => onCategoryChange(category)}
-          >
-            {category}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-);
+const Services = memo(() => {
+  const t = useTranslations("Services");
+  const services = useMemo(() => getServicesData(t), [t]);
+  const [selectedCategory, setSelectedCategory] = useState(t("categories.all"));
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.01 });
 
-const ServiceGrid = memo(({ services, viewMoreText }) => (
-  <motion.div
-    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
-    variants={containerVariants}
-  >
-    {services.map((service, index) => (
-      <ServiceCard
-        key={index}
-        service={service}
-        index={index}
-        viewMoreText={viewMoreText}
-      />
-    ))}
-  </motion.div>
-));
-
-const ServiceCard = memo(({ service, index, viewMoreText }) => (
-  <motion.div
-    className="relative overflow-hidden mx-auto w-full text-center group rounded-3xl shadow-md hover:shadow-lg transition-shadow duration-300"
-    variants={headingVariants}
-  >
-    <div className="overflow-hidden rounded-3xl relative">
-      <Link href={service.link} className="block relative">
-        <Image
-          src={service.image}
-          alt={service.title}
-          width={400}
-          height={500}
-          className="w-full rounded-2xl aspect-[1/1.2] object-cover transition-transform duration-500 group-hover:scale-110"
-          priority={index < 4}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70 rounded-2xl opacity-90 transition-opacity duration-300 group-hover:opacity-100"></div>
-      </Link>
-    </div>
-    <div className="absolute -bottom-10 left-0 right-0 p-4 sm:p-5 md:p-6 text-left transform translate-y-1/2 group-hover:translate-y-0 transition-all duration-500 ease-out">
-      <SubHeading className="mb-2 sm:mb-3 md:mb-4 text-white">
-        {service.title}
-      </SubHeading>
-      <Description className="!text-white mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-3">
-        {service.description}
-      </Description>
-      <Link
-        href={service.link}
-        className="inline-block text-secondary font-semibold text-base sm:text-lg hover:text-white transition-colors duration-300"
-      >
-        {viewMoreText}
-        <span className="ml-1.5 inline-block transform transition-transform duration-300 group-hover:translate-x-1.5">
-          →
-        </span>
-      </Link>
-    </div>
-  </motion.div>
-));
+  return (
+    <ServicesSection
+      ref={ref}
+      inView={inView}
+      services={services}
+      translations={t}
+      selectedCategory={selectedCategory}
+      setSelectedCategory={setSelectedCategory}
+    />
+  );
+});
 
 // Add display names for better debugging
-Services.displayName = "Services";
-ServicesSection.displayName = "ServicesSection";
 CategoryFilter.displayName = "CategoryFilter";
 ServiceGrid.displayName = "ServiceGrid";
 ServiceCard.displayName = "ServiceCard";
+ServicesSection.displayName = "ServicesSection";
+Services.displayName = "Services";
 
+export { CategoryFilter };
 export default Services;

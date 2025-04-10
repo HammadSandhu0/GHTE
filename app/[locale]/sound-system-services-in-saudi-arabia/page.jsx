@@ -8,8 +8,6 @@ import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
-
-// Import data from soundSystemServicesData.js
 import {
   metadata,
   pageHeader,
@@ -49,8 +47,6 @@ const page = ({ params }) => {
       />
       <ServiceBenefit items={benefitItems(t)} />
       <WhyChooseUs whychooseus={whychooseus(t)} />
-      <CtaBox />
-      <VendorSlider />
     </>
   );
 };

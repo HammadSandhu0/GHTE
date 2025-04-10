@@ -49,8 +49,6 @@ const page = ({ params }) => {
       />
       <ServiceBenefit items={benefitItems(t)} />
       <WhyChooseUs whychooseus={whychooseus(t)} />
-      <CtaBox />
-      <VendorSlider />
     </>
   );
 };

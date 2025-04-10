@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { Header, Heading } from "./Headings";
+import { Heading } from "./Headings";
 
 // Dynamically import Navbar with no SSR to reduce initial load time
 const Navbar = dynamic(() => import("./Navbar"), { ssr: false });
@@ -44,14 +44,13 @@ const PageHeader = memo(({ pageHeader }) => {
 
   return (
     <div className="relative">
-      {/* Background with optimized Image component */}
       <div className="absolute inset-0">
         <Image
           src={backgroundImage}
           alt=""
           layout="fill"
           objectFit="cover"
-          quality={60} // Reduced quality for better performance
+          quality={60}
           priority={true}
           loading="eager"
           sizes="100vw"
@@ -60,16 +59,12 @@ const PageHeader = memo(({ pageHeader }) => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
-
-      {/* Navbar */}
       <Navbar />
 
       {/* Content */}
       <div className="container mx-auto  px-4 sm:px-6 md:px-8 lg:px-12 py-40">
         <div className="text-center relative z-10">
-          <Header>
-            <Heading className="text-white">{title}</Heading>
-          </Header>
+          <Heading className="text-white">{title}</Heading>
           <Breadcrumbs breadcrumbs={breadcrumbs} backto={backto} />
         </div>
       </div>

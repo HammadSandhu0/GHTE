@@ -25,7 +25,8 @@ const About = memo(() => {
     />
   );
 });
-const ReachItem = ({ icon, label }) => {
+
+export const ReachItem = ({ icon, label }) => {
   return (
     <motion.li className="flex items-start" variants={itemVariants}>
       <p className="mr-3">{icon}</p>
@@ -33,6 +34,7 @@ const ReachItem = ({ icon, label }) => {
     </motion.li>
   );
 };
+
 const Reach = () => {
   const t = useTranslations("AboutReach");
   const icon = (
@@ -69,18 +71,20 @@ const Reach = () => {
     </motion.div>
   );
 };
+
 const AboutSection = memo(({ ref, inView, translations }) => {
   const { about, btn } = translations;
 
   return (
     <motion.section
+      id="about"
       ref={ref}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="w-full py-8 sm:py-12 md:py-16 lg:py-20"
+      className="w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-white"
     >
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-8 md:space-y-12">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
           <AboutImage variants={containerVariants} />
           <AboutContent
@@ -94,42 +98,51 @@ const AboutSection = memo(({ ref, inView, translations }) => {
     </motion.section>
   );
 });
+
 const AboutImage = memo(({ variants }) => (
   <motion.div
-    className="w-full order-1 xl:order-1 flex justify-center xl:justify-start"
+    className="w-full order-1 xl:order-1 flex justify-center xl:justify-start relative"
     variants={variants}
   >
-    <div className="relative w-full max-w-md xl:max-w-none overflow-hidden rounded-2xl md:rounded-3xl shadow-md">
+    <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/40 rounded-lg z-0"></div>
+    <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/40 rounded-lg z-0"></div>
+    <div className="relative w-full max-w-md xl:max-w-none overflow-hidden rounded-2xl md:rounded-3xl shadow-lg z-10">
       <Image
         src="/about/about-1.webp"
-        alt="Illustration about Gulf Horizon Telecom Est."
+        alt="About Power Solutions Saudi Arabia - Our team and facilities"
         width={800}
         height={600}
         className="w-full h-auto object-cover object-center rounded-2xl md:rounded-3xl"
         quality={90}
-        loading="lazy"
-        placeholder="blur"
-        blurDataURL="/about/about-1.webp"
+        loading="eager"
+        priority
       />
     </div>
   </motion.div>
 ));
+
 const AboutContent = memo(({ title, mainTitle, description, btnText }) => (
   <div className="order-2 xl:order-2 text-center xl:text-start space-y-3 md:space-y-4 lg:space-y-5 px-4 sm:px-6 md:px-0">
     <SubHeading>{title}</SubHeading>
     <Heading className="!text-primary">{mainTitle}</Heading>
-    <Description className="text-base sm:text-lg md:text-xl w-full mx-auto xl:mx-0">
+    <Description className="text-lg text-gray-700 w-full mx-auto xl:mx-0">
       {description}
     </Description>
     <div className="py-2 md:py-4">
       <Reach />
     </div>
-    <ButtonGroup className="sm:justify-center xl:justify-start">
-      <Button href="/contact" text={btnText} type="secondary" />
-      <CalltoActionBtn className="w-fit mx-auto" />
+    <ButtonGroup className="flex flex-col sm:flex-row gap-4 sm:justify-center xl:justify-start">
+      <Button
+        href="/company-profile"
+        text={btnText}
+        type="secondary"
+        className="border border-gray-300 hover:border-primary text-gray-800 hover:text-primary px-6 py-3 rounded-md transition-colors"
+      />
+      <CalltoActionBtn />
     </ButtonGroup>
   </div>
 ));
+
 About.displayName = "About";
 AboutSection.displayName = "AboutSection";
 AboutImage.displayName = "AboutImage";

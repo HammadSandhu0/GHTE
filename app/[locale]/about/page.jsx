@@ -58,8 +58,6 @@ const page = ({ params }) => {
         <About />
         <CompanyHistory />
         <MissionVision />
-        <CtaBox />
-        <VendorSlider />
         <ContactUs />
       </div>
     </>
