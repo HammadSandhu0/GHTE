@@ -16,7 +16,7 @@ const CountCard = memo(({ icon, heading, text, count, unit, subtext }) => (
     className="relative group border rounded-[50px] shadow-lg p-7 py-10 flex flex-col items-start justify-between overflow-hidden"
     variants={headingVariants}
   >
-    <div className="relative z-10 pb-6 mb-6">
+    <div className="relative pb-6 mb-6 space-y-6">
       <Image
         src={icon}
         alt={heading}
@@ -82,7 +82,7 @@ const WhyChooseUs = ({ whychooseus }) => {
       variants={containerVariants}
       onViewportEnter={() => setIsVisible(true)}
     >
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-8 md:space-y-12">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-20">
         <Header>
           <SubHeading>{t("title")}</SubHeading>
           <Heading className="!text-primary">{t("subtitle")}</Heading>
@@ -117,8 +117,6 @@ const WhyChooseUs = ({ whychooseus }) => {
     </motion.section>
   );
 };
-
-// Add display name for better debugging
 CountCard.displayName = "CountCard";
 
 export default memo(WhyChooseUs);

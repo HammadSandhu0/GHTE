@@ -35,7 +35,6 @@ const page = ({ params }) => {
       />
       <PageHeader pageHeader={pageHeader(t)} />
       <ContactUs />
-      <VendorSlider />
     </>
   );
 };

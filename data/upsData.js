@@ -1,5 +1,3 @@
-// data.js
-
 export const metadata = {
   title: {
     default: "UPS Saudi Arabia - Reliable Systems & Services",

@@ -87,7 +87,7 @@ const VendorLogos = memo(() => (
           variants={containerVariants}
         >
           <Image
-            src={`/vendor${(index % 8) + 1}.png`}
+            src={`/vendor/vendor-${(index % 20) + 1}.webp`}
             alt={`Vendor ${(index % 8) + 1}`}
             width={192}
             height={96}

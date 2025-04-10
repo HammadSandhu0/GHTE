@@ -10,7 +10,7 @@ const buttonStyles = {
   transparent:
     "bg-transparent text-white border border-light hover:bg-white/10",
   outline:
-    "bg-transparent text-white  border border-primary hover:bg-primary/5",
+    "bg-transparent text-secondary  border border-primary hover:bg-primary/5",
 };
 
 const Button = memo(

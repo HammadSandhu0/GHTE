@@ -70,8 +70,6 @@ const Page = ({ params }) => {
       <PageHeader pageHeader={pageHeader} />
       <Projects />
       <WhyChooseUs whychooseus={whychooseus} />
-      <CtaBox />
-      <VendorSlider />
     </>
   );
 };
