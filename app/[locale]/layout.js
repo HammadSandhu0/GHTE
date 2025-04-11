@@ -12,6 +12,7 @@ import NextTopLoader from "nextjs-toploader";
 import Loader from "@/components/Loader";
 import CtaBox from "@/components/CtaBox";
 import VendorSlider from "@/components/Vendor";
+import WhatsAppButton from "@/components/WhatsAppButton";
 const dm_sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm_sans",
@@ -36,6 +37,7 @@ export default async function LocaleLayout({ children, params }) {
           <CtaBox />
           <VendorSlider />
           <Footer />
+          <WhatsAppButton />
         </NextIntlClientProvider>
         <SpeedInsights />
         <Analytics />
