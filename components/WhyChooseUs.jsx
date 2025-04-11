@@ -82,7 +82,7 @@ const WhyChooseUs = ({ whychooseus }) => {
       variants={containerVariants}
       onViewportEnter={() => setIsVisible(true)}
     >
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-20">
+      <div className="container mx-auto py-8 px-4 md:px-6 my-20 space-y-20">
         <Header>
           <SubHeading>{t("title")}</SubHeading>
           <Heading className="!text-primary">{t("subtitle")}</Heading>

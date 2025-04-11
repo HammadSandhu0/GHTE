@@ -42,7 +42,7 @@ const CtaBoxContent = memo(({ inViewRef, isInView, translatedText }) => {
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
     >
-      <motion.div className="container mx-auto flex flex-row items-center px-4 sm:px-6 md:px-8 lg:px-12">
+      <motion.div className="container mx-auto flex flex-row items-center px-4">
         <CtaTextSection translatedText={translatedText} />
         <CtaImageSection />
       </motion.div>

@@ -11,21 +11,20 @@ const OverviewTab = ({ typeData }) => {
         </Header>
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-4">
         <CardHeading className="!text-primary">Key Features</CardHeading>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <ul className="grid grid-cols-1 xl:grid-cols-2 gap-2">
           {typeData.features.map((feature, index) => (
             <li key={index} className="flex items-center justify-start">
               {/* Icon or Bullet Point */}
               <div className="mr-2 flex-shrink-0">
                 <ArrownRightIcon />
               </div>
-              <span className="text-gray-700">{feature}</span>
+              <div className="text-gray-700">{feature}</div>
             </li>
           ))}
         </ul>
       </div>
-
       <div className="space-y-8">
         <CardHeading className="!text-primary">Benefits</CardHeading>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

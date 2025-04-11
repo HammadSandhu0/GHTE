@@ -11,7 +11,7 @@ import { ArrownRightIcon } from "./Icons";
 
 export const IndustryApplications = ({ applications }) => {
   return (
-    <section className="container mx-auto space-y-20">
+    <section className="container mx-auto space-y-20 py-8 px-4 md:px-6">
       <Header>
         <SubHeading className="!text-secondary">
           {applications?.subHeading}
