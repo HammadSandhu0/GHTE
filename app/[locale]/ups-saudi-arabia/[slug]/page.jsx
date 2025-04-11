@@ -62,19 +62,13 @@ const UpsSystemDetailPage = ({ params }) => {
       <PageHeader pageHeader={currentPageHeader} />
       <div className="bg-gray-50">
         <div className="container mx-auto py-8 px-4 md:px-6">
-          {/* Main Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div className="lg:col-span-2">
-              {/* Image Slider */}
               <ImageSlider images={typeData.images} altText={typeData.name} />
-
-              {/* Tabs Navigation */}
               <TabNavigation
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
               />
-
-              {/* Tab Content */}
               <div className="space-y-6">
                 {activeTab === "overview" && (
                   <OverviewTab typeData={typeData} />
@@ -103,13 +97,6 @@ const UpsSystemDetailPage = ({ params }) => {
                     rental={typeData.rental}
                   />
                 )}
-
-                {activeTab === "resources" && (
-                  <ResourcesTab
-                    documents={typeData.documents}
-                    relatedProducts={typeData.relatedProducts}
-                  />
-                )}
               </div>
 
               {/* UPS Types Section */}
@@ -124,9 +111,6 @@ const UpsSystemDetailPage = ({ params }) => {
             </div>
           </div>
         </div>
-
-        <CtaBox />
-        <VendorSlider />
       </div>
     </>
   );

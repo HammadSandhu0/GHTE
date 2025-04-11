@@ -1,25 +1,44 @@
 "use client";
 
 import { useState } from "react";
-import { Description, Header, Heading, SubHeading } from "./Headings";
+import {
+  CardHeading,
+  Description,
+  Header,
+  Heading,
+  SubHeading,
+} from "./Headings";
 
 const FaqAccordion = ({ faqs }) => {
   const [openFaq, setOpenFaq] = useState(null);
-
   const toggleFaq = (id) => {
     setOpenFaq(openFaq === id ? null : id);
   };
 
+  // Check if heading matches Online UPS or Line Interactive UPS
+  const isLeftAligned =
+    faqs?.heading?.toLowerCase().includes("online ups") ||
+    faqs?.heading?.toLowerCase().includes("line interactive ups");
+
   return (
-    <div className="container mx-auto  space-y-20">
-      <Header>
-        <SubHeading>{faqs.subHeading || ""}</SubHeading>
-        <Heading className="!text-primary">{faqs.heading || ""}</Heading>
+    <div className="container mx-auto space-y-10 px-4 md:px-0">
+      <Header alignment={isLeftAligned ? "left" : "center"}>
+        <SubHeading>{faqs?.subHeading || ""}</SubHeading>
+
+        {isLeftAligned ? (
+          <CardHeading className="!text-primary">
+            {faqs?.heading || ""}
+          </CardHeading>
+        ) : (
+          <Heading className="!text-primary">{faqs?.heading || ""}</Heading>
+        )}
+
         <Description className="!text-textcolor">
-          {faqs.description || ""}
+          {faqs?.description || ""}
         </Description>
       </Header>
-      <div className="">
+
+      <div>
         {faqs?.details?.map((faq, index) => (
           <div
             key={index}

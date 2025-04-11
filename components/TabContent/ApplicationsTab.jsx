@@ -1,10 +1,17 @@
 import FaqAccordion from "../FaqAccordion";
+import { CardHeading, Description } from "../Headings";
 
 const ApplicationsTab = ({ applications, maintenanceInfo, faqs }) => {
   return (
     <>
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Ideal Applications</h2>
+        <CardHeading className="!text-primary">
+          Maintenance Information
+        </CardHeading>
+        <Description>{maintenanceInfo}</Description>
+      </div>
+      <div>
+        <CardHeading className="!text-primary">Ideal Applications</CardHeading>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {applications.map((app, index) => (
             <div key={index} className="border rounded-lg shadow-sm bg-white">
@@ -31,14 +38,6 @@ const ApplicationsTab = ({ applications, maintenanceInfo, faqs }) => {
           ))}
         </div>
       </div>
-
-      <div>
-        <h2 className="text-2xl font-semibold mb-4">Maintenance Information</h2>
-        <div className="bg-white border rounded-lg p-4 shadow-sm">
-          <p className="text-gray-700">{maintenanceInfo}</p>
-        </div>
-      </div>
-
       <FaqAccordion faqs={faqs} />
     </>
   );

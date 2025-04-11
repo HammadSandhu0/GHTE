@@ -13,7 +13,7 @@ import Button from "./Button";
 
 export default function ProductTypeCard({ ProductTypes = [] }) {
   return (
-    <section className="mb-16 space-y-20 container mx-auto">
+    <section className="container mx-auto py-8 px-4 md:px-6 space-y-20">
       <Header>
         <SubHeading>{ProductTypes?.subHeading || ""}</SubHeading>
         <Heading className="!text-primary">

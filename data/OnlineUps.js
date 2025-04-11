@@ -32,7 +32,6 @@ export const OnlineUpsData = {
     "/ups/ups-1.webp",
   ],
   applications: [
-    "True double-conversion technology for 100% power conditioning",
     "Seamless transition to battery during Saudi grid failures",
     "Scalable parallel configurations for mega-projects",
     "High-efficiency modes (96-99%) to reduce energy costs",
@@ -141,7 +140,7 @@ export const OnlineUpsData = {
     "Energy Star Certified",
   ],
   maintenanceInfo:
-    "Modular UPS systems require regular preventive maintenance to ensure optimal performance and longevity. This includes visual inspections, environmental checks, electrical measurements, battery testing, firmware updates, and functional tests. The recommended maintenance schedule is quarterly visual inspections, semi-annual preventive maintenance, and annual comprehensive service. The modular design allows for most maintenance activities to be performed without taking the system offline, significantly reducing the risk of downtime.",
+    "Online UPS systems in Saudi Arabia require bi-annual professional servicing due to extreme operating conditions. Key tasks include cleaning sand-blocked air filters, calibrating voltage thresholds for regional grids, and stress-testing batteries (replace VRLA every 3-4 years, Li-ion every 8-10). Always use SASO-approved replacement parts and Saudi-certified technicians to maintain warranty compliance. Regular inspections should also include checking for corrosion, ensuring proper grounding, and verifying that all connections are secure. For rental units, maintenance is included in the rental package, with 24/7 technical support available.",
   installationRequirements: [
     "Adequate floor loading capacity to support the UPS weight",
     "Proper ventilation and cooling to maintain operating temperature between 0-40°C",
@@ -151,49 +150,58 @@ export const OnlineUpsData = {
     "Separate battery room for extended runtime configurations",
     "Fire suppression systems appropriate for electrical equipment",
   ],
-  faqs: [
-    {
-      question: "What is the difference between N+1 and 2N redundancy?",
-      answer:
-        "N+1 redundancy means having one more module than needed to support the load, so if one module fails, the system continues to operate. 2N redundancy means having double the required capacity, essentially two complete systems, providing the highest level of protection but at a higher cost.",
-    },
-    {
-      question: "Can I mix different capacity modules in the same system?",
-      answer:
-        "Most modular UPS systems require modules of the same capacity within a single frame. However, some advanced systems allow for mixed module sizes, though this may affect load balancing and redundancy calculations.",
-    },
-    {
-      question: "What is the expected lifespan of a modular UPS system?",
-      answer:
-        "The frame and power distribution components typically last 15-20 years, while individual power modules have a design life of 10-15 years. Batteries typically need replacement every 3-5 years for VRLA or 8-10 years for Li-ion.",
-    },
-    {
-      question: "Can modular UPS systems work with generators?",
-      answer:
-        "Yes, modular UPS systems are designed to work with generators. They typically include programmable settings to adjust input parameters for generator compatibility, such as input frequency range and slew rate tolerance.",
-    },
-    {
-      question:
-        "How does a modular UPS compare to a traditional UPS in terms of efficiency?",
-      answer:
-        "Modern modular UPS systems often have higher efficiency than traditional UPS systems, especially at partial loads. This is because modules can be switched on/off based on load requirements, allowing the system to operate in the optimal efficiency range.",
-    },
-    {
-      question: "What are the advantages of renting vs. buying a UPS system?",
-      answer:
-        "Renting is ideal for temporary needs, avoiding capital expenditure, and when you need flexibility. It includes maintenance and technical support. Buying is better for long-term needs, customization requirements, and when you want to build equity in the equipment.",
-    },
-    {
-      question: "What is included in the rental package?",
-      answer:
-        "Our rental packages typically include the UPS system, batteries for the specified runtime, installation and commissioning, 24/7 technical support, preventive maintenance during the rental period, and decommissioning at the end of the rental term.",
-    },
-    {
-      question: "Can I upgrade my rental UPS if my power requirements change?",
-      answer:
-        "Yes, one of the advantages of our rental program is flexibility. If your power requirements increase during the rental period, we can upgrade your UPS system with minimal disruption to your operations.",
-    },
-  ],
+  // FAQs for Online UPS systems
+  faqs: {
+    id: "Online UPS FAQs",
+    heading: "Online UPS - Frequently Asked Questions",
+    description:
+      "Get answers to common questions about Online UPS systems, including how they work, where they are best used, and what makes them ideal for critical power protection. Learn about sizing, maintenance, and compatibility with solar or generator setups.",
+    details: [
+      {
+        question: "What is an Online UPS and how does it work?",
+        answer:
+          "An Online UPS (Double Conversion UPS) provides the highest level of power protection by continuously converting incoming AC power to DC and then back to AC. This isolates connected equipment from all power disturbances such as surges, sags, and outages.",
+      },
+      {
+        question: "What are the benefits of using an Online UPS?",
+        answer:
+          "Online UPS systems offer zero transfer time, clean and stable power output, and consistent protection against all types of power anomalies. They are ideal for critical systems like data centers, medical equipment, and sensitive electronics.",
+      },
+      {
+        question:
+          "Is an Online UPS better than Line-Interactive or Offline UPS?",
+        answer:
+          "Yes, Online UPS systems provide superior protection compared to Line-Interactive and Offline models. They are best suited for environments where power quality is poor or where equipment requires continuous, clean power with no interruptions.",
+      },
+      {
+        question: "What applications are ideal for Online UPS systems?",
+        answer:
+          "Online UPS systems are ideal for data centers, hospitals, telecom infrastructure, industrial automation, and any application where power quality and uptime are critical.",
+      },
+      {
+        question: "How do I size an Online UPS for my needs?",
+        answer:
+          "To size an Online UPS, you need to calculate the total power load in kVA or kW, consider future expansion, battery runtime requirements, and power factor. Consulting with a professional ensures accurate sizing and proper configuration.",
+      },
+      {
+        question: "What kind of batteries are used with Online UPS systems?",
+        answer:
+          "Most Online UPS systems use VRLA (Valve-Regulated Lead Acid) or Lithium-ion batteries. VRLA is cost-effective, while Li-ion offers longer lifespan, lighter weight, and faster recharge times.",
+      },
+      {
+        question:
+          "Can Online UPS systems be integrated with solar or generators?",
+        answer:
+          "Yes, Online UPS systems can be integrated with solar inverters and generators. They include advanced settings for generator compatibility and can support hybrid power setups.",
+      },
+      {
+        question: "How often do Online UPS systems need maintenance?",
+        answer:
+          "Routine preventive maintenance is recommended every 6 to 12 months. Battery health checks, firmware updates, and visual inspections help ensure optimal performance and longevity.",
+      },
+    ],
+  },
+
   relatedProducts: [
     "Battery Monitoring Systems",
     "Power Distribution Units",

@@ -163,16 +163,6 @@ const UpsTypeAccordion = ({ upsTypes, currentUpsId }) => {
                       ))}
                     </div>
                   </div>
-
-                  {type.id !== currentUpsId && (
-                    <div className="pt-2">
-                      <Link href={`/services/ups-systems/${type.id}`}>
-                        <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition-colors">
-                          View {type.name} Details
-                        </button>
-                      </Link>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
