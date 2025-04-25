@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, memo } from "react";
+import React, { useMemo, memo, useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -65,21 +65,23 @@ const ProjectsSectionContent = memo(
   ({ ref, inView, projects, translations: t }) => {
     return (
       <motion.div
-        className="py-16 px-4 lg:px-20 flex flex-col items-center justify-between bg-light"
+        className="bg-light"
         ref={ref}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={containerVariants}
       >
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-8 md:space-y-12">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 space-y-4 xl:space-y-6">
           <ProjectsHeader translations={t} />
           <ProjectsGrid projects={projects} viewMoreText={t("view_more_btn")} />
           <Button
             href="/client-projects"
-            text={t("view_projects")}
             type="secondary"
+            size="lg"
             className="w-fit"
-          />
+          >
+            {t("view_projects")}
+          </Button>
         </div>
       </motion.div>
     );
@@ -110,48 +112,71 @@ const ProjectsGrid = memo(({ projects, viewMoreText }) => (
   </motion.div>
 ));
 
-const ProjectCard = memo(({ project, index, viewMoreText }) => (
-  <motion.div
-    className="relative overflow-hidden mx-auto max-w-sm text-center group"
-    variants={headingVariants}
-  >
-    <div className="overflow-hidden rounded-[30px] relative">
-      <Link href={project.link} className="block relative">
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={500}
-          height={750}
-          className="w-full aspect-[1/1.5] object-cover transition-transform duration-300 group-hover:scale-105 rounded-[30px]"
-          loading="lazy"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          style={{ objectFit: "cover" }}
-          priority={false}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/50 to-black/70 rounded-lg"></div>
-      </Link>
-    </div>
+const ProjectCard = memo(({ project, index }) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
-    {/* Project Info */}
-    <div className="absolute bottom-20 left-6 right-6 bg-opacity-0 text-left transform translate-y-full group-hover:translate-y-0 group-hover:bg-opacity-100 transition-all duration-500">
-      <CardHeading className="!text-white">{project.title}</CardHeading>
-      <Description className="text-lg text-white mb-4 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out">
-        {project.description}
-      </Description>
-      <Link
-        href={project.link}
-        className="absolute text-secondary font-semibold capitalize text-lg hover:text-white flex items-center justify-start -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
-      >
-        {viewMoreText}
-        <img
-          src="/arrow.svg"
-          alt="svg"
-          className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-2"
-        />
-      </Link>
-    </div>
-  </motion.div>
-));
+  // Handle mouse movement to update tooltip position
+  const handleMouseMove = (e) => {
+    setTooltipPosition({
+      x: e.clientX + 15,
+      y: e.clientY - 10,
+    });
+  };
+
+  return (
+    <motion.div
+      className="relative overflow-hidden mx-auto w-full text-center group rounded-[30px] shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
+      variants={headingVariants}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+      onMouseMove={handleMouseMove}
+    >
+      <div className="overflow-hidden rounded-[30px] relative h-full">
+        <Link href={project.link} className="block relative h-full">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={500}
+            height={750}
+            className="w-full aspect-[1/1.5] object-cover transition-transform duration-500 group-hover:scale-110 rounded-[30px]"
+            loading="lazy"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority={false}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80 rounded-[30px] opacity-90 transition-opacity duration-300 group-hover:opacity-100"></div>
+
+          {/* Content Container - Fixed positioning relative to card */}
+          <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 md:p-7 text-left transform transition-all duration-500 ease-out">
+            <CardHeading className="!text-white mb-2 sm:mb-3">
+              {project.title}
+            </CardHeading>
+
+            {/* Use max-height transition for better animation */}
+            <div className="overflow-hidden transition-all duration-500 ease-out max-h-0 group-hover:max-h-32">
+              <Description className="!text-white/90 text-sm sm:text-base transition-opacity duration-300">
+                {project.description}
+              </Description>
+            </div>
+          </div>
+        </Link>
+      </div>
+
+      {/* Elegant tooltip */}
+      {showTooltip && (
+        <div
+          className="fixed z-50 bg-gradient-to-r from-primary to-secondary text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg pointer-events-none flex items-center justify-center transition-opacity duration-200 opacity-90 hover:opacity-100"
+          style={{
+            left: `${tooltipPosition.x}px`,
+            top: `${tooltipPosition.y}px`,
+          }}
+        >
+          View Project
+        </div>
+      )}
+    </motion.div>
+  );
+});
 
 // Add display names for better debugging
 ProjectsSection.displayName = "ProjectsSection";

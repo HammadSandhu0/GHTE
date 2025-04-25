@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
 import { useTranslations } from "next-intl";
-import { containerVariants, motion, cardAnimation } from "@/utils/animations";
-import Image from "next/image"; // Using Next.js Image for optimization
-import { Description, Heading, SubHeading } from "./Headings";
+import { Description, Heading } from "./Headings";
+import { MissionIcon, ValuesIcon, VisionIcon } from "./Icons";
 
 const MissionVision = () => {
   const t = useTranslations("Mission-vision-value");
@@ -12,21 +11,21 @@ const MissionVision = () => {
   const cards = [
     {
       key: "mission",
-      icon: "/icon-our-mission.svg",
+      icon: <MissionIcon />,
       alt: "Our Mission Icon",
       titleKey: "mission-title",
       descriptionKey: "mission-description",
     },
     {
       key: "vision",
-      icon: "/icon-our-vision.svg",
+      icon: <VisionIcon />,
       alt: "Our Vision Icon",
       titleKey: "vision-title",
       descriptionKey: "vision-description",
     },
     {
       key: "values",
-      icon: "/icon-our-values.svg",
+      icon: <ValuesIcon />,
       alt: "Our Values Icon",
       titleKey: "values-title",
       descriptionKey: "values-description",
@@ -35,39 +34,21 @@ const MissionVision = () => {
 
   // Reusable card component
   const CardItem = ({ icon, alt, titleKey, descriptionKey }) => (
-    <motion.div
-      className="bg-white px-8 rounded-3xl shadow-lg flex flex-col items-start border border-textcolor/50 py-16"
-      variants={cardAnimation}
-    >
-      <div className="mb-4 flex justify-start w-full">
-        <Image
-          src={icon}
-          alt={alt}
-          width={64}
-          height={64}
-          className="w-16 h-16"
-        />
+    <div className="bg-white p-8 rounded-3xl shadow-lg flex flex-col items-start border border-textcolor/50">
+      <div className="mb-4 flex justify-start w-full" aria-label={alt}>
+        {icon}
       </div>
       <Heading className="!text-primary !text-2xl md:!text-3xl mb-4 !font-semibold">
         {t(titleKey)}
       </Heading>
       <Description>{t(descriptionKey)}</Description>
-    </motion.div>
+    </div>
   );
 
   return (
-    <motion.section
-      className="py-20 md:py-32 lg:py-44"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariants}
-    >
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-        >
+    <section className="bg-white">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 lg:gap-12 items-center">
           {cards.map((card) => (
             <CardItem
               key={card.key}
@@ -77,9 +58,9 @@ const MissionVision = () => {
               descriptionKey={card.descriptionKey}
             />
           ))}
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

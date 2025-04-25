@@ -1,19 +1,12 @@
 import Image from "next/image";
 import { ArrownRightIcon, MessageSquareQuote } from "./Icons";
-import {
-  Description,
-  Header,
-  Heading,
-  MotionDiv,
-  SubHeading,
-} from "./Headings";
+import { Description, Header, Heading, SubHeading } from "./Headings";
 import { Badge } from "./Badge";
 import Link from "next/link";
-import Button from "./Button";
 
 export default function ProductTypeCard({ ProductTypes = [] }) {
   return (
-    <section className="container mx-auto py-8 px-4 md:px-6 space-y-20">
+    <section className="container mx-auto px-4 sm:px-6 md:px-4 xl:px-12 py-8 sm:py-12 md:py-16 lg:py-20 space-y-4">
       <Header>
         <SubHeading>{ProductTypes?.subHeading || ""}</SubHeading>
         <Heading className="!text-primary">
@@ -24,7 +17,7 @@ export default function ProductTypeCard({ ProductTypes = [] }) {
         </Description>
       </Header>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {ProductTypes?.details.map((type, index) => (
           <div
             key={index}

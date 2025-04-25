@@ -21,7 +21,7 @@ const FaqAccordion = ({ faqs }) => {
     faqs?.heading?.toLowerCase().includes("line interactive ups");
 
   return (
-    <div className="container mx-auto space-y-10 px-4 md:px-0">
+    <div className="container mx-auto px-4 sm:px-6 md:px-4 xl:px-12 py-8 sm:py-12 md:py-16 lg:py-20 space-y-4">
       <Header alignment={isLeftAligned ? "left" : "center"}>
         <SubHeading>{faqs?.subHeading || ""}</SubHeading>
 

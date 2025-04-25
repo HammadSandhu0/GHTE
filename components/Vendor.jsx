@@ -18,19 +18,14 @@ const VendorSlider = memo(() => {
 
 const VendorSliderContent = memo(({ inViewRef, isInView, translations: t }) => {
   return (
-    <motion.section
-      className="py-20"
-      ref={inViewRef}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={containerVariants}
+    <section
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 space-y-4 lg:space-y-40">
         <VendorHeader translations={t} />
         <VendorLogoSlider />
         <FeaturedLink />
       </div>
-    </motion.section>
+    </section>
   );
 });
 

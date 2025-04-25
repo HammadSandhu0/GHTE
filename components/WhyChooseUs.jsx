@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, memo, useRef } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -75,14 +76,14 @@ const WhyChooseUs = ({ whychooseus }) => {
 
   return (
     <motion.section
-      className="py-16"
+      className="bg-white"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
       onViewportEnter={() => setIsVisible(true)}
     >
-      <div className="container mx-auto py-8 px-4 md:px-6 my-20 space-y-20">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 space-y-4 lg:space-y-6">
         <Header>
           <SubHeading>{t("title")}</SubHeading>
           <Heading className="!text-primary">{t("subtitle")}</Heading>

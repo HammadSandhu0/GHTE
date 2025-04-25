@@ -1,16 +1,13 @@
-"use client";
 import { Description, Header, Heading } from "@/components/Headings";
 import { IndustryApplications } from "@/components/IndustryApplications";
 import ImageSlider from "@/components/ImageSlider";
 import { modularUpsData } from "@/data/modular-ups-data";
 import Sidebar from "@/components/Sidebar";
-import { useTranslations } from "next-intl";
 import PageHeader from "@/components/PageHeader";
 import { SideCategoriesList } from "@/components/CategoriesList";
 import { ProductList } from "@/components/ProductList";
 import ProductTypeCard from "@/components/ProductTypeCard";
 import SEOHead from "@/components/SeoHead";
-import { useEffect, useState } from "react";
 import {
   metadata,
   pageHeader,
@@ -19,9 +16,13 @@ import {
 } from "@/data/upsData";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import FaqAccordion from "@/components/FaqAccordion";
+import { getTranslations } from "next-intl/server";
 
-export default function page({ params }) {
-  const t = useTranslations("UPS_SYSTEM");
+export default async function page({ params: { locale } }) {
+  const t = await getTranslations({
+    locale,
+    namespace: "UPS_SYSTEM",
+  });
 
   const UPSData = {
     title: "UPS Systems",
@@ -294,33 +295,27 @@ export default function page({ params }) {
     ],
   };
 
-  const [resolvedParams, setResolvedParams] = useState(null);
-  useEffect(() => {
-    const fetchParams = async () => {
-      const resolved = await params;
-      setResolvedParams(resolved);
-    };
-    fetchParams();
-  }, [params]);
-  if (!resolvedParams) return null;
   return (
     <>
       <SEOHead
         title={metadata.title.default}
         description={metadata.description}
-        locale={resolvedParams.locale}
+        locale={locale}
         pageUrl="/ups-saudi-arabia"
       />
       <PageHeader pageHeader={pageHeader(t)} />
-      <section className="mb-16">
-        <div className="container mx-auto py-8 px-4 md:px-6">
+      <section>
+        <div className="container mx-auto px-4 sm:px-6 md:px-4 xl:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div className="lg:col-span-2 space-y-10">
               <ImageSlider
                 images={UPSData.images}
                 altText={"UPS Systems Images"}
               />
-              <Header alignment="left">
+              <Header
+                alignment="responsive"
+                className="text-center mx-auto lg:!text-left"
+              >
                 <Heading className="!text-primary">{UPSData.title}</Heading>
                 <Description>{UPSData.description}</Description>
               </Header>

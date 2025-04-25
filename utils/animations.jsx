@@ -1,5 +1,5 @@
 // Animation variants
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 export const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -115,5 +115,5 @@ export const slideVariants = {
   }),
 };
 // Export motion directly
-export { motion };
+export { motion, AnimatePresence };
 export { useInView };
