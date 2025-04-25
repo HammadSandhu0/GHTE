@@ -72,14 +72,14 @@ const ServiceCard = memo(({ service, index }) => {
 
   return (
     <motion.div
-      className="relative overflow-hidden mx-auto w-full text-center group rounded-3xl shadow-md hover:shadow-lg transition-shadow duration-300"
+      className="relative overflow-hidden mx-auto w-full text-center group rounded-3xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
       variants={headingVariants}
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
       onMouseMove={handleMouseMove}
     >
-      <div className="overflow-hidden rounded-3xl relative">
-        <Link href={service.link} className="block relative">
+      <div className="overflow-hidden rounded-3xl relative h-full">
+        <Link href={service.link} className="block relative h-full">
           <Image
             src={service.image}
             alt={service.title}
@@ -89,15 +89,21 @@ const ServiceCard = memo(({ service, index }) => {
             priority={index < 4}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/70 rounded-2xl opacity-90 transition-opacity duration-300 group-hover:opacity-100"></div>
+
+          {/* Content Container - Fixed positioning relative to card */}
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-left transform translate-y-0 transition-all duration-500 ease-out bg-gradient-to-t from-black/80 to-transparent">
+            <SubHeading className="mb-2 sm:mb-3 md:mb-4 text-white">
+              {service.title}
+            </SubHeading>
+
+            {/* Use max-height transition instead of opacity for better readability */}
+            <div className="overflow-hidden transition-all duration-500 ease-out max-h-0 group-hover:max-h-24">
+              <Description className="!text-white transition-opacity duration-300 line-clamp-3">
+                {service.description}
+              </Description>
+            </div>
+          </div>
         </Link>
-      </div>
-      <div className="absolute -bottom-6 left-0 right-0 p-4 sm:p-5 md:p-6 text-left transform translate-y-1/2 group-hover:translate-y-0 transition-all duration-500 ease-out">
-        <SubHeading className="mb-2 sm:mb-3 md:mb-4 text-white">
-          {service.title}
-        </SubHeading>
-        <Description className="!text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-3">
-          {service.description}
-        </Description>
       </div>
 
       {/* Elegant round tooltip */}
@@ -144,13 +150,13 @@ const ServicesSection = memo(
 
     return (
       <motion.section
-        className="py-8 sm:py-12 md:py-16 lg:py-20 bg-light"
+        className="bg-light"
         ref={ref}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={containerVariants}
       >
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 space-y-8 md:space-y-12">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 space-y-4 lg:space-y-6">
           <Header>
             <SubHeading>{t("heading")}</SubHeading>
             <Heading className="!text-primary">{t("subheading")}</Heading>

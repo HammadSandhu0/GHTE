@@ -71,7 +71,8 @@
   "CompanyBtn": {
     "CompanyProfile": "ملف الشركة",
     "Support": "الدعم ٢٤/٧",
-    "phone": "+٩٦٦ ١٢٢ ٨٧٣ ٠٧١"
+    "phone": "+٩٦٦ ١٢٢ ٨٧٣ ٠٧١",
+    "Click_to_call_support": "انقر للاتصال بفريق الدعم"
   },
   "CTA": {
     "title": "دعونا نعمل على شيء عظيم معًا!",

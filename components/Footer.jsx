@@ -1,10 +1,15 @@
 "use client";
 import React, { memo } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import SocialIcons from "./SocialIcons";
 import { useTranslations } from "next-intl";
 import { containerVariants, sectionVariants, motion } from "@/utils/animations";
+import {
+  ArrowWithCircleIcon,
+  LocationIcon,
+  MailIcon,
+  PhoneIcon,
+} from "./Icons";
 
 const Footer = memo(() => {
   const t = useTranslations("Footer");
@@ -15,14 +20,14 @@ const Footer = memo(() => {
 const FooterContainer = memo(({ t }) => {
   return (
     <motion.footer
-      className="bg-primary pt-4 sm:pt-6 lg:pt-8"
+      className="bg-primary"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       <div className="pt-12">
-        <div className="container mx-auto  px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12  space-y-4 lg:space-y-6">
           <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
             <AboutSection t={t} />
             <ServicesSection t={t} />
@@ -110,17 +115,17 @@ const ContactSection = memo(({ t }) => {
   const contactLinks = [
     {
       href: "tel:+966122873071",
-      icon: "/icon-phone.svg",
+      icon: <PhoneIcon className="w-9 h-9" />,
       label: t("ContactUs.phone"),
     },
     {
       href: "mailto:Info@gulfhorizontele.com",
-      icon: "/icon-mail.svg",
+      icon: <MailIcon className="w-9 h-9" fill="none" stroke="#ffb703" />,
       label: t("ContactUs.email"),
     },
     {
       href: "/contact",
-      icon: "/icon-location.svg",
+      icon: <LocationIcon />,
       label: t("ContactUs.address"),
     },
   ];
@@ -141,14 +146,13 @@ const NavLinks = memo(({ links, useCustomIcon = false }) => (
       <Link
         key={index}
         href={link.href}
-        className="text-white flex items-center justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
+        className="text-white flex items-end justify-start gap-x-1 transition duration-100 hover:text-secondary text-[16px] font-semibold"
       >
-        <Image
-          src={useCustomIcon ? link.icon : "/arrow.svg"}
-          alt=""
-          width={useCustomIcon ? 24 : 16}
-          height={useCustomIcon ? 24 : 16}
-        />
+        {useCustomIcon ? (
+          link.icon
+        ) : (
+          <ArrowWithCircleIcon stroke="white" fill="none" />
+        )}
         {link.label}
       </Link>
     ))}

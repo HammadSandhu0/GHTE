@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import { motion, containerVariants } from "@/utils/animations";
 
 const ButtonGroup = memo(
   ({
@@ -20,7 +19,7 @@ const ButtonGroup = memo(
     // Spacing classes
     const spacingClass =
       {
-        tight: "gap-2 sm:gap-3",
+        tight: "gap-0 sm:gap-1",
         default: "gap-3 sm:gap-4",
         wide: "gap-4 sm:gap-6",
       }[spacing] || "gap-3 sm:gap-4";
@@ -36,23 +35,21 @@ const ButtonGroup = memo(
       }[alignment] || "justify-center sm:justify-start";
 
     return (
-      <motion.div
-        className={`flex items-center ${directionClass} ${spacingClass} ${alignmentClass} mt-6 sm:mt-8 md:mt-10 ${className}`}
+      <div
+        className={`flex items-center ${directionClass} ${spacingClass} ${alignmentClass} ${className}`}
         initial="hidden"
-        whileInView="visible"
+        whileinview="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
       >
         {React.Children.map(children, (child, index) => (
-          <motion.div
+          <div
             key={index}
-            variants={containerVariants}
             className={direction === "responsive" ? "w-full sm:w-auto" : ""}
           >
             {child}
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     );
   }
 );

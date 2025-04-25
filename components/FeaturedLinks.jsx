@@ -10,27 +10,17 @@ import {
 } from "@/utils/animations";
 import { Header, Heading } from "./Headings";
 import { getFeaturedLinks } from "@/data/featuredLinksData";
+import { ArrownRightIcon } from "./Icons";
 
 const FeatureCard = memo(({ title, link }) => (
-  <motion.div className="p-2 w-full" variants={headingVariants}>
-    <div className="bg-light hover:bg-light/50 transition-all rounded flex p-4 h-full items-center cursor-pointer">
-      <svg
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="3"
-        className="text-primary w-6 h-6 flex-shrink-0 mr-4"
-        viewBox="0 0 24 24"
-      >
-        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-        <path d="M22 4L12 14.01l-3-3"></path>
-      </svg>
-      <Link href={link} className="title-font font-medium">
+  <div className="p-2 w-full">
+    <div className="bg-light hover:bg-light/75 transition-all rounded flex p-2 h-full items-center cursor-pointer">
+    <ArrownRightIcon/>
+      <Link href={link} className="text-textcolor">
         {title}
       </Link>
     </div>
-  </motion.div>
+  </div>
 ));
 
 const FeaturedLink = () => {
@@ -47,8 +37,8 @@ const FeaturedLinkContent = memo(({ inViewRef, isInView, translations: t }) => {
   const features = getFeaturedLinks(t);
 
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 mt-32">
+    <section className="">
+      <div className="space-y-4 lg:space-y-6">
         <Header>
           <Heading className="!text-primary">{t("heading")}</Heading>
         </Header>

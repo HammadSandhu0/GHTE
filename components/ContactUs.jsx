@@ -238,7 +238,7 @@ const ContactUs = () => {
     <motion.section
       className="bg-light bg-center bg-cover py-8 sm:py-12 md:py-16"
       initial="hidden"
-      whileInView="visible"
+      whileinview="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={containerVariants}
     >

@@ -1,4 +1,3 @@
-// LocaleLayout.js
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -31,7 +30,7 @@ export default async function LocaleLayout({ children, params }) {
     <html lang={locale}>
       <body className={`${dm_sans.variable} font-dm_sans w-full min-h-screen`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <NextTopLoader color="#01ae47" height={4} />
+          <NextTopLoader color="#01ae47" height={5} />
           <Loader />
           {children}
           <CtaBox />

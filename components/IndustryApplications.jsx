@@ -40,7 +40,7 @@ export const IndustryApplications = ({ applications }) => {
               <SubHeading className="!text-primary/75">
                 Key Benefits:
               </SubHeading>
-              <MotionDiv>
+              <div>
                 {app.benefits.map((benefit, benefitIndex) => (
                   <span
                     key={benefitIndex}
@@ -50,7 +50,7 @@ export const IndustryApplications = ({ applications }) => {
                     <Description>{benefit}</Description>
                   </span>
                 ))}
-              </MotionDiv>
+              </div>
             </div>
           </div>
         ))}
